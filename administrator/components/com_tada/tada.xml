@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+    <identifier>com:tada</identifier>
+    <name>com_tada</name>
+    <author>Joomlatools</author>
+    <creationDate>July 2014</creationDate>
+    <copyright>Copyright (C) 2011 - 2014 Timble CVBA (http://www.timble.net)</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>support@joomlatools.com</authorEmail>
+    <authorUrl>www.joomlatools.com</authorUrl>
+    <version>0.0.1</version>
+    <description>A Tada example component</description>
+
+    <scriptfile>install/script.php</scriptfile>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">install/install.sql</file>
+        </sql>
+    </install>
+
+    <files folder="site/components/com_tada">
+        <filename>tada.php</filename>
+    </files>
+
+    <administration>
+        <menu>COM_TADA</menu>
+
+        <files folder="administrator/components/com_tada">
+            <filename>tada.php</filename>
+        </files>
+    </administration>
+
+</extension>
