@@ -81,8 +81,6 @@ defined('KOOWA') or die; ?>
                                 </div>
                             </div>
                         </div>
-
-                        <input name="created_by" id="created_by" value="<?= $todo->created_by ? $todo->created_by : @object('user')->getId(); ?>" type="hidden" disabled="disabled">
                     </fieldset>
                 </div>
             </div>
