@@ -9,6 +9,8 @@ defined('KOOWA') or die; ?>
 
 <?= @helper('behavior.koowa'); ?>
 
+<ktml:style src="media://koowa/com_koowa/css/koowa.css" />
+
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" title="COM_TADA_SUBMENU_TODOS" icon="todo icon-stack">
 </ktml:module>
@@ -60,8 +62,8 @@ defined('KOOWA') or die; ?>
                             <a href="<?= @route('view=todo&id='.$todo->id); ?>">
                                 <?= @escape($todo->title); ?></a>
                         </td>
-                        <td>
-                            <?= @helper('grid.state', array('entity' => $todo, 'clickable' => true)) ?>
+                        <td style="text-align: center">
+                            <?= @helper('grid.publish', array('entity' => $todo, 'clickable' => true)) ?>
                         </td>
                         <td>
                             <?= @escape($todo->getAuthor()->getName()); ?>

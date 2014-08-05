@@ -9,6 +9,8 @@ defined('KOOWA') or die; ?>
 
 <?= @helper('behavior.validator'); ?>
 
+<ktml:style src="media://koowa/com_koowa/css/koowa.css" />
+
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="todo-add icon-pencil-2">
 </ktml:module>

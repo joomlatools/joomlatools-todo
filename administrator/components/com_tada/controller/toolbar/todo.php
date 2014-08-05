@@ -8,25 +8,12 @@
 
 class ComTadaControllerToolbarTodo extends ComKoowaControllerToolbarActionbar
 {
-    protected function _afterRead(KControllerContextInterface $context)
-    {
-
-        $this->addCommand('apply');
-        $this->addCommand('save');
-        $this->addCommand('save2new');
-
-        $this->addCommand('cancel');
-
-    }
-
     protected function _afterBrowse(KControllerContextInterface $context)
     {
         parent::_afterBrowse($context);
 
-        $controller = $this->getController();
-
         $this->addSeparator();
-        $this->addPublish(array('allowed' => $controller->canEdit()));
-        $this->addUnpublish(array('allowed' => $controller->canEdit()));
+        $this->addPublish();
+        $this->addUnpublish();
     }
 }
