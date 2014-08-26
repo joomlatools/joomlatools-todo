@@ -10,11 +10,8 @@ defined('_JEXEC') or die;
 
 if (!class_exists('Koowa'))
 {
-    if (!file_exists(JPATH_ADMINISTRATOR.'/components/com_extman/extman.php')) {
-        $error = JText::_('EXTMAN_ERROR');
-    }
-    elseif (!JPluginHelper::isEnabled('system', 'koowa')) {
-        $error = sprintf(JText::_('EXTMAN_PLUGIN_ERROR'), JRoute::_('index.php?option=com_plugins&view=plugins&filter_folder=system'));
+    if (!JPluginHelper::isEnabled('system', 'koowa')) {
+        $error = 'This extension requires \'Nooku Framework\' to be installed and enabled';
     }
 
     return JFactory::getApplication()->redirect(JURI::base(), $error, 'error');

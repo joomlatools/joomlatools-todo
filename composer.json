@@ -1,0 +1,24 @@
+{
+    "name": "nooku/com_tada",
+    "type": "joomlatools-installer",
+    "license": "GPLv3",
+    "description": "Example todo list Joomla extension build using Nooku Framework",
+    "keywords": [
+        "joomla",
+        "extension",
+        "framework",
+        "nooku"
+    ],
+    "homepage": "https://github.com/nooku/nooku-com_tada",
+    "authors": [
+        {
+            "name": "Timble",
+            "email": "info@timble.net",
+            "homepage": "http://www.timble.net"
+        }
+    ],
+    "require": {
+        "joomlatools/installer": "*",
+        "nooku/framework": "*"
+    }
+}
