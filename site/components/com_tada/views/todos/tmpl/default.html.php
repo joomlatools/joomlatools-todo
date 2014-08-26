@@ -8,7 +8,7 @@
 defined('KOOWA') or die; ?>
 
 <? foreach ($todos as $todo): ?>
-    <? Import child template from document view ?>
+    <? //Import child template from document view ?>
     <?= @import('com://site/tada.todo.default.html', array(
         'todo' => $todo,
     )) ?>
