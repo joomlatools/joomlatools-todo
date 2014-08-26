@@ -12,8 +12,14 @@ class ComTadaControllerToolbarTodo extends ComKoowaControllerToolbarActionbar
     {
         parent::_afterBrowse($context);
 
+        $controller = $this->getController();
+
         $this->addSeparator();
-        $this->addPublish();
-        $this->addUnpublish();
+        $this->addPublish(array('allowed' => $controller->canEdit()));
+        $this->addUnpublish(array('allowed' => $controller->canEdit()));
+
+        if ($controller->canAdmin()) {
+            $this->addSeparator()->addOptions();
+        }
     }
 }
