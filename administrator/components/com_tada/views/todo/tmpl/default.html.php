@@ -48,7 +48,7 @@ defined('KOOWA') or die; ?>
                         <div class="tada_grid description_container">
                             <div class="control-group tada_grid__item one-whole">
                                 <div class="controls">
-                                    <?= @editor(array(
+                                    <?= @helper('editor.display', array(
                                         'name' => 'description',
                                         'id'   => 'description',
                                         'width' => '100%',

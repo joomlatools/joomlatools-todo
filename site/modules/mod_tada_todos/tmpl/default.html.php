@@ -37,7 +37,7 @@ defined('KOOWA') or die; ?>
                 <? // Created ?>
                 <? if ($module->params->show_created): ?>
                 <span class="module_todo__date">
-                    <?= @date(array('date' => $todo->created_on)); ?>
+                    <?= @helper('date.format', array('date' => $todo->created_on)); ?>
                 </span>
                 <? endif; ?>
             </p>

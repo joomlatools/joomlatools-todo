@@ -69,7 +69,7 @@ defined('KOOWA') or die; ?>
                             <?= @escape($todo->getAuthor()->getName()); ?>
                         </td>
                         <td>
-                            <?= @date(array('date' => $todo->created_on)); ?>
+                            <?= @helper('date.format', array('date' => $todo->created_on)); ?>
                         </td>
                     </tr>
                     <? endforeach; ?>
