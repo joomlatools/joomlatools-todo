@@ -7,7 +7,7 @@
  */
 defined('KOOWA') or die; ?>
 
-<?= @helper('behavior.koowa'); ?>
+<?= helper('behavior.koowa'); ?>
 
 <ktml:style src="media://koowa/com_koowa/css/koowa.css" />
 
@@ -24,19 +24,19 @@ defined('KOOWA') or die; ?>
                 <thead>
                     <tr>
                         <th style="text-align: center;" width="1">
-                            <?= @helper('grid.checkall')?>
+                            <?= helper('grid.checkall')?>
                         </th>
                         <th class="tada_table__title_field">
-                            <?= @helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
+                            <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
                         </th>
                         <th width="5%" data-hide="phone,phablet">
-                            <?= @helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
+                            <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
                         </th>
                         <th width="5%" data-hide="phone,phablet,tablet">
-                            <?= @helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
+                            <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
                         </th>
                         <th width="5%" data-hide="phone,phablet">
-                            <?= @helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
+                            <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
                         </th>
                     </tr>
                 </thead>
@@ -44,7 +44,7 @@ defined('KOOWA') or die; ?>
                 <tfoot>
                     <tr>
                         <td colspan="9">
-                            <?= @helper('paginator.pagination', array('total' => $total)) ?>
+                            <?= helper('paginator.pagination', array('total' => $total)) ?>
                         </td>
                     </tr>
                 </tfoot>
@@ -56,20 +56,20 @@ defined('KOOWA') or die; ?>
                     ?>
                     <tr>
                         <td style="text-align: center;">
-                            <?= @helper('grid.checkbox', array('entity' => $todo)) ?>
+                            <?= helper('grid.checkbox', array('entity' => $todo)) ?>
                         </td>
                         <td class="tada_table__title_field">
-                            <a href="<?= @route('view=todo&id='.$todo->id); ?>">
-                                <?= @escape($todo->title); ?></a>
+                            <a href="<?= route('view=todo&id='.$todo->id); ?>">
+                                <?= escape($todo->title); ?></a>
                         </td>
                         <td style="text-align: center">
-                            <?= @helper('grid.publish', array('entity' => $todo, 'clickable' => true)) ?>
+                            <?= helper('grid.publish', array('entity' => $todo, 'clickable' => true)) ?>
                         </td>
                         <td>
-                            <?= @escape($todo->getAuthor()->getName()); ?>
+                            <?= escape($todo->getAuthor()->getName()); ?>
                         </td>
                         <td>
-                            <?= @helper('date.format', array('date' => $todo->created_on)); ?>
+                            <?= helper('date.format', array('date' => $todo->created_on)); ?>
                         </td>
                     </tr>
                     <? endforeach; ?>
@@ -77,7 +77,7 @@ defined('KOOWA') or die; ?>
                     <? if (!count($todos)) : ?>
                     <tr>
                         <td colspan="9" align="center" style="text-align: center;">
-                            <?= @translate('No todos found.') ?>
+                            <?= translate('No todos found.') ?>
                         </td>
                     </tr>
                     <? endif; ?>

@@ -11,20 +11,20 @@ defined('KOOWA') or die; ?>
     <h4 class="koowa_header">
         <? // Header title ?>
         <span class="koowa_header__item">
-            <a class="koowa_header__title_link" href="<?= @route('view=todo&id='.$todo->id); ?>">
-                <?= @escape($todo->title); ?>
+            <a class="koowa_header__title_link" href="<?= route('view=todo&id='.$todo->id); ?>">
+                <?= escape($todo->title); ?>
             </a>
          </span>
 
         <? // Label locked ?>
         <?= var_dump($todo->isPermissible()); ?>
         <? if ($todo->isPermissible() && $todo->canPerform('edit') && $todo->isLockable() && $todo->isLocked()): ?>
-            <span class="label label-warning"><?= @helper('grid.lock_message', array('entity' => $todo)); ?></span>
+            <span class="label label-warning"><?= helper('grid.lock_message', array('entity' => $todo)); ?></span>
         <? endif; ?>
 
         <? // Label status ?>
         <? if (!$todo->isPublished() || !$todo->enabled): ?>
-            <? $status = $todo->enabled ? @translate($todo->status) : @translate('Draft'); ?>
+            <? $status = $todo->enabled ? translate($todo->status) : translate('Draft'); ?>
             <span class="label label-<?= $todo->enabled ? $todo->status : 'draft' ?>"><?= ucfirst($status); ?></span>
         <? endif; ?>
     </h4>

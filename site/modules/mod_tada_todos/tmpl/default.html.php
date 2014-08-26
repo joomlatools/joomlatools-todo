@@ -10,7 +10,7 @@ defined('KOOWA') or die; ?>
 <? // No todos message ?>
 <? if ($total == 0): ?>
     <p class="alert alert-info">
-        <?= @translate('You do not have any todos yet.'); ?>
+        <?= translate('You do not have any todos yet.'); ?>
     </p>
 <? else: ?>
 
@@ -24,9 +24,9 @@ defined('KOOWA') or die; ?>
                 <span class="koowa_header__item">
                     <a href="<?= $todo->title_link; ?>"
                        class="koowa_header__title_link"
-                       data-title="<?= @escape($todo->title); ?>"
+                       data-title="<?= escape($todo->title); ?>"
                        data-id="<?= $todo->id; ?>">
-                        <?= @escape($todo->title);?></a>
+                        <?= escape($todo->title);?></a>
 
                 </span>
             </p>
@@ -37,7 +37,7 @@ defined('KOOWA') or die; ?>
                 <? // Created ?>
                 <? if ($module->params->show_created): ?>
                 <span class="module_todo__date">
-                    <?= @helper('date.format', array('date' => $todo->created_on)); ?>
+                    <?= helper('date.format', array('date' => $todo->created_on)); ?>
                 </span>
                 <? endif; ?>
             </p>
