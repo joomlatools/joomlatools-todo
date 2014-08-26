@@ -12,6 +12,8 @@ class ComTadaDatabaseTableTodos extends KDatabaseTableAbstract
     {
         $config->append(array(
             'behaviors' => array(
+                'permissible',
+                'lockable',
                 'creatable',
                 'modifiable',
                 'sluggable',

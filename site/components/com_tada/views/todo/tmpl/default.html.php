@@ -15,6 +15,18 @@ defined('KOOWA') or die; ?>
                 <?= @escape($todo->title); ?>
             </a>
          </span>
+
+        <? // Label locked ?>
+        <?= var_dump($todo->isPermissible()); ?>
+        <? if ($todo->isPermissible() && $todo->canPerform('edit') && $todo->isLockable() && $todo->isLocked()): ?>
+            <span class="label label-warning"><?= @helper('grid.lock_message', array('entity' => $todo)); ?></span>
+        <? endif; ?>
+
+        <? // Label status ?>
+        <? if (!$todo->isPublished() || !$todo->enabled): ?>
+            <? $status = $todo->enabled ? @translate($todo->status) : @translate('Draft'); ?>
+            <span class="label label-<?= $todo->enabled ? $todo->status : 'draft' ?>"><?= ucfirst($status); ?></span>
+        <? endif; ?>
     </h4>
     <div class="todo_description">
         <?= JHtml::_('content.prepare', $todo->description); ?>
