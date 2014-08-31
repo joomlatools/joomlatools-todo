@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="3.0" type="package" method="upgrade">
+    <identifier>pkg:tada</identifier>
+    <name>pkg_tada</name>
+    <packagename>tada</packagename>
+    <author>Joomlatools</author>
+    <creationDate>July 2014</creationDate>
+    <copyright>Copyright (C) 2011 - 2014 Timble CVBA (http://www.timble.net)</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>support@joomlatools.com</authorEmail>
+    <authorUrl>www.joomlatools.com</authorUrl>
+    <version>0.0.1</version>
+    <description>A Tada example component</description>
+
+    <files>
+        <file type="component" id="com_tada">administrator/components/com_tada</file>
+    </files>
+</extension>
