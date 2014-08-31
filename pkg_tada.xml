@@ -10,9 +10,9 @@
     <authorEmail>support@joomlatools.com</authorEmail>
     <authorUrl>www.joomlatools.com</authorUrl>
     <version>0.0.1</version>
-    <description>A Tada example component</description>
+    <description>A Tada example component and module</description>
 
     <files>
-        <file type="component" id="com_tada">administrator/components/com_tada</file>
+        <file type="component" id="com_tada">administrator/components</file>
     </files>
 </extension>
