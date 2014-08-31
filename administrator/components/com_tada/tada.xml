@@ -19,14 +19,28 @@
         </sql>
     </install>
 
-    <files folder="site/components/com_tada">
+    <files folder="../../../site/components/com_tada">
+        <folder>dispatcher</folder>
+        <folder>views</folder>
+
+        <filename>router.php</filename>
         <filename>tada.php</filename>
     </files>
 
     <administration>
         <menu>COM_TADA</menu>
 
-        <files folder="administrator/components/com_tada">
+        <files folder="../../../administrator/components/com_tada">
+            <folder>controller</folder>
+            <folder>database</folder>
+            <folder>dispatcher</folder>
+            <folder>install</folder>
+            <folder>language</folder>
+            <folder>model</folder>
+            <folder>views</folder>
+
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
             <filename>tada.php</filename>
         </files>
     </administration>
