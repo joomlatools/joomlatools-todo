@@ -18,6 +18,6 @@
         }
     ],
     "require": {
-        "nooku/nooku-framework": "*"
+        "nooku/nooku-framework": "dev-develop"
     }
 }
