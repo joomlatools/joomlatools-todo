@@ -50,6 +50,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls">
                                     <?= helper('editor.display', array(
                                         'name' => 'description',
+                                        'value' => $todo->description,
                                         'id'   => 'description',
                                         'width' => '100%',
                                         'height' => '341',
