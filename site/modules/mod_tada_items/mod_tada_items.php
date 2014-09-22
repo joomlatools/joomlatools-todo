@@ -13,7 +13,7 @@ if (class_exists('Koowa'))
     //Catch exceptions before Joomla does (JApplication::dispatch())
     try
     {
-        echo KObjectManager::getInstance()->getObject('mod://site/tada_todos.html')
+        echo KObjectManager::getInstance()->getObject('mod://site/tada_items.html')
             ->module($module)
             ->attribs($attribs)
             ->render();

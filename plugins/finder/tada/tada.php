@@ -27,7 +27,7 @@ class plgFinderTada extends PlgKoowaFinder
     {
         $config->append(array(
             'context'  => 'Tada',
-            'entity'   => 'todo',
+            'entity'   => 'item',
         ));
 
         parent::_initialize($config);

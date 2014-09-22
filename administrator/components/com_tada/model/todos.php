@@ -6,7 +6,7 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTadaModelTodos extends KModelDatabase
+class ComTadaModelItems extends KModelDatabase
 {
     public function __construct(KObjectConfig $config)
     {

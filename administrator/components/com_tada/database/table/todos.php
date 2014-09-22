@@ -6,7 +6,7 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTadaDatabaseTableTodos extends KDatabaseTableAbstract
+class ComTadaDatabaseTableItems extends KDatabaseTableAbstract
 {
     protected function _initialize(KObjectConfig $config)
     {

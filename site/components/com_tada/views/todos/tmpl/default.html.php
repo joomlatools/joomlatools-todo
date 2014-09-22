@@ -7,9 +7,9 @@
  */
 defined('KOOWA') or die; ?>
 
-<? foreach ($todos as $todo): ?>
+<? foreach ($items as $item): ?>
     <? //Import child template from document view ?>
-    <?= import('com://site/tada.todo.default.html', array(
-        'todo' => $todo,
+    <?= import('com://site/tada.item.default.html', array(
+        'item' => $item,
     )) ?>
 <? endforeach ?>

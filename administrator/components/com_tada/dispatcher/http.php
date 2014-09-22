@@ -11,7 +11,7 @@ class ComTadaDispatcherHttp extends ComKoowaDispatcherHttp
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'controller' => 'todo',
+            'controller' => 'item',
         ));
 
         parent::_initialize($config);

@@ -6,7 +6,7 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTadaControllerToolbarTodo extends ComKoowaControllerToolbarActionbar
+class ComTadaControllerToolbarItem extends ComKoowaControllerToolbarActionbar
 {
     protected function _afterBrowse(KControllerContextInterface $context)
     {

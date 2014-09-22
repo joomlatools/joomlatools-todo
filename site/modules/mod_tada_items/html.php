@@ -6,13 +6,13 @@
  * @link        http://www.joomlatools.com
  */
 
-class ModTada_TodosHtml extends ModKoowaHtml
+class ModTada_ItemsHtml extends ModKoowaHtml
 {
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
             'auto_fetch'     => false,
-            'model'          => 'com://admin/tada.model.todos',
+            'model'          => 'com://admin/tada.model.items',
         ));
 
         parent::_initialize($config);
@@ -54,7 +54,7 @@ class ModTada_TodosHtml extends ModKoowaHtml
 
         $this->_setModelState($model);
 
-        $context->data->todos = $model->fetch();
+        $context->data->items = $model->fetch();
         $context->data->total = $model->count();
     }
 

@@ -12,7 +12,7 @@ defined('KOOWA') or die; ?>
 <ktml:style src="media://koowa/com_koowa/css/koowa.css" />
 
 <ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" icon="todo-add icon-pencil-2">
+    <ktml:toolbar type="actionbar" icon="item-add icon-pencil-2">
 </ktml:module>
 
 <div class="tada_form_layout">
@@ -30,7 +30,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls">
                                     <div class="input-group">
                                         <input required class="input-group-form-control" id="tada_form_title" type="text" name="title" maxlength="255"
-                                               value="<?= escape($todo->title); ?>" />
+                                               value="<?= escape($item->title); ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ defined('KOOWA') or die; ?>
                                 <label class="control-label" for="tada_form_alias"><?= translate('Alias') ?></label>
                                 <div class="controls">
                                     <input id="tada_form_alias" type="text" class="input-block-level" name="slug" maxlength="255"
-                                           value="<?= escape($todo->slug) ?>" />
+                                           value="<?= escape($item->slug) ?>" />
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls">
                                     <?= helper('editor.display', array(
                                         'name' => 'description',
-                                        'value' => $todo->description,
+                                        'value' => $item->description,
                                         'id'   => 'description',
                                         'width' => '100%',
                                         'height' => '341',
@@ -75,7 +75,7 @@ defined('KOOWA') or die; ?>
                                 <div class="controls radio btn-group">
                                     <?= helper('select.booleanlist', array(
                                         'name' => 'enabled',
-                                        'selected' => $todo->enabled,
+                                        'selected' => $item->enabled,
                                         'true' => translate('Published'),
                                         'false' => translate('Unpublished')
                                     )); ?>

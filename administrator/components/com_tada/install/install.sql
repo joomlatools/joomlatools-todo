@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS `#__tada_todos` (
-  `tada_todo_id` SERIAL,
+CREATE TABLE IF NOT EXISTS `#__tada_items` (
+  `tada_item_id` SERIAL,
   `uuid` char(36) NOT NULL UNIQUE,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL UNIQUE,

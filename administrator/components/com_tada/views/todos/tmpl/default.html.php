@@ -12,7 +12,7 @@ defined('KOOWA') or die; ?>
 <ktml:style src="media://koowa/com_koowa/css/koowa.css" />
 
 <ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TADA_SUBMENU_TODOS" icon="todo icon-stack">
+    <ktml:toolbar type="actionbar" title="COM_TADA_SUBMENU_ITEMS" icon="item icon-stack">
 </ktml:module>
 
 
@@ -40,7 +40,7 @@ defined('KOOWA') or die; ?>
                         </th>
                     </tr>
                 </thead>
-                <? if (count($todos)): ?>
+                <? if (count($items)): ?>
                 <tfoot>
                     <tr>
                         <td colspan="9">
@@ -50,34 +50,34 @@ defined('KOOWA') or die; ?>
                 </tfoot>
                 <? endif; ?>
                 <tbody>
-                    <? foreach ($todos as $todo):
-                        $todo->isPermissible();
+                    <? foreach ($items as $item):
+                        $item->isPermissible();
                         $location = false;
                     ?>
                     <tr>
                         <td style="text-align: center;">
-                            <?= helper('grid.checkbox', array('entity' => $todo)) ?>
+                            <?= helper('grid.checkbox', array('entity' => $item)) ?>
                         </td>
                         <td class="tada_table__title_field">
-                            <a href="<?= route('view=todo&id='.$todo->id); ?>">
-                                <?= escape($todo->title); ?></a>
+                            <a href="<?= route('view=item&id='.$item->id); ?>">
+                                <?= escape($item->title); ?></a>
                         </td>
                         <td style="text-align: center">
-                            <?= helper('grid.publish', array('entity' => $todo, 'clickable' => true)) ?>
+                            <?= helper('grid.publish', array('entity' => $item, 'clickable' => true)) ?>
                         </td>
                         <td>
-                            <?= escape($todo->getAuthor()->getName()); ?>
+                            <?= escape($item->getAuthor()->getName()); ?>
                         </td>
                         <td>
-                            <?= helper('date.format', array('date' => $todo->created_on)); ?>
+                            <?= helper('date.format', array('date' => $item->created_on)); ?>
                         </td>
                     </tr>
                     <? endforeach; ?>
 
-                    <? if (!count($todos)) : ?>
+                    <? if (!count($items)) : ?>
                     <tr>
                         <td colspan="9" align="center" style="text-align: center;">
-                            <?= translate('No todos found.') ?>
+                            <?= translate('No items found.') ?>
                         </td>
                     </tr>
                     <? endif; ?>

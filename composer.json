@@ -2,7 +2,7 @@
     "name": "nooku/pkg_tada",
     "type": "joomla-extension",
     "license": "GPLv3",
-    "description": "Example todo list Joomla extension build using Nooku Framework",
+    "description": "Example item list Joomla extension build using Nooku Framework",
     "keywords": [
         "joomla",
         "extension",

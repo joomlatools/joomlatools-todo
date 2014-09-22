@@ -1,7 +1,7 @@
 pkg_tada
 ========
 
-Example todo list Joomla extension build using Nooku Framework.
+Example item list Joomla extension build using Nooku Framework.
 
 ## Installation
 

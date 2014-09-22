@@ -7,27 +7,27 @@
  */
 defined('KOOWA') or die; ?>
 
-<div class="tada_todo">
+<div class="tada_item">
     <h4 class="koowa_header">
         <? // Header title ?>
         <span class="koowa_header__item">
-            <a class="koowa_header__title_link" href="<?= route('view=todo&id='.$todo->id); ?>">
-                <?= escape($todo->title); ?>
+            <a class="koowa_header__title_link" href="<?= route('view=item&id='.$item->id); ?>">
+                <?= escape($item->title); ?>
             </a>
          </span>
 
         <? // Label locked ?>
-        <? if ($todo->isPermissible() && $todo->canPerform('edit') && $todo->isLockable() && $todo->isLocked()): ?>
-            <span class="label label-warning"><?= helper('grid.lock_message', array('entity' => $todo)); ?></span>
+        <? if ($item->isPermissible() && $item->canPerform('edit') && $item->isLockable() && $item->isLocked()): ?>
+            <span class="label label-warning"><?= helper('grid.lock_message', array('entity' => $item)); ?></span>
         <? endif; ?>
 
         <? // Label status ?>
-        <? if (!$todo->isPublished() || !$todo->enabled): ?>
-            <? $status = $todo->enabled ? translate($todo->status) : translate('Draft'); ?>
-            <span class="label label-<?= $todo->enabled ? $todo->status : 'draft' ?>"><?= ucfirst($status); ?></span>
+        <? if (!$item->isPublished() || !$item->enabled): ?>
+            <? $status = $item->enabled ? translate($item->status) : translate('Draft'); ?>
+            <span class="label label-<?= $item->enabled ? $item->status : 'draft' ?>"><?= ucfirst($status); ?></span>
         <? endif; ?>
     </h4>
-    <div class="todo_description">
-        <?= JHtml::_('content.prepare', $todo->description); ?>
+    <div class="item_description">
+        <?= JHtml::_('content.prepare', $item->description); ?>
     </div>
 </div>
