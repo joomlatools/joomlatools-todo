@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @package    Tada
  * @copyright   Copyright (C) 2011 - 2014 Timble CVBA (http://www.timble.net)
