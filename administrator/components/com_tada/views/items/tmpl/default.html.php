@@ -44,7 +44,7 @@ defined('KOOWA') or die; ?>
                 <tfoot>
                     <tr>
                         <td colspan="9">
-                            <?= helper('paginator.pagination', array('total' => $total)) ?>
+                            <?= helper('paginator.pagination') ?>
                         </td>
                     </tr>
                 </tfoot>
