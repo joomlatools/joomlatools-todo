@@ -7,18 +7,40 @@
  */
 defined('KOOWA') or die; ?>
 
+<?= helper('bootstrap.load', array('javascript' => true)); ?>
 <?= helper('behavior.koowa'); ?>
 
 <ktml:style src="media://koowa/com_koowa/css/koowa.css" />
+<ktml:style src="media://com_tada/css/admin.css" />
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" title="COM_TADA_SUBMENU_ITEMS" icon="item icon-stack">
 </ktml:module>
 
-
 <div class="tada-container">
     <div class="tada_admin_list_grid">
         <form action="" method="get" class="-koowa-grid">
+            <div class="scopebar">
+                <div class="scopebar-group hidden-tablet hidden-phone">
+                    <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
+                       href="<?= route('enabled=&search=' ) ?>">
+                        <?= translate('All') ?>
+                    </a>
+                </div>
+                <div class="scopebar-group last hidden-tablet hidden-phone">
+                    <a class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>"
+                       href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
+                        <?= translate('Unpublished') ?>
+                    </a>
+                    <a class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>"
+                       href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
+                        <?= translate('Published') ?>
+                    </a>
+                </div>
+                <div class="scopebar-search">
+                    <?= helper('grid.search', array('submit_on_clear' => true)) ?>
+                </div>
+            </div>
             <div class="tada_table_container">
                 <table class="table table-striped footable">
                 <thead>

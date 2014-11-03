@@ -16,6 +16,17 @@ class ComTadaModelItems extends KModelDatabase
             ->insert('enabled', 'int');
     }
 
+    protected function _initialize(KObjectConfig $config)
+    {
+        $config->append(array(
+            'behaviors' => array(
+                'searchable' => array('columns' => array('title', 'description'))
+            )
+        ));
+
+        parent::_initialize($config);
+    }
+
     protected function _buildQueryWhere(KDatabaseQueryInterface $query)
     {
         parent::_buildQueryWhere($query);
