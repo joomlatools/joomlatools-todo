@@ -7,6 +7,13 @@
  */
 defined('KOOWA') or die; ?>
 
+<?= helper('bootstrap.load'); ?>
+<?= helper('behavior.koowa');?>
+<?= helper('behavior.modal');?>
+
+<? // Toolbar ?>
+<ktml:toolbar type="actionbar" title="false" />
+
 <? foreach ($items as $item): ?>
     <? //Import child template from document view ?>
     <?= import('com://site/tada.item.default.html', array(

@@ -39,10 +39,18 @@ function TadaBuildRoute(&$query)
  */
 function TadaParseRoute($segments)
 {
-    $vars = array(
-        'view'  =>  $segments[0],
-        'id'    =>  $segments[1]
-    );
+    $vars = array();
+
+    $vars['view'] = $segments[0];
+
+    if(isset($segments[1])) {
+        $vars['id'] = $segments[1];
+    }
+
+    $menu      = JFactory::getApplication()->getMenu()->getActive();
+    if (isset($menu->query['layout'])) {
+        $vars['layout'] = $menu->query['layout'];
+    }
 
     return $vars;
 }

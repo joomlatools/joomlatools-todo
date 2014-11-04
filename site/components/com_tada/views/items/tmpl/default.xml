@@ -5,4 +5,13 @@
 			<![CDATA[COM_TADA_VIEW_DEFAULT_DESCRIPTION]]>
 		</message>
 	</layout>
+    <fields name="params">
+        <fieldset name="tada" label="TADA_OPTIONS">
+            <field name="show_add_item_button" type="radio" class="btn-group" default="1" label="SHOW_ADD_ITEM_BUTTON"
+                   description="SHOW_ADD_ITEM_BUTTON_DESCRIPTION">
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+        </fieldset>
+    </fields>
 </metadata>
