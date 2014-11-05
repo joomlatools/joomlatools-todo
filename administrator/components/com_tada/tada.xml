@@ -42,6 +42,7 @@
             <folder>language</folder>
             <folder>model</folder>
             <folder>views</folder>
+            <folder>resources</folder>
 
             <filename>access.xml</filename>
             <filename>config.xml</filename>
