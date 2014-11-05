@@ -9,6 +9,7 @@
 return array(
 
     'aliases'    => array(
-        'com://site/tada.database.table.items'     	  => 'com://admin/tada.database.table.items',
+        'com://site/tada.database.table.item'          => 'com://admin/tada.database.table.item',
+        'com://site/tada.model.entity.item'            => 'com://admin/tada.model.entity.item',
     ),
 );

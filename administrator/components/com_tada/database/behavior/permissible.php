@@ -16,6 +16,13 @@ class ComTadaDatabaseBehaviorPermissible extends KDatabaseBehaviorAbstract
 
     public function canPerform($action)
     {
-        return false;
+        $user      = $this->getObject('user');
+        $component = 'com_' . $this->getTable()->getIdentifier()->package;
+
+        if (!$user->isAuthentic()) {
+            return false;
+        }
+
+        return (bool)$user->authorise('core.'.$action, $component);
     }
 }
