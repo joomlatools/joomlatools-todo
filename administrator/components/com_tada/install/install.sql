@@ -13,3 +13,25 @@ CREATE TABLE IF NOT EXISTS `#__tada_items` (
   `modified_by` bigint(20) NOT NULL default 0,
   `params` text
 ) DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `#__tada_activities` (
+	`tada_activity_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+	`uuid` VARCHAR(36) NOT NULL DEFAULT '' UNIQUE,
+	`application` VARCHAR(10) NOT NULL DEFAULT '',
+	`type` VARCHAR(3) NOT NULL DEFAULT '',
+	`package` VARCHAR(50) NOT NULL DEFAULT '',
+	`name` VARCHAR(50) NOT NULL DEFAULT '',
+	`action` VARCHAR(50) NOT NULL DEFAULT '',
+	`row` varchar(2048) NOT NULL DEFAULT '',
+	`title` VARCHAR(255) NOT NULL DEFAULT '',
+	`status` varchar(100) NOT NULL,
+	`created_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+	`created_by` INT(11) NOT NULL DEFAULT '0',
+	`ip` varchar(45) NOT NULL DEFAULT '',
+	`metadata` text NOT NULL,
+	PRIMARY KEY(`tada_activity_id`),
+	KEY `package` (`package`),
+    KEY `name` (`name`),
+    KEY `row` (`row`),
+    KEY `ip` (`ip`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
