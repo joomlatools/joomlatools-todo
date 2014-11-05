@@ -9,10 +9,7 @@ class ComTadaControllerToolbarItem extends ComKoowaControllerToolbarActionbar
 
     protected function _afterBrowse(KControllerContextInterface $context)
     {
-        // Only display add document button if the user has access to add documents and if the button should be shown
-        $params = JFactory::getApplication()->getMenu()->getActive()->params;
-
-        if($this->getController()->canAdd() && $params->get('show_add_item_button')) {
+        if($this->getController()->canAdd()) {
             $this->addCommand('new');
         }
     }

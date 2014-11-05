@@ -17,7 +17,6 @@ defined('KOOWA') or die; ?>
          </span>
 
         <? // Label locked ?>
-        <? var_dump($item) ?>
         <? if ($item->isPermissible() && $item->canPerform('edit') && $item->isLockable() && $item->isLocked()): ?>
             <span class="label label-warning"><?= helper('grid.lock_message', array('entity' => $item)); ?></span>
         <? endif; ?>
