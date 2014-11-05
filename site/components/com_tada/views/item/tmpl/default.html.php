@@ -30,4 +30,8 @@ defined('KOOWA') or die; ?>
     <div class="item_description">
         <?= JHtml::_('content.prepare', $item->description); ?>
     </div>
+
+    <? // Edit area | Import partial template from item view ?>
+    <?= import('com://site/tada.item.manage.html', array('item' => $item)) ?>
+
 </div>
