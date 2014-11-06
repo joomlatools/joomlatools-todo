@@ -27,6 +27,10 @@
         <filename>tada.php</filename>
     </files>
 
+    <media folder="media">
+        <folder>com_tada</folder>
+    </media>
+
     <administration>
         <menu>COM_TADA</menu>
 
