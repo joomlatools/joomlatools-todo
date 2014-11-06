@@ -19,6 +19,6 @@
     ],
     "require": {
         "nooku/nooku-framework": "dev-develop",
-        "nooku/activities-component": "dev-feature/51-API"
+        "nooku/activities-component": "dev-develop"
     }
 }
