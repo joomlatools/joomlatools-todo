@@ -36,6 +36,7 @@
 
         <files folder="../../../administrator/components/com_tada">
             <folder>controller</folder>
+            <folder>activity</folder>
             <folder>database</folder>
             <folder>dispatcher</folder>
             <folder>install</folder>
