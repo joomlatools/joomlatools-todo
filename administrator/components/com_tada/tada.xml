@@ -30,8 +30,8 @@
     <administration>
         <menu>COM_TADA</menu>
         <submenu>
-            <menu view="items" link="option=com_tada&amp;view=items" img="class:article">COM_TADA_SUBMENU_ITEMS</menu>
-            <menu view="activities" link="option=com_tada&amp;view=activities" img="class:category">COM_TADA_SUBMENU_ACTIVITIES</menu>
+            <menu view="items" link="option=com_tada&amp;view=items">COM_TADA_SUBMENU_ITEMS</menu>
+            <menu view="activities" link="option=com_tada&amp;view=activities">COM_TADA_SUBMENU_ACTIVITIES</menu>
         </submenu>
 
         <files folder="../../../administrator/components/com_tada">
