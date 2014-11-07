@@ -36,15 +36,21 @@
 
     <administration>
         <menu>COM_TADA</menu>
+        <submenu>
+            <menu view="items" link="option=com_tada&amp;view=items">COM_TADA_SUBMENU_ITEMS</menu>
+            <menu view="activities" link="option=com_tada&amp;view=activities">COM_TADA_SUBMENU_ACTIVITIES</menu>
+        </submenu>
 
         <files folder="../../../administrator/components/com_tada">
             <folder>controller</folder>
+            <folder>activity</folder>
             <folder>database</folder>
             <folder>dispatcher</folder>
             <folder>install</folder>
             <folder>language</folder>
             <folder>model</folder>
             <folder>views</folder>
+            <folder>resources</folder>
 
             <filename>access.xml</filename>
             <filename>config.xml</filename>

@@ -13,6 +13,10 @@ defined('KOOWA') or die; ?>
 <ktml:style src="media://koowa/com_koowa/css/koowa.css" />
 <ktml:style src="media://com_tada/css/admin.css" />
 
+<ktml:module position="submenu">
+    <ktml:toolbar type="menubar">
+</ktml:module>
+
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" title="COM_TADA_SUBMENU_ITEMS" icon="item icon-stack">
 </ktml:module>
