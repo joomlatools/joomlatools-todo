@@ -19,6 +19,7 @@ return array(
     'identifiers' => array(
         'com://admin/todo.controller.item' => array(
             'behaviors' => array('com:activities.controller.behavior.loggable' => array('loggers' => array('com://admin/todo.activity.logger')))
-        )
+        ),
+        'com:activities.translator.catalogue.default' => array('prefix' => 'KLS_ACTIVITY_', 'key_length' => false),
     )
 );
