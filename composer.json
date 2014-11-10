@@ -1,5 +1,5 @@
 {
-    "name": "nooku/pkg_tada",
+    "name": "nooku/pkg_todo",
     "type": "joomla-extension",
     "license": "GPLv3",
     "description": "Example item list Joomla extension build using Nooku Framework",
@@ -9,7 +9,7 @@
         "framework",
         "nooku"
     ],
-    "homepage": "https://github.com/nooku/nooku-pkg_tada",
+    "homepage": "https://github.com/nooku/nooku-pkg_todo",
     "authors": [
         {
             "name": "Timble",

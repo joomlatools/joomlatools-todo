@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0.0" method="upgrade">
+    <identifier>com:todo</identifier>
+    <name>com_todo</name>
+    <author>Joomlatools</author>
+    <creationDate>July 2014</creationDate>
+    <copyright>Copyright (C) 2011 - 2014 Timble CVBA (http://www.timble.net)</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>support@joomlatools.com</authorEmail>
+    <authorUrl>www.joomlatools.com</authorUrl>
+    <version>0.0.1</version>
+    <description>A Todo example component</description>
+
+    <scriptfile>install/script.php</scriptfile>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">install/install.sql</file>
+        </sql>
+    </install>
+
+    <files folder="../../../site/components/com_todo">
+        <folder>controller</folder>
+        <folder>dispatcher</folder>
+        <folder>resources</folder>
+        <folder>template</folder>
+        <folder>views</folder>
+
+        <filename>router.php</filename>
+        <filename>todo.php</filename>
+    </files>
+
+    <media folder="../../../media">
+        <folder>com_todo</folder>
+    </media>
+
+    <administration>
+        <menu>COM_TODO</menu>
+        <submenu>
+            <menu view="items" link="option=com_todo&amp;view=items">COM_TODO_SUBMENU_ITEMS</menu>
+            <menu view="activities" link="option=com_todo&amp;view=activities">COM_TODO_SUBMENU_ACTIVITIES</menu>
+        </submenu>
+
+        <files folder="../../../administrator/components/com_todo">
+            <folder>controller</folder>
+            <folder>activity</folder>
+            <folder>database</folder>
+            <folder>dispatcher</folder>
+            <folder>install</folder>
+            <folder>language</folder>
+            <folder>model</folder>
+            <folder>views</folder>
+            <folder>resources</folder>
+
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>todo.php</filename>
+        </files>
+    </administration>
+
+</extension>

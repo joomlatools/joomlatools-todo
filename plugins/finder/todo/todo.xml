@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="finder" method="upgrade">
+    <identifier>plg:finder.todo</identifier>
+    <name>plg_finder_todo</name>
+    <author>Joomlatools</author>
+    <creationDate>August 2014</creationDate>
+    <copyright>Copyright (C) 2014 Timble CVBA</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>info@joomlatools.eu</authorEmail>
+    <authorUrl>www.joomlatools.eu</authorUrl>
+    <version>1.0.0</version>
+    <description />
+
+    <files>
+        <filename plugin="todo">todo.php</filename>
+        <folder>language</folder>
+    </files>
+    <config>
+        <fields name="params">
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="3.0" type="package" method="upgrade">
+    <identifier>pkg:todo</identifier>
+    <name>pkg_todo</name>
+    <packagename>todo</packagename>
+    <author>Joomlatools</author>
+    <creationDate>July 2014</creationDate>
+    <copyright>Copyright (C) 2011 - 2014 Timble CVBA (http://www.timble.net)</copyright>
+    <license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+    <authorEmail>support@joomlatools.com</authorEmail>
+    <authorUrl>www.joomlatools.com</authorUrl>
+    <version>0.0.1</version>
+    <description>A Todo example component and module</description>
+
+    <files>
+        <file type="component" id="com_todo">administrator/components</file>
+        <file type="module" id="mod_todo_items">site/modules</file>
+        <file type="plugin" id="plg_finder_todo">plugins/finder/todo</file>
+    </files>
+</extension>

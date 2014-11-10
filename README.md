@@ -1,4 +1,4 @@
-pkg_tada
+pkg_todo
 ========
 
 Example item list Joomla extension build using Nooku Framework.
@@ -10,7 +10,7 @@ You can install this extension using Composer. Create a `composer.json` file in 
 ```json
 {
     "require": {        
-        "nooku/pkg_tada": "dev-master"
+        "nooku/pkg_todo": "dev-master"
     },
     "minimum-stability": "dev"
 }
