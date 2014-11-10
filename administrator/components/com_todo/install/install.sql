@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `#__todo_activities` (
 	`created_on` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
 	`created_by` INT(11) NOT NULL DEFAULT '0',
 	`ip` varchar(45) NOT NULL DEFAULT '',
-	`metodota` text NOT NULL,
+	`metadata` text NOT NULL,
 	PRIMARY KEY(`todo_activity_id`),
 	KEY `package` (`package`),
     KEY `name` (`name`),
