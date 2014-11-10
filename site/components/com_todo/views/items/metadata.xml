@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<metodota>
+<metadata>
     <view title="COM_TODO_VIEW_DEFAULT">
         <message><![CDATA[COM_TODO_VIEW_DEFAULT_DESCRIPTION]]></message>
     </view>
-</metodota>
+</metadata>
