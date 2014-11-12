@@ -76,10 +76,7 @@ defined('KOOWA') or die; ?>
                 </tfoot>
                 <? endif; ?>
                 <tbody>
-                    <? foreach ($items as $item):
-                        $item->isPermissible();
-                        $location = false;
-                    ?>
+                    <? foreach ($items as $item): ?>
                     <tr>
                         <td style="text-align: center;">
                             <?= helper('grid.checkbox', array('entity' => $item)) ?>
