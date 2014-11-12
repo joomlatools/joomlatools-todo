@@ -33,6 +33,11 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
             $query->enabled = 0;
         }
 
+        // Force tmpl=koowa for form layouts
+        if ($query->layout === 'form') {
+            $query->tmpl = 'koowa';
+        }
+
         return $request;
 
     }

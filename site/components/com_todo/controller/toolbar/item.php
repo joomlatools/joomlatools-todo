@@ -3,7 +3,7 @@ class ComTodoControllerToolbarItem extends ComKoowaControllerToolbarActionbar
 {
     protected function _commandNew(KControllerToolbarCommand $command)
     {
-        $command->href  = 'view=item&layout=form&tmpl=koowa';
+        $command->href  = 'view=item&layout=form';
         $command->label = 'Add new item';
     }
 

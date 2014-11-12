@@ -20,7 +20,7 @@ $button_size   = 'btn-small';
         <? // Edit ?>
         <? if ($show_edit): ?>
             <a class="btn <?= $button_size ?>"
-               href="<?= route('view=item&id='.$item->id.'&layout=form&tmpl=koowa');?>"
+               href="<?= route('view=item&id='.$item->id.'&layout=form');?>"
             ><?= translate('Edit'); ?></a>
         <? endif ?>
 
