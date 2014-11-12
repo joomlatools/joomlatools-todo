@@ -16,4 +16,24 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
 
         parent::_initialize($config);
     }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $query = $request->query;
+
+        // Can't use executable behavior here as it calls getController which in turn calls this method
+        if ($this->getObject('user')->authorise('core.manage', 'com_todo') !== true)
+        {
+            $query->enabled = 1;
+        }
+        else
+        {
+            $query->enabled = 0;
+        }
+
+        return $request;
+
+    }
 }
