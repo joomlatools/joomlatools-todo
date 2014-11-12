@@ -18,6 +18,11 @@
             <file driver="mysql" charset="utf8">resources/install/install.sql</file>
         </sql>
     </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">resources/install/uninstall.sql</file>
+        </sql>
+    </uninstall>
 
     <files folder="../../../site/components/com_todo">
         <folder>controller</folder>
