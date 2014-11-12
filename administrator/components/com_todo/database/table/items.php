@@ -20,7 +20,11 @@ class ComTodoDatabaseTableItems extends KDatabaseTableAbstract
                 'identifiable',
                 'parameterizable',
             ),
-
+            'filters' => array(
+                'title'        => array('trim'),
+                'slug'         => array('trim'),
+                'description'  => array('trim', 'html')
+            )
         ));
 
         parent::_initialize($config);
