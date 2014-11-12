@@ -8,21 +8,11 @@
 
 class ComTodoDatabaseBehaviorPermissible extends KDatabaseBehaviorAbstract
 {
-    public static $task_map = array(
-        'delete'   => 'core.delete',
-        'add'      => 'core.create',
-        'edit'     => 'core.edit',
-    );
-
     public function canPerform($action)
     {
         $user      = $this->getObject('user');
         $component = 'com_' . $this->getTable()->getIdentifier()->package;
 
-        if (!$user->isAuthentic()) {
-            return false;
-        }
-
-        return (bool)$user->authorise('core.'.$action, $component);
+        return $user->isAuthentic() && (bool)$user->authorise('core.'.$action, $component);
     }
 }
