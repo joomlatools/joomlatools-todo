@@ -11,11 +11,11 @@
     <version>0.0.1</version>
     <description>A Todo example component</description>
 
-    <scriptfile>install/script.php</scriptfile>
+    <scriptfile>resources/install/script.php</scriptfile>
 
     <install>
         <sql>
-            <file driver="mysql" charset="utf8">install/install.sql</file>
+            <file driver="mysql" charset="utf8">resources/install/install.sql</file>
         </sql>
     </install>
 
@@ -46,7 +46,6 @@
             <folder>activity</folder>
             <folder>database</folder>
             <folder>dispatcher</folder>
-            <folder>install</folder>
             <folder>language</folder>
             <folder>model</folder>
             <folder>views</folder>
