@@ -35,7 +35,6 @@ function TodoBuildRoute(&$query)
     {
         $segments[] = $query['view'];
         unset( $query['view'] );
-        //var_dump($segments);
     }
 
     if(isset($query['id']))
