@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS `#__todo_items` (
   `params` text
 ) DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `#__todo_activities` (
-	`todo_activity_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `#__activities_activities` (
+	`activities_activity_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 	`uuid` VARCHAR(36) NOT NULL DEFAULT '' UNIQUE,
 	`application` VARCHAR(10) NOT NULL DEFAULT '',
 	`type` VARCHAR(3) NOT NULL DEFAULT '',
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `#__todo_activities` (
 	`created_by` INT(11) NOT NULL DEFAULT '0',
 	`ip` varchar(45) NOT NULL DEFAULT '',
 	`metadata` text NOT NULL,
-	PRIMARY KEY(`todo_activity_id`),
+	PRIMARY KEY(`activities_activity_id`),
 	KEY `package` (`package`),
     KEY `name` (`name`),
     KEY `row` (`row`),
