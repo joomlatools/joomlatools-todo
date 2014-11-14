@@ -6,8 +6,7 @@
  * @link        http://www.joomlatools.com
  */
 
-return array(
-    'identifiers' => array(
-        'com://admin/todo.controller.item' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
-    )
-);
+
+class ComTodoViewActivitiesJson extends ComActivitiesViewActivitiesJson
+{
+}

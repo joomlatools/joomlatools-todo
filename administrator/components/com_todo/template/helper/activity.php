@@ -6,6 +6,6 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTodoDatabaseTableActivities extends ComActivitiesDatabaseTableActivities
+class ComTodoTemplateHelperActivity extends ComActivitiesTemplateHelperActivity
 {
 }

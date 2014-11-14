@@ -6,6 +6,6 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTodoModelActivities extends ComActivitiesModelActivities
+class ComTodoControllerToolbarActivity extends ComActivitiesControllerToolbarActivity
 {
 }
