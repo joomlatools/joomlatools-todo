@@ -23,7 +23,11 @@ class ComTodoControllerActivity extends ComKoowaControllerModel
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'behaviors' => array('purgeable')
+            'model'     => 'com:activities.model.activities',
+            'behaviors' => array(
+                'com:activities.controller.behavior.purgeable',
+                'permissible' => array('permission' => 'com:activities.controller.permission.activity')
+            )
         ));
 
         parent::_initialize($config);
