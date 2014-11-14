@@ -22,7 +22,7 @@ defined('KOOWA') or die; ?>
             <p class="koowa_header">
                 <? // Header title ?>
                 <span class="koowa_header__item">
-                    <a href="<?= $item->title_link; ?>"
+                    <a href="<?= route('option=com_todo&view=item&id='.$item->id); ?>"
                        class="koowa_header__title_link"
                        data-title="<?= escape($item->title); ?>"
                        data-id="<?= $item->id; ?>">

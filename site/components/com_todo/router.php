@@ -17,16 +17,33 @@ defined('_JEXEC') or die;
 function TodoBuildRoute(&$query)
 {
     $segments = array();
+
+    if(!isset($query['Itemid']))
+    {
+        $component = JComponentHelper::getComponent('com_todo');
+
+        $attributes = array('component_id');
+        $values     = array($component->id);
+
+        $items = JApplication::getInstance('site')->getMenu()->getItems($attributes, $values);
+
+        $query['Itemid'] = $items[0]->id;
+
+    }
+
     if(isset($query['view']))
     {
         $segments[] = $query['view'];
         unset( $query['view'] );
+        //var_dump($segments);
     }
+
     if(isset($query['id']))
     {
         $segments[] = $query['id'];
         unset( $query['id'] );
-    };
+    }
+
     return $segments;
 }
 
