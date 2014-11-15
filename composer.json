@@ -17,6 +17,12 @@
             "homepage": "http://www.timble.net"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nooku/basicauth-extension.git"
+        }
+    ],
     "require": {
         "nooku/nooku-framework": "~2.0",
         "nooku/activities-component": "dev-develop",
