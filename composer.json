@@ -21,5 +21,6 @@
         "nooku/nooku-framework": "~2.0",
         "nooku/activities-component": "dev-develop",
         "nooku/plg_basicauth": "dev-master"
-    }
+    },
+    "minimum-stability": "dev"
 }
