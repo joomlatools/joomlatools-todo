@@ -31,17 +31,19 @@ class ModTodo_ItemsHtml extends ModKoowaHtml
         // Set all parameters in the state to allow easy extension of the module
         $state = $params->toArray();
 
-        if (substr($params->sort, 0, 8) === 'reverse_')
-        {
+        if (substr($params->sort, 0, 8) === 'reverse_') {
             $state['sort'] = substr($params->sort, 8);
             $state['direction'] = 'desc';
         }
 
         $model->setState($state);
 
-        $model
-            ->enabled(1)
-            ->limit($params->limit);
+        if ($this->getObject('user')->authorise('core.manage', 'com_todo') !== true)
+        {
+            $model->enabled(1);
+        }
+
+        $model->limit($params->limit);
 
         return $this;
     }
