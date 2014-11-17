@@ -20,6 +20,6 @@
     "require": {
         "nooku/nooku-framework": "~2.0",
         "nooku/activities-component": "dev-release/2.0.2",
-        "nooku/plg_basicauth": "dev-master"
+        "nooku/joomla-basicauth": "dev-master"
     }
 }
