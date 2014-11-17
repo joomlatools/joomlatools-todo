@@ -1,5 +1,5 @@
-pkg_todo
-========
+Joomla Todo component
+=====================
 
 Example item list Joomla extension build using Nooku Framework.
 
