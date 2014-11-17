@@ -28,6 +28,11 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
         {
             $query->enabled = 1;
         }
+        else
+        {
+            // force null so the state is_numeric fails - see Nooku #174
+            $query->enabled = null;
+        }
 
         // Force tmpl=koowa for form layouts
         if ($query->layout === 'form') {
