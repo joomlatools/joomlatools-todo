@@ -30,7 +30,8 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
         }
         else
         {
-            $query->enabled = 0;
+            // force 0+1 so the state is set with the right values - see Nooku #174
+            $query->enabled = array(0,1);
         }
 
         // Force tmpl=koowa for form layouts
