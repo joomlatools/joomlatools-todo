@@ -59,6 +59,7 @@
             <filename>access.xml</filename>
             <filename>config.xml</filename>
             <filename>todo.php</filename>
+            <filename>version.php</filename>
         </files>
     </administration>
 
