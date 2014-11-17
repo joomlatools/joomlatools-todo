@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "nooku/nooku-framework": "dev-develop",
-        "nooku/activities-component": "dev-develop",
+        "nooku/nooku-framework": "~2.0",
+        "nooku/activities-component": "dev-release/2.0.2",
         "nooku/plg_basicauth": "dev-master"
     }
 }
