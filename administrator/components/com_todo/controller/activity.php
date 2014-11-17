@@ -6,42 +6,22 @@
  * @link        http://www.joomlatools.com
  */
 
-class ComTodoControllerActivity extends ComKoowaControllerModel
+class ComTodoControllerActivity extends ComActivitiesControllerActivity
 {
     /**
-     * Constructor.
+     * Initializes the default configuration for the object
      *
-     * @param KObjectConfig $config Configuration options.
+     * Called from {@link __construct()} as a first step of object instantiation.
+     *
+     * @param   KObjectConfig $config Configuration options
+     * @return void
      */
-    public function __construct(KObjectConfig $config)
-    {
-        parent::__construct($config);
-
-        $this->getObject('translator')->load('com:activities');
-    }
-
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'model'     => 'com:activities.model.activities',
-            'behaviors' => array(
-                'com:activities.controller.behavior.purgeable',
-                'permissible' => array('permission' => 'com:activities.controller.permission.activity')
-            )
+            'toolbars'   => array('menubar', 'activity'),
         ));
 
         parent::_initialize($config);
-    }
-
-    /**
-     * Set the ip address if we are adding a new activity.
-     *
-     * @param KControllerContextInterface $context A command context object.
-     *
-     * @return KModelEntityInterface
-     */
-    protected function _beforeAdd(KControllerContextInterface $context)
-    {
-        $context->request->data->ip = $this->getObject('request')->getAddress();
     }
 }

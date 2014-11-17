@@ -55,7 +55,7 @@ defined('KOOWA') or die; ?>
                                 <?= helper('grid.checkbox', array('entity' => $activity)) ?>
                             </td>
                             <td class="todo_table__message_field">
-                                <?= helper('activity.activity', array('entity' => $activity)) ?>
+                                <?= helper('com:activities.activity.activity', array('entity' => $activity)) ?>
                             </td>
                             <td>
                                 <?= helper('date.humanize', array('date' => $activity->created_on)); ?>
