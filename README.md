@@ -5,8 +5,8 @@ Example item list Joomla extension build using Nooku Framework.
 
 ## Installation
 
-Go to the Joomla root directory in command line and execute this command: 
+Go to the root directory of your Joomla installation in command line and execute this command:
 
 ```
-composer require nooku/pkg_todo:dev-master
+composer require nooku/joomla-todo:1.*
 ```
