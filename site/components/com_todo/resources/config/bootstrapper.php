@@ -9,9 +9,11 @@
  */
 
 return array(
-
+    'identifiers' => array(
+        'com://site/todo.controller.item' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
+    ),
     'aliases'    => array(
         'com://site/todo.database.table.items'          => 'com://admin/todo.database.table.items',
-        'com://site/todo.model.items'                   => 'com://admin/todo.model.items',
-    ),
+        'com://site/todo.model.items'                   => 'com://admin/todo.model.items'
+    )
 );
