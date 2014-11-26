@@ -8,7 +8,7 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
-class ModTodo_ItemsHtml extends ModKoowaHtml
+class ModTodo_itemsHtml extends ModKoowaHtml
 {
     protected function _initialize(KObjectConfig $config)
     {
