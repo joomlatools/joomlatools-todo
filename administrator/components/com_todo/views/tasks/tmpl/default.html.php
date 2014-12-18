@@ -21,7 +21,7 @@ defined('KOOWA') or die; ?>
 </ktml:module>
 
 <ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_ITEMS" icon="item icon-stack">
+    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
 </ktml:module>
 
 <div class="todo-container">
@@ -69,7 +69,7 @@ defined('KOOWA') or die; ?>
                         </th>
                     </tr>
                 </thead>
-                <? if (count($items)): ?>
+                <? if (count($tasks)): ?>
                 <tfoot>
                     <tr>
                         <td colspan="9">
@@ -79,31 +79,31 @@ defined('KOOWA') or die; ?>
                 </tfoot>
                 <? endif; ?>
                 <tbody>
-                    <? foreach ($items as $item): ?>
+                    <? foreach ($tasks as $task): ?>
                     <tr>
                         <td style="text-align: center;">
-                            <?= helper('grid.checkbox', array('entity' => $item)) ?>
+                            <?= helper('grid.checkbox', array('entity' => $task)) ?>
                         </td>
                         <td class="todo_table__title_field">
-                            <a href="<?= route('view=item&id='.$item->id); ?>">
-                                <?= escape($item->title); ?></a>
+                            <a href="<?= route('view=task&id='.$task->id); ?>">
+                                <?= escape($task->title); ?></a>
                         </td>
                         <td style="text-align: center">
-                            <?= helper('grid.publish', array('entity' => $item, 'clickable' => true)) ?>
+                            <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
                         </td>
                         <td>
-                            <?= escape($item->getAuthor()->getName()); ?>
+                            <?= escape($task->getAuthor()->getName()); ?>
                         </td>
                         <td>
-                            <?= helper('date.format', array('date' => $item->created_on)); ?>
+                            <?= helper('date.format', array('date' => $task->created_on)); ?>
                         </td>
                     </tr>
                     <? endforeach; ?>
 
-                    <? if (!count($items)) : ?>
+                    <? if (!count($tasks)) : ?>
                     <tr>
                         <td colspan="9" align="center" style="text-align: center;">
-                            <?= translate('No items found.') ?>
+                            <?= translate('No tasks found.') ?>
                         </td>
                     </tr>
                     <? endif; ?>

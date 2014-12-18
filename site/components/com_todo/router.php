@@ -28,9 +28,9 @@ function TodoBuildRoute(&$query)
         $attributes = array('component_id');
         $values     = array($component->id);
 
-        $items = JApplication::getInstance('site')->getMenu()->getItems($attributes, $values);
+        $tasks = JApplication::getInstance('site')->getMenu()->getItems($attributes, $values);
 
-        $query['Itemid'] = $items[0]->id;
+        $query['Itemid'] = $tasks[0]->id;
 
     }
 
