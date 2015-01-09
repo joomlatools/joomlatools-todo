@@ -8,8 +8,14 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
-return array(
-    'identifiers' => array(
-        'com://admin/todo.controller.task' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
-    )
-);
+class ComTodoControllerTask extends ComKoowaControllerModel
+{
+	protected function _initialize(KObjectConfig $config)
+	{
+		$config->append(array(
+			'formats'   => array('json')
+		));
+
+		parent::_initialize($config);
+	}
+}

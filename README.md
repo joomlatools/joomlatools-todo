@@ -1,7 +1,7 @@
 Joomla Todo component
 =====================
 
-Example item list Joomla extension build using Nooku Framework.
+Example task list Joomla extension build using Nooku Framework.
 
 ## Installation
 
