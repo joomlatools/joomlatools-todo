@@ -42,7 +42,7 @@
     <administration>
         <menu>COM_TODO</menu>
         <submenu>
-            <menu view="tasks" link="option=com_todo&amp;view=tasks">COM_TODO_SUBMENU_TASKS</menu>
+            <menu view="items" link="option=com_todo&amp;view=items">COM_TODO_SUBMENU_ITEMS</menu>
             <menu view="activities" link="option=com_todo&amp;view=activities">COM_TODO_SUBMENU_ACTIVITIES</menu>
         </submenu>
 

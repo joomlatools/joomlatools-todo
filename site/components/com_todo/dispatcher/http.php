@@ -13,7 +13,7 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'controller' => 'task',
+            'controller' => 'item',
         ));
 
         parent::_initialize($config);

@@ -29,7 +29,7 @@ class plgFinderTodo extends PlgKoowaFinder
     {
         $config->append(array(
             'context'  => 'Todo',
-            'entity'   => 'task',
+            'entity'   => 'item',
         ));
 
         parent::_initialize($config);

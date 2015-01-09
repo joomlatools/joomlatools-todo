@@ -8,14 +8,7 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
-class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
+class ComTodoModelEntityItem extends KModelEntityRow
 {
-    protected function _initialize(KObjectConfig $config)
-    {
-        $config->append(array(
-            'controller' => 'item',
-        ));
 
-        parent::_initialize($config);
-    }
 }

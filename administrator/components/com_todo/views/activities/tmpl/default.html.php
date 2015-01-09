@@ -21,7 +21,7 @@ defined('KOOWA') or die; ?>
 </ktml:module>
 
 <ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_ACTIVITIES" icon="task icon-stack">
+    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_ACTIVITIES" icon="item icon-stack">
 </ktml:module>
 
 <div class="todo-container">
