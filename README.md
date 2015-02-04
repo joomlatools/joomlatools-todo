@@ -4,7 +4,7 @@
 
 Joomla Todo is an example component for the [Nooku Framework](https://github.com/nooku/nooku-framework). It's a simple todo list solution with logging support.
 
-It's a code 'kata' component. It is used to demonstrate the power and magic of  [Nooku Framework](https://github.com/nooku/nooku-framework) by trying to do as much as possible with as few lines of code as possible as fast as possible.
+It's a code 'kata' component and is used to demonstrate the power and magic of  [Nooku Framework](https://github.com/nooku/nooku-framework) by trying to do as much as possible with as few lines of code as possible as fast as possible.
 
 > *A code kata is a simple exercise used to sharpen programming skills. You only actually practice problem solving the very first time you perform the kata. Then you repeat, and repeat again. And again. The objective of the exercise is to practice speed, technique and tools.*
 
