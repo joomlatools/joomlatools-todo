@@ -36,8 +36,6 @@ class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
 
         $command->attribs->download = $this->getObject('translator')->translate('tasks');
         $command->attribs->href     = $this->getController()->getView()->getRoute('format=csv', false, false);
-
-        $this->_commandDialog($command);
     }
 
 }
