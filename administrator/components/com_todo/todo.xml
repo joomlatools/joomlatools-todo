@@ -49,7 +49,6 @@
         <files folder="../../../administrator/components/com_todo">
             <folder>controller</folder>
             <folder>database</folder>
-            <folder>template</folder>
             <folder>dispatcher</folder>
             <folder>language</folder>
             <folder>model</folder>
