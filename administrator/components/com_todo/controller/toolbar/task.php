@@ -30,13 +30,12 @@ class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
 
     protected function _commandExport(KControllerToolbarCommand $command)
     {
-        $url = 'format=csv';
-
         if (version_compare(JVERSION, '3.0', '>=')) {
             $command->icon = 'icon-download';
         }
 
-        $command->attribs->href = $this->getController()->getView()->getRoute($url, false, false);
+        $command->attribs->download = $this->getObject('translator')->translate('tasks');
+        $command->attribs->href     = $this->getController()->getView()->getRoute('format=csv', false, false);
 
         $this->_commandDialog($command);
     }
