@@ -20,8 +20,24 @@ class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
         $this->addPublish(array('allowed' => $controller->canEdit()));
         $this->addUnpublish(array('allowed' => $controller->canEdit()));
 
+        if($controller->canBrowse()) {
+            $this->addSeparator()->addExport();
+        }
+
         if ($controller->canAdmin()) {
             $this->addSeparator()->addOptions();
         }
+
     }
+
+    protected function _commandExport(KControllerToolbarCommand $command)
+    {
+        if (version_compare(JVERSION, '3.0', '>=')) {
+            $command->icon = 'icon-download';
+        }
+
+        $command->attribs->download = $this->getObject('translator')->translate('tasks');
+        $command->attribs->href     = $this->getController()->getView()->getRoute('format=csv', false, false);
+    }
+
 }
