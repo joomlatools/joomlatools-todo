@@ -20,7 +20,9 @@ class ComTodoControllerToolbarTask extends ComKoowaControllerToolbarActionbar
         $this->addPublish(array('allowed' => $controller->canEdit()));
         $this->addUnpublish(array('allowed' => $controller->canEdit()));
 
-        $this->addSeparator()->addExport();
+        if($controller->canBrowse()) {
+            $this->addSeparator()->addExport();
+        }
 
         if ($controller->canAdmin()) {
             $this->addSeparator()->addOptions();
