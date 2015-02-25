@@ -12,7 +12,7 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.validator'); ?>
 
-<ktml:style src="media://koowa/com_koowa/css/koowa.css" />
+<ktml:style src="media://koowa/com_koowa/css/admin.css" />
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">

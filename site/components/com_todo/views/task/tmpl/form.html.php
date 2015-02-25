@@ -10,8 +10,7 @@
 
 defined('KOOWA') or die; ?>
 
-<ktml:style src="media://koowa/com_koowa/css/koowa.css" />
-<ktml:style src="media://com_todo/css/site.css" />
+<ktml:style src="media://koowa/com_koowa/css/site.css" />
 
 <?= helper('bootstrap.load'); ?>
 <?= helper('behavior.koowa'); ?>

@@ -10,6 +10,8 @@
 
 defined('KOOWA') or die; ?>
 
+<ktml:style src="media://koowa/com_koowa/css/site.css" />
+
 <div class="todo_task">
     <h4 class="koowa_header">
         <? // Header title ?>
