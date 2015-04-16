@@ -28,9 +28,12 @@ function TodoBuildRoute(&$query)
         $attributes = array('component_id');
         $values     = array($component->id);
 
-        $tasks = JFactory::getApplication()->getMenu()->getItems($attributes, $values);
+        $items = JApplication::getInstance('site')->getMenu()->getItems($attributes, $values);
 
-        $query['Itemid'] = $tasks[0]->id;
+        if(count($items)) {
+            $query['Itemid'] = $items[0]->id;
+        }
+
     }
 
     if(isset($query['view']))
