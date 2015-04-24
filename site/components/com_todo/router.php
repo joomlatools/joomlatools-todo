@@ -28,9 +28,14 @@ function TodoBuildRoute(&$query)
         $attributes = array('component_id');
         $values     = array($component->id);
 
-        $tasks = JFactory::getApplication()->getMenu()->getItems($attributes, $values);
 
-        $query['Itemid'] = $tasks[0]->id;
+        $items = JApplication::getInstance('site')->getMenu()->getItems($attributes, $values);
+
+        if(count($items)) {
+            $query['Itemid'] = $items[0]->id;
+        }
+
+     
     }
 
     if(isset($query['view']))
@@ -63,6 +68,7 @@ function TodoParseRoute($segments)
 
     if(isset($segments[1])) {
         $vars['id'] = $segments[1];
+        $vars['view'] = KStringInflector::singularize($segments[0]);
     }
 
     $menu = JFactory::getApplication()->getMenu()->getActive();
