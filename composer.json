@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "nooku/nooku-framework": "~3.0",
+        "nooku/nooku-framework-joomla": "~3.0",
         "nooku/nooku-activities": "~3.0",
         "nooku/joomla-basicauth": "~1.0"
     }
