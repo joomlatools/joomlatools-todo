@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "nooku/nooku-framework": "dev-develop",
-        "nooku/nooku-activities": "dev-develop",
+        "nooku/nooku-framework": "~3.0",
+        "nooku/nooku-activities": "~3.0",
         "nooku/joomla-basicauth": "~1.0"
     }
 }
