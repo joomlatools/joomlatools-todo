@@ -24,4 +24,13 @@ class com_todoInstallerScript
 		
 		return $return;
 	}
+
+    public function postflight($type, $installer)
+    {
+        $attachments_folder = JPATH_ROOT.'/todo-attachments';
+
+        if (!is_dir($attachments_folder)) {
+            mkdir($attachments_folder);
+        }
+    }
 }

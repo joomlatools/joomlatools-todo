@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS `#__todo_tasks` (
   `uuid` char(36) NOT NULL UNIQUE,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL UNIQUE,
+  `attachment` varchar(1024) NOT NULL default '',
   `description` longtext,
   `enabled` tinyint(1) NOT NULL default 1,
   `locked_on` datetime NOT NULL default '0000-00-00 00:00:00',

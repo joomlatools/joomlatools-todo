@@ -44,6 +44,32 @@ defined('KOOWA') or die; ?>
                                            value="<?= escape($task->slug) ?>" />
                                 </div>
                             </div>
+
+                            <div class="control-group todo_grid__task one-third input-group-form-control-field input-file">
+                                <label class="control-label" for="todo_form_alias"><?= translate('Attachment') ?></label>
+                                <div class="input-group">
+                                    <?
+                                    ?>
+                                    <?= helper('com:files.modal.select', array(
+                                        'name'  => 'attachment',
+                                        'value' => '',
+                                        'link'  => route('option=com_todo&view=files&layout=select&tmpl=koowa'),
+                                        'callback' => 'attachmentSelectCallback',
+                                        'button_attribs' => array(
+                                            'data-koowa-modal' => htmlentities(json_encode(array('mainClass' => 'koowa_dialog_modal'))),
+                                        )
+                                    ))?>
+                                </div>
+                                <script>
+                                    var attachmentSelectCallback = function(selected) {
+                                        kQuery('#attachment').val(selected).trigger('change');
+
+                                        if (typeof kQuery.magnificPopup !== 'undefined' && kQuery.magnificPopup.instance) {
+                                            kQuery.magnificPopup.close();
+                                        }
+                                    };
+                                </script>
+                            </div>
                         </div>
 
                         <legend><?= translate('Description') ?></legend>
