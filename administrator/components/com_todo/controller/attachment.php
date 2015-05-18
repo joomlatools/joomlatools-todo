@@ -22,8 +22,7 @@ class ComTodoControllerAttachment extends ComTodoControllerTask
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'model' => 'tasks',
-            'view'  => 'download'
+            'model' => 'tasks'
         ));
 
         parent::_initialize($config);
