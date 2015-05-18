@@ -52,7 +52,7 @@ defined('KOOWA') or die; ?>
                                     ?>
                                     <?= helper('com:files.modal.select', array(
                                         'name'  => 'attachment',
-                                        'value' => '',
+                                        'value' => $task->attachment,
                                         'link'  => route('option=com_todo&view=files&layout=select&tmpl=koowa'),
                                         'callback' => 'attachmentSelectCallback',
                                         'button_attribs' => array(

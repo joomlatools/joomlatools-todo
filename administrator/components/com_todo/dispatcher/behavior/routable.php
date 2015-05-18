@@ -9,7 +9,7 @@
  */
 
 /**
- * Routes requests that has view=files or marked with routed=1 through com_files
+ * Routes requests that has view=files or routed=1 in the URL through com_files
  *
  */
 class ComTodoDispatcherBehaviorRoutable extends KControllerBehaviorAbstract
@@ -17,15 +17,7 @@ class ComTodoDispatcherBehaviorRoutable extends KControllerBehaviorAbstract
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'container' => 'todo-attachments',
-            'identifiers' => array(
-                'com:files.database.table.containers' => array(
-                    'name' => 'todo_containers'
-                ),
-                'com:files.database.table.thumbnails' => array(
-                    'name' => 'todo_thumbnails'
-                )
-            )
+            'container' => 'todo-attachments'
         ));
 
         parent::_initialize($config);
@@ -37,13 +29,6 @@ class ComTodoDispatcherBehaviorRoutable extends KControllerBehaviorAbstract
 
         if ($query->routed || $query->view === 'files')
         {
-            $manager     = $this->getObject('manager');
-            $identifiers = $this->getConfig()->identifiers->toArray();
-
-            foreach ($identifiers as $identifier => $config) {
-                $manager->setIdentifier(new KObjectIdentifier($identifier, $config));
-            }
-
             $query->container = $this->getConfig()->container;
 
             $context->param = 'com:files.dispatcher.http';
