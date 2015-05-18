@@ -14,6 +14,9 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
     {
         $config->append(array(
             'controller' => 'task',
+            'behaviors'      => array(
+                'com://admin/todo.dispatcher.behavior.routable'
+            )
         ));
 
         parent::_initialize($config);
