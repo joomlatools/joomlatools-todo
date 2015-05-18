@@ -32,6 +32,16 @@ defined('KOOWA') or die; ?>
             <span class="label label-<?= $task->enabled ? $task->status : 'draft' ?>"><?= ucfirst($status); ?></span>
         <? endif; ?>
     </h4>
+
+
+    <? // Download button for attachment ?>
+    <? if ($task->attachment): ?>
+        <a class="btn btn-mini" href="<?= @route('view=attachment&id='.$task->id) ?>">
+            <i class="icon-download"></i><?= translate('Download attachment') ?></a>
+    <? endif ?>
+
+
+    <? // Description area ?>
     <div class="task_description">
         <?= JHtml::_('content.prepare', $task->description); ?>
     </div>
