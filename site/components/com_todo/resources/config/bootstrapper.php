@@ -13,6 +13,7 @@ return array(
         'com://site/todo.controller.task' => array('behaviors' => array('com:activities.controller.behavior.loggable'))
     ),
     'aliases'    => array(
+        'com://site/todo.controller.attachment'         => 'com://admin/todo.controller.attachment',
         'com://site/todo.database.table.tasks'          => 'com://admin/todo.database.table.tasks',
         'com://site/todo.model.tasks'                   => 'com://admin/todo.model.tasks'
     )
