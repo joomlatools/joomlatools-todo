@@ -20,6 +20,10 @@ defined('KOOWA') or die; ?>
     <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
 </ktml:module>
 
+<ktml:module position="submenu">
+    <ktml:toolbar type="menubar">
+</ktml:module>
+
 <?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
 
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
