@@ -109,32 +109,34 @@ defined('KOOWA') or die; ?>
                                 </a>
                             </li>
                             <li>
-                                <a class="k-breadcrumb__item" href="#" data-title="Category 1">
-                                    <span>Category 1</span>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Category 1
                                 </a>
                             </li>
                             <li>
-                                <a class="k-breadcrumb__item" href="#" data-title="Sub Category 2">
-                                    <span>Sub Category 2</span>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Sub Category 2
                                 </a>
                             </li>
                             <li>
-                                <a class="k-breadcrumb__item" href="#" data-title="Sub Category 3">
-                                    <span>Sub Category 3</span>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Sub Category 3
                                 </a>
                             </li>
                             <li>
-                                <a class="k-breadcrumb__item" href="#" data-title="A probably German ridiculous long category name">
-                                    <span>A probably German ridiculous long category name</span>
+                                <a class="k-breadcrumb__item" href="#">
+                                    A probably German ridiculous long category name
                                 </a>
                             </li>
                             <li>
-                                <a class="k-breadcrumb__item" href="#" data-title="Category 5">
-                                    <span>Category 5</span>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Category 5
                                 </a>
                             </li>
                             <li class="active">
-                                <span class="k-breadcrumb__item" data-title="Category 6">Category 6</span>
+                                <span class="k-breadcrumb__item">
+                                    Category 6
+                                </span>
                             </li>
                         </ul>
                     </div>
