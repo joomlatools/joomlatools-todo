@@ -16,14 +16,6 @@ defined('KOOWA') or die; ?>
 <ktml:style src="assets://css/admin-joomla.css" />
 <ktml:script src="assets://js/scriptszzz.js" />
 
-<ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
-</ktml:module>
-
-<ktml:module position="submenu">
-    <ktml:toolbar type="menubar">
-</ktml:module>
-
 <?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
 
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
@@ -35,24 +27,11 @@ defined('KOOWA') or die; ?>
     <form action="" method="get" class="k-content-wrapper -koowa-grid">
 
         <!-- Sidebar -->
-        <div class="k-sidebar">
+        <div id="k-sidebar" class="k-sidebar">
 
             <!-- Main component navigation -->
             <div class="k-sidebar__navigation">
-                <ul class="k-navigation">
-                    <li class="active">
-                        <a href="/administrator/index.php?option=com_todo&view=tasks">
-                            <span class="k-icon-home"></span>
-                            <span class="k-title collapsible">Joomla</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/administrator/index.php?option=com_todo&view=tasks&tmpl=component">
-                            <span class="k-icon-grid"></span>
-                            <span class="k-title collapsible">Standalone</span>
-                        </a>
-                    </li>
-                </ul>
+                <ktml:toolbar type="menubar">
             </div>
 
             <!-- Categories -->
@@ -111,12 +90,7 @@ defined('KOOWA') or die; ?>
                 </button>
 
                 <div class="k-toolbar__buttons">
-                    <a class="btn btn-sm btn-success" href="form.html">New</a>
-                    <button class="btn btn-sm btn-default" disabled>Delete</button>
-                    <button class="btn btn-sm btn-default" disabled>Publish</button>
-                    <button class="btn btn-sm btn-default" disabled>Unpublish</button>
-                    <button class="btn btn-sm btn-default" disabled>Move</button>
-                    <button class="btn btn-sm btn-default btn-right k-modal mfp-iframe" data-mfp-src="select-file.html">Options</button>
+                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
                 </div>
             </div>
 
