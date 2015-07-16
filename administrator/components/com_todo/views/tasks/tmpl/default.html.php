@@ -14,7 +14,7 @@ defined('KOOWA') or die; ?>
 <?= helper('behavior.koowa'); ?>
 
 <ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/scriptszzz.js" />
+<ktml:script src="assets://js/scripts.js" />
 
 <?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
 
@@ -141,23 +141,35 @@ defined('KOOWA') or die; ?>
                 </div>
 
                 <div class="k-scopebar">
-                    <div class="scopebar-group hidden-tablet hidden-phone">
-                        <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
-                           href="<?= route('enabled=&search=' ) ?>">
-                            <?= translate('All') ?>
-                        </a>
+                    <!-- Filter items by -->
+                    <div class="k-scopebar__item k-scopebar__item--fluid">
+                        <div class="dropdown-holder">
+                            <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--published" data-toggle="dropdown" aria-expanded="true">
+                                Published
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--published">
+                                <li role="presentation" class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>">
+                                    <a role="menuitem" href="<?= route('enabled=&search=' ) ?>">
+                                        <?= translate('All') ?>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>">
+                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
+                                        <?= translate('Unpublished') ?>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>">
+                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
+                                        <?= translate('Published') ?>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="scopebar-group last hidden-tablet hidden-phone">
-                        <a class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>"
-                           href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
-                            <?= translate('Unpublished') ?>
-                        </a>
-                        <a class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>"
-                           href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
-                            <?= translate('Published') ?>
-                        </a>
-                    </div>
-                    <div class="scopebar-search">
+
+                    <!-- Search filtered items -->
+                    <div class="k-scopebar__item k-scopebar__search">
                         <?= helper('grid.search', array('submit_on_clear' => true)) ?>
                     </div>
                 </div>
