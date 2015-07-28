@@ -14,6 +14,7 @@ defined('KOOWA') or die; ?>
 <?= helper('behavior.koowa'); ?>
 
 <ktml:style src="assets://css/admin-joomla.css" />
+<ktml:script src="assets://js/modernizr.js" />
 <ktml:script src="assets://js/scripts.js" />
 
 <?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
@@ -21,10 +22,10 @@ defined('KOOWA') or die; ?>
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
 
 <!-- Begin List layout -->
-<div class="k-overview k-flex">
+<div class="k-overview">
 
     <!-- The content -->
-    <form action="" method="get" class="k-content-wrapper -koowa-grid">
+    <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
 
         <!-- Sidebar -->
         <div id="k-sidebar" class="k-sidebar">
@@ -41,9 +42,9 @@ defined('KOOWA') or die; ?>
                     <ul class="k-list">
                         <li class="k-tree">
                             <a href="#">
-                                <span class="k-clicker collapsible"></span>
+                                <span class="k-clicker"></span>
                                 <span class="k-icon-folder"></span>
-                                <span class="k-title collapsible">All categories</span>
+                                <span class="k-title">All categories</span>
                             </a>
                             <ul class="k-tree__items">
                                 <li class="k-list__item--active"><a href="#">Category</a></li>
@@ -52,30 +53,24 @@ defined('KOOWA') or die; ?>
                         <li>
                             <a href="#">
                                 <span class="k-icon-user"></span>
-                                <span class="k-title collapsible">My documents</span>
+                                <span class="k-title">My documents</span>
                             </a>
                         </li>
                         <li class="active">
                             <a href="#">
                                 <span class="k-icon-clock"></span>
-                                <span class="k-title collapsible">Recently edited</span>
+                                <span class="k-title">Recently edited</span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <span class="k-icon-star"></span>
-                                <span class="k-title collapsible">Most popular</span>
+                                <span class="k-title">Most popular</span>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Sidebar footer -->
-            <div class="k-sidebar__footer collapsible">
-                © 2015 - Timble
-            </div>
-
         </div> <!-- .k-sidebar -->
 
         <!-- The content -->
@@ -85,8 +80,10 @@ defined('KOOWA') or die; ?>
             <div class="k-toolbar">
 
                 <!-- Sidebar toggle button -->
-                <button class="k-button--toggle k-icon-burger">
-                    <span class="visually-hidden-icon-label">Toggle</span>
+                <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
                 </button>
 
                 <div class="k-toolbar__buttons">
@@ -97,49 +94,45 @@ defined('KOOWA') or die; ?>
             <!-- Component -->
             <div class="k-component">
 
-                <!-- location bar -->
-                <div class="k-location">
-
-                    <!-- Breadcrumbs -->
-                    <div class="k-breadcrumb">
-                        <ul>
-                            <li class="home">
-                                <a class="k-breadcrumb__item k-icon-home" href="#">
-                                    <span class="visually-hidden-icon-label">Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="k-breadcrumb__item" href="#">
-                                    Category 1
-                                </a>
-                            </li>
-                            <li>
-                                <a class="k-breadcrumb__item" href="#">
-                                    Sub Category 2
-                                </a>
-                            </li>
-                            <li>
-                                <a class="k-breadcrumb__item" href="#">
-                                    Sub Category 3
-                                </a>
-                            </li>
-                            <li>
-                                <a class="k-breadcrumb__item" href="#">
-                                    A probably German ridiculous long category name
-                                </a>
-                            </li>
-                            <li>
-                                <a class="k-breadcrumb__item" href="#">
-                                    Category 5
-                                </a>
-                            </li>
-                            <li class="active">
-                                <span class="k-breadcrumb__item">
-                                    Category 6
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- Breadcrumbs -->
+                <div class="k-breadcrumb">
+                    <ul>
+                        <li class="home">
+                            <a class="k-breadcrumb__item k-icon-home" href="#">
+                                <span class="visually-hidden-icon-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Category 1
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Sub Category 2
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Sub Category 3
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                A probably German ridiculous long category name
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Category 5
+                            </a>
+                        </li>
+                        <li class="active">
+                            <span class="k-breadcrumb__item">
+                                Category 6
+                            </span>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="k-scopebar">
@@ -168,7 +161,17 @@ defined('KOOWA') or die; ?>
                                 </li>
                             </ul>
                         </div>
+
+                        <div class="select2-wrapper select2--no-gfx">
+                            <select>
+                                <option value="Option1">All</option>
+                                <option value="Option2">Published</option>
+                                <option value="Option3">Unpublished</option>
+                            </select>
+                        </div>
+
                     </div>
+
 
                     <!-- Search filtered items -->
                     <div class="k-scopebar__item k-scopebar__search">
@@ -176,67 +179,142 @@ defined('KOOWA') or die; ?>
                     </div>
                 </div>
 
-                <div class="k-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th style="text-align: center;" width="1">
-                                    <?= helper('grid.checkall')?>
-                                </th>
-                                <th class="todo_table__title_field">
-                                    <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
-                                </th>
-                                <th width="5%" data-hide="phone,phablet">
-                                    <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
-                                </th>
-                                <th width="5%" data-hide="phone,phablet,tablet">
-                                    <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
-                                </th>
-                                <th width="5%" data-hide="phone,phablet">
-                                    <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
-                                </th>
-                            </tr>
-                        </thead>
-                        <? if (count($tasks)): ?>
-                        <tfoot>
-                            <tr>
-                                <td colspan="9">
-                                    <?= helper('paginator.pagination') ?>
-                                </td>
-                            </tr>
-                        </tfoot>
-                        <? endif; ?>
-                        <tbody>
+                <div class="k-table-container">
+                    <div class="k-table">
+                        <table class="table--fixed">
+                            <thead>
+                                <tr>
+                                    <th width="1">
+                                        <?= helper('grid.checkall')?>
+                                    </th>
+                                    <th class="todo_table__title_field">
+                                        <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <? if (count($tasks)): ?>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="9">
+                                        <div class="select2--no-gfx">
+                                            <?= helper('paginator.pagination') ?>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                            <? endif; ?>
+                            <tbody>
                             <? foreach ($tasks as $task): ?>
-                            <tr>
-                                <td style="text-align: center;">
-                                    <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                </td>
-                                <td class="todo_table__title_field">
-                                    <a href="<?= route('view=task&id='.$task->id); ?>">
-                                        <?= escape($task->title); ?></a>
-                                </td>
-                                <td style="text-align: center">
-                                    <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                </td>
-                                <td>
-                                    <?= escape($task->getAuthor()->getName()); ?>
-                                </td>
-                                <td>
-                                    <?= helper('date.format', array('date' => $task->created_on)); ?>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                    </td>
+                                </tr><tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                    </td>
+                                </tr><tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                    </td>
+                                </tr><tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                    </td>
+                                </tr>
                             <? endforeach; ?>
 
-                            <? if (!count($tasks)) : ?>
-                            <tr>
-                                <td colspan="9" align="center" style="text-align: center;">
-                                    <?= translate('No tasks found.') ?>
-                                </td>
-                            </tr>
-                            <? endif; ?>
-                        </tbody>
-                    </table>
+                                <? if (!count($tasks)) : ?>
+                                <tr>
+                                    <td colspan="9" align="center" style="text-align: center;">
+                                        <?= translate('No tasks found.') ?>
+                                    </td>
+                                </tr>
+                                <? endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div><!-- .k-component -->
         </div><!-- k-content -->
