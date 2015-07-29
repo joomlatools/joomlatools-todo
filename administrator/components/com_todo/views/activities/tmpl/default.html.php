@@ -36,6 +36,27 @@ defined('KOOWA') or die; ?>
             <div class="k-sidebar__navigation">
                 <ktml:toolbar type="menubar">
             </div>
+
+            <!-- Categories -->
+            <div class="k-sidebar__item">
+                <div class="k-sidebar__content">
+
+                    <ul class="k-list">
+                        <li>
+                            <a href="#">
+                                <span class="k-icon-user"></span>
+                                <span class="k-title">My activities</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <span class="k-icon-clock"></span>
+                                <span class="k-title">Recent activities</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div> <!-- .k-sidebar -->
 
         <!-- The content -->
@@ -58,83 +79,16 @@ defined('KOOWA') or die; ?>
 
             <!-- Component -->
             <div class="k-component">
-
-                <!-- Breadcrumbs -->
-                <div class="k-breadcrumb">
-                    <ul>
-                        <li class="home">
-                            <a class="k-breadcrumb__item k-icon-home" href="#">
-                                <span class="visually-hidden-icon-label">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Category 1
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Sub Category 2
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Sub Category 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                A probably German ridiculous long category name
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Category 5
-                            </a>
-                        </li>
-                        <li class="active">
-                            <span class="k-breadcrumb__item">
-                                Category 6
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
                 <div class="k-scopebar">
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
-                        <div class="dropdown-holder">
-                            <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--published" data-toggle="dropdown" aria-expanded="true">
-                                Published
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--published">
-                                <li role="presentation" class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled=&search=' ) ?>">
-                                        <?= translate('All') ?>
-                                    </a>
-                                </li>
-                                <li role="presentation" class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
-                                        <?= translate('Unpublished') ?>
-                                    </a>
-                                </li>
-                                <li role="presentation" class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
-                                        <?= translate('Published') ?>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
                         <div class="select2-wrapper select2--no-gfx">
                             <select>
-                                <option value="Option1">All</option>
-                                <option value="Option2">Published</option>
-                                <option value="Option3">Unpublished</option>
+                                <option value="Option1">Created</option>
+                                <option value="Option2">Edited</option>
+                                <option value="Option3">Deleted</option>
                             </select>
                         </div>
-
                     </div>
 
 

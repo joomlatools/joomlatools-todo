@@ -84,47 +84,6 @@ defined('KOOWA') or die; ?>
             <!-- Component -->
             <div class="k-component">
 
-                <!-- Breadcrumbs -->
-                <div class="k-breadcrumb">
-                    <ul>
-                        <li class="home">
-                            <a class="k-breadcrumb__item k-icon-home" href="#">
-                                <span class="visually-hidden-icon-label">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Category 1
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Sub Category 2
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Sub Category 3
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                A probably German ridiculous long category name
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Category 5
-                            </a>
-                        </li>
-                        <li class="active">
-                            <span class="k-breadcrumb__item">
-                                Category 6
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
                 <div class="k-scopebar">
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
