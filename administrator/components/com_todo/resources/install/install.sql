@@ -26,7 +26,7 @@ INSERT INTO `#__todo_tasks` (`todo_task_id`, `uuid`, `title`, `slug`, `descripti
   (5, 'ca7b0608-8e5f-40e0-9369-291f212cb9a5', 'Pro eu bonorum adversarium', 'pro-eu-bonorum-adversarium', '<p>Pro eu bonorum adversarium, an pri duis diceret deserunt. Labores scribentur disputationi ius in. Ut qui quod mazim, ea solum democritum per. Zril aeterno appellantur vim cu, enim persecuti percipitur cu vim. Utinam soleat mentitum quo an, dico purto scripserit ne vis. Vel ei unum cetero labores, invenire salutandi principes ne sed. Ei persius indoctum sit, nonumes singulis cu sea, ut sea quaeque commune.</p>', 1, '0000-00-00 00:00:00', 0, '2014-11-17 13:09:03', 951, '0000-00-00 00:00:00', 0, NULL);
 
 
-CREATE TABLE IF NOT EXISTS `#__activities` (
+CREATE TABLE IF NOT EXISTS `#__activities_activities` (
 	`activities_activity_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 	`uuid` VARCHAR(36) NOT NULL DEFAULT '' UNIQUE,
 	`application` VARCHAR(10) NOT NULL DEFAULT '',
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `#__activities` (
 -- Dumping data for table `#__activities_activities`
 --
 
-INSERT INTO `#__activities` (`activities_activity_id`, `uuid`, `application`, `type`, `package`, `name`, `action`, `row`, `title`, `status`, `created_on`, `created_by`, `ip`, `metadata`) VALUES
+INSERT INTO `#__activities_activities` (`activities_activity_id`, `uuid`, `application`, `type`, `package`, `name`, `action`, `row`, `title`, `status`, `created_on`, `created_by`, `ip`, `metadata`) VALUES
   (1, 'ce3c628018f3426b8de4109b32861db3', 'admin', 'com', 'todo', 'item', 'add', '1', 'Lorem ipsum dolor sit amet', 'created', '2014-11-17 13:02:21', 951, '33.33.33.1', '[]'),
   (2, '0ab95c3f30ca4590a085c7843f47123b', 'admin', 'com', 'todo', 'item', 'add', '2', 'Utinam lobortis qualisque vis ex', 'created', '2014-11-17 13:07:58', 951, '33.33.33.1', '[]'),
   (3, 'b0baa5d8f5ff4efeb063ba76717104a6', 'admin', 'com', 'todo', 'item', 'add', '3', 'Vis natum eleifend eu', 'created', '2014-11-17 13:08:19', 951, '33.33.33.1', '[]'),
