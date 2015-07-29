@@ -82,7 +82,7 @@ defined('KOOWA') or die; ?>
                 <div class="k-scopebar">
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
-                        <div class="select2-wrapper select2--no-gfx">
+                        <div class="select2-wrapper select2--link-style select2--filter">
                             <select id="select2-filter" data-placeholder="State">
                                 <option></option>
                                 <optgroup label="Select status">
@@ -121,9 +121,7 @@ defined('KOOWA') or die; ?>
                                 <tfoot>
                                 <tr>
                                     <td colspan="9">
-                                        <div class="select2--no-gfx">
-                                            <?= helper('paginator.pagination') ?>
-                                        </div>
+                                        <?= helper('paginator.pagination') ?>
                                     </td>
                                 </tr>
                                 </tfoot>
