@@ -15,7 +15,8 @@ class ComTodoModelTasks extends KModelDatabase
         parent::__construct($config);
 
         $this->getState()
-            ->insert('enabled', 'int');
+            ->insert('enabled', 'int')
+            ->insert('created_by', 'int');
     }
 
     protected function _initialize(KObjectConfig $config)
@@ -29,6 +30,15 @@ class ComTodoModelTasks extends KModelDatabase
         parent::_initialize($config);
     }
 
+    protected function _buildQueryColumns(KDatabaseQueryInterface $query)
+    {
+        parent::_buildQueryColumns($query);
+
+        $query->columns(array(
+            'last_modified_on' => 'IF(tbl.modified_on, tbl.modified_on, tbl.created_on)'
+        ));
+    }
+
     protected function _buildQueryWhere(KDatabaseQueryInterface $query)
     {
         parent::_buildQueryWhere($query);
@@ -38,6 +48,11 @@ class ComTodoModelTasks extends KModelDatabase
         if (!is_null($state->enabled))
         {
             $query->where('(tbl.enabled IN :enabled)')->bind(array('enabled' => (array) $state->enabled));
+        }
+
+        if (is_numeric($state->created_by))
+        {
+            $query->where('(tbl.created_by IN :created_by)')->bind(array('created_by' => (array) $state->created_by));
         }
     }
 }

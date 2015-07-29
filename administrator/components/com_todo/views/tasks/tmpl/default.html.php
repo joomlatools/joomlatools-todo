@@ -40,22 +40,22 @@ defined('KOOWA') or die; ?>
                 <div class="k-sidebar__content">
 
                     <ul class="k-list">
-                        <li>
-                            <a href="#">
+                        <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
+                            <a href="<?= route('created_by=&sort=&direction=') ?>">
+                                <span class="k-icon-user"></span>
+                                <span class="k-title">All tasks</span>
+                            </a>
+                        </li>
+                        <li class="<?= parameters()->created_by ? 'active' : ''; ?>">
+                            <a href="<?= route('created_by='.object('user')->getId().'&sort=&direction=') ?>">
                                 <span class="k-icon-user"></span>
                                 <span class="k-title">My tasks</span>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="#">
+                        <li class="<?= parameters()->sort == 'last_modified_on' && parameters()->direction == 'desc' ? 'active' : ''; ?>">
+                            <a href="<?= route('sort=last_modified_on&direction=desc&created_by=') ?>">
                                 <span class="k-icon-clock"></span>
                                 <span class="k-title">Recently edited</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="k-icon-star"></span>
-                                <span class="k-title">Most popular</span>
                             </a>
                         </li>
                     </ul>
@@ -112,7 +112,7 @@ defined('KOOWA') or die; ?>
                         </div>
 
                         <div class="select2-wrapper select2--link-style select2--filter">
-                            <select id="select2-filter" data-placeholder="State">
+                            <select id="select2-filter" data-placeholder="Status">
                                 <option></option>
                                 <optgroup label="Select status">
                                     <option value="Option1">All</option>
@@ -149,7 +149,7 @@ defined('KOOWA') or die; ?>
                                         <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
                                     </th>
                                     <th width="5%">
-                                        <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
+                                        <?= helper('grid.sort', array('column' => 'last_modified_on', 'title' => 'Last modified')); ?>
                                     </th>
                                 </tr>
                             </thead>
@@ -179,7 +179,7 @@ defined('KOOWA') or die; ?>
                                         <?= escape($task->getAuthor()->getName()); ?>
                                     </td>
                                     <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
+                                        <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
                                     </td>
                                 </tr>
                             <? endforeach; ?>
