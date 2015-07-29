@@ -40,20 +40,10 @@ defined('KOOWA') or die; ?>
                 <div class="k-sidebar__content">
 
                     <ul class="k-list">
-                        <li class="k-tree">
-                            <a href="#">
-                                <span class="k-clicker"></span>
-                                <span class="k-icon-folder"></span>
-                                <span class="k-title">All categories</span>
-                            </a>
-                            <ul class="k-tree__items">
-                                <li class="k-list__item--active"><a href="#">Category</a></li>
-                            </ul>
-                        </li>
                         <li>
                             <a href="#">
                                 <span class="k-icon-user"></span>
-                                <span class="k-title">My documents</span>
+                                <span class="k-title">My tasks</span>
                             </a>
                         </li>
                         <li class="active">
@@ -215,77 +205,6 @@ defined('KOOWA') or die; ?>
                             <tbody>
                             <? foreach ($tasks as $task): ?>
                                 <tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
-                                    </td>
-                                </tr><tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
-                                    </td>
-                                </tr><tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->created_on)); ?>
-                                    </td>
-                                </tr><tr>
                                     <td>
                                         <?= helper('grid.checkbox', array('entity' => $task)) ?>
                                     </td>
