@@ -112,10 +112,13 @@ defined('KOOWA') or die; ?>
                         </div>
 
                         <div class="select2-wrapper select2--no-gfx">
-                            <select>
-                                <option value="Option1">All</option>
-                                <option value="Option2">Published</option>
-                                <option value="Option3">Unpublished</option>
+                            <select id="select2-filter" data-placeholder="State">
+                                <option></option>
+                                <optgroup label="Select status">
+                                    <option value="Option1">All</option>
+                                    <option value="Option2">Published</option>
+                                    <option value="Option3">Unpublished</option>
+                                </optgroup>
                             </select>
                         </div>
 
