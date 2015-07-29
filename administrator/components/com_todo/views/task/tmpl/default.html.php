@@ -31,14 +31,6 @@ defined('KOOWA') or die; ?>
 
     <!-- Toolbar -->
     <div class="k-toolbar">
-
-        <!-- Sidebar toggle button -->
-        <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
-            <span class="bar1"></span>
-            <span class="bar2"></span>
-            <span class="bar3"></span>
-        </button>
-
         <div class="k-toolbar__buttons">
             <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
         </div>
@@ -64,16 +56,23 @@ defined('KOOWA') or die; ?>
                         <div class="row">
                             <div class="control-group col-xs-12">
                                 <div class="controls">
-                                    <input
-                                        required
-                                        class="form-control input-lg"
-                                        id="todo_form_title"
-                                        type="email"
-                                        name="title"
-                                        maxlength="255"
-                                        value="<?= escape($task->title); ?>"
-                                        placeholder="Enter title here"
-                                    />
+
+                                    <div class="input-group input-group-lg">
+                                        <label for="todo_form_title" class="input-group-addon">
+                                            Title
+                                        </label>
+                                        <input
+                                            required
+                                            class="form-control"
+                                            id="todo_form_title"
+                                            type="email"
+                                            name="title"
+                                            maxlength="255"
+                                            value="<?= escape($task->title); ?>"
+                                            placeholder="Enter title here"
+                                        />
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="control-group col-xs-12">
