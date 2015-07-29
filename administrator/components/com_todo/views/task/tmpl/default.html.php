@@ -17,6 +17,7 @@ defined('KOOWA') or die; ?>
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">
 </ktml:module>
+
 <ktml:style src="assets://css/admin-joomla.css" />
 <ktml:script src="assets://js/modernizr.js" />
 <ktml:script src="assets://js/scripts.js" />
@@ -27,6 +28,21 @@ defined('KOOWA') or die; ?>
 
 <!-- Begin Form layout -->
 <div class="k-form">
+
+    <!-- Toolbar -->
+    <div class="k-toolbar">
+
+        <!-- Sidebar toggle button -->
+        <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </button>
+
+        <div class="k-toolbar__buttons">
+            <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
+        </div>
+    </div>
 
     <!-- The form -->
     <form action="" method="post" class="-koowa-form">
@@ -57,7 +73,6 @@ defined('KOOWA') or die; ?>
                                         maxlength="255"
                                         value="<?= escape($task->title); ?>"
                                         placeholder="Enter title here"
-                                        autofocus
                                     />
                                 </div>
                             </div>
