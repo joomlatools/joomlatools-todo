@@ -11,88 +11,149 @@
 defined('KOOWA') or die; ?>
 
 <?= helper('behavior.validator'); ?>
-
-<ktml:style src="assets://css/admin.css" />
+<?= helper('bootstrap.load', array('javascript' => true)); ?>
+<?= helper('behavior.koowa'); ?>
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">
 </ktml:module>
+<ktml:style src="assets://css/admin-joomla.css" />
+<ktml:script src="assets://js/modernizr.js" />
+<ktml:script src="assets://js/scripts.js" />
 
-<div class="koowa">
+<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
 
-    <div class="todo_form_layout">
-        <form action="" method="post" class="-koowa-form">
-            <div class="todo_container">
-                <div class="koowa_grid__row">
-                    <div class="koowa_grid__item two-thirds">
-                        <fieldset>
+<script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
 
-                            <legend><?= translate('Details') ?></legend>
+<!-- Begin Form layout -->
+<div class="k-form">
 
-                            <div class="koowa_grid__row">
-                                <div class="control-group koowa_grid__item two-thirds">
-                                    <label class="control-label" for="todo_form_title"><?= translate('Title') ?></label>
-                                    <div class="controls">
-                                        <div class="input-group">
-                                            <input required class="input-group-form-control" id="todo_form_title" type="text" name="title" maxlength="255"
-                                                   value="<?= escape($task->title); ?>" />
+    <!-- The form -->
+    <form action="" method="post" class="-koowa-form">
+
+        <!-- Grid container -->
+        <div class="container-fluid">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Two thirds -->
+                <div class="col-sm-8">
+
+                    <fieldset>
+
+                        <?php // @TODO: make sure we can just delete this <legend> without a new one being created ?>
+                        <legend style="height:0;overflow:hidden;padding:0;margin:0;border:none;"><?= translate('') ?></legend>
+
+                        <div class="row">
+                            <div class="control-group col-xs-12">
+                                <div class="controls">
+                                    <input
+                                        required
+                                        class="form-control input-lg"
+                                        id="todo_form_title"
+                                        type="email"
+                                        name="title"
+                                        maxlength="255"
+                                        value="<?= escape($task->title); ?>"
+                                        placeholder="Enter title here"
+                                        autofocus
+                                    />
+                                </div>
+                            </div>
+                            <div class="control-group col-xs-12">
+                                <div class="controls">
+
+                                    <div class="input-group input-group-sm">
+                                        <label for="todo_form_alias" class="input-group-addon">
+                                            Alias
+                                        </label>
+                                        <input
+                                            id="todo_form_alias"
+                                            type="text"
+                                            class="form-control"
+                                            name="slug"
+                                            maxlength="255"
+                                            value="<?= escape($task->slug) ?>"
+                                            placeholder="Will be created automatically"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="control-group col-xs-12">
+                                <div class="controls">
+                                    <?= helper('editor.display', array(
+                                        'name' => 'description',
+                                        'value' => $task->description,
+                                        'id'   => 'description',
+                                        'width' => '100%',
+                                        'height' => '341',
+                                        'cols' => '100',
+                                        'rows' => '20',
+                                        'buttons' => array('pagebreak')
+                                    )); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div><!-- Two thirds -->
+
+                <!-- One third -->
+                <div class="col-sm-4">
+
+                    <fieldset class="k-form-block">
+
+                        <div class="k-form-block__header">
+                            <?= translate('Publishing') ?>
+                        </div>
+
+                        <div class="k-form-block__content">
+                            <div class="row">
+                                <div class="control-group col-xs-12">
+                                    <div class="control-content">
+                                        <label class="control-label">Status</label>
+                                        <div class="controls">
+                                            <div class="radio-toggle">
+                                                <div class="radio-toggle-item">
+                                                    <input type="radio" name="status" id="status1" value="1" checked="checked">
+                                                    <label for="status1">
+                                                        <span>
+                                                            Published
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="radio-toggle-item">
+                                                    <input type="radio" name="status" id="status0" value="0">
+                                                    <label for="status0">
+                                                        <span>
+                                                            Unpublished
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="control-group koowa_grid__item one-third">
-                                    <label class="control-label" for="todo_form_alias"><?= translate('Alias') ?></label>
-                                    <div class="controls">
-                                        <input id="todo_form_alias" type="text" class="input-block-level" name="slug" maxlength="255"
-                                               value="<?= escape($task->slug) ?>" />
-                                    </div>
-                                </div>
-                            </div>
 
-                            <legend><?= translate('Description') ?></legend>
-
-                            <div class="koowa_grid description_container">
-                                <div class="control-group koowa_grid__item one-whole">
-                                    <div class="controls">
-                                        <?= helper('editor.display', array(
-                                            'name' => 'description',
-                                            'value' => $task->description,
-                                            'id'   => 'description',
-                                            'width' => '100%',
-                                            'height' => '341',
-                                            'cols' => '100',
-                                            'rows' => '20',
-                                            'buttons' => array('pagebreak')
-                                        )); ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </fieldset>
-                    </div>
-                    <div class="koowa_grid__item one-third">
-                        <fieldset>
-
-                            <legend><?= translate('Publishing') ?></legend>
-
-                            <div class="koowa_grid__row">
-                                <div class="control-group koowa_grid__item one-whole">
-                                    <label class="control-label"><?= translate('Status'); ?></label>
-                                    <div class="controls radio btn-group">
+                                    <?php // @TODO: Make sure code below generates code above
+                                    if ( 1 == 2 ) :?>
                                         <?= helper('select.booleanlist', array(
                                             'name' => 'enabled',
                                             'selected' => $task->enabled,
                                             'true' => translate('Published'),
                                             'false' => translate('Unpublished')
                                         )); ?>
-                                    </div>
+                                    <?php endif; ?>
+
                                 </div>
                             </div>
-                        </fieldset>
-                    </div>
-                </div>
-            </div>
-
-        </form>
-    </div>
-
-</div>
+                        </div>
+                    </fieldset>
+                </div><!-- One third -->
+            </div><!-- Grid row -->
+        </div><!-- Grid container -->
+    </form><!-- The form -->
+</div><!-- Form layout-->

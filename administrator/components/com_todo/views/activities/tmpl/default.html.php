@@ -21,8 +21,6 @@ defined('KOOWA') or die; ?>
 
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
 
-
-
 <!-- Begin List layout -->
 <div class="k-overview">
 
