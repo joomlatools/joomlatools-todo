@@ -40,16 +40,16 @@ defined('KOOWA') or die; ?>
                 <div class="k-sidebar__content">
 
                     <ul class="k-list">
-                        <li>
-                            <a href="#">
+                        <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
+                            <a href="<?= route('user=') ?>">
                                 <span class="k-icon-user"></span>
-                                <span class="k-title">My activities</span>
+                                <span class="k-title">All activities</span>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="#">
-                                <span class="k-icon-clock"></span>
-                                <span class="k-title">Recent activities</span>
+                        <li class="<?= parameters()->user ? 'active' : ''; ?>">
+                            <a href="<?= route('user='.object('user')->getId()) ?>">
+                                <span class="k-icon-user"></span>
+                                <span class="k-title">My activities</span>
                             </a>
                         </li>
                     </ul>
@@ -81,9 +81,9 @@ defined('KOOWA') or die; ?>
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
                         <div class="select2-wrapper select2--link-style select2--filter">
-                            <select id="select2-filter" data-placeholder="State">
+                            <select id="select2-filter" data-placeholder="Action">
                                 <option></option>
-                                <optgroup label="Select status">
+                                <optgroup label="Select action">
                                     <option value="Option1">Created</option>
                                     <option value="Option2">Edited</option>
                                     <option value="Option3">Deleted</option>
