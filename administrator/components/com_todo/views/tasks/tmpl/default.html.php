@@ -24,7 +24,7 @@ defined('KOOWA') or die; ?>
 <!-- Begin List layout -->
 <div class="k-overview">
 
-    <!-- The content -->
+    <!-- The form -->
     <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
 
         <!-- Sidebar -->
