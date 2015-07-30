@@ -62,15 +62,13 @@ defined('KOOWA') or die; ?>
 
             <!-- Toolbar -->
             <div class="k-toolbar">
-
-                <!-- Sidebar toggle button -->
-                <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
-                    <span class="bar1"></span>
-                    <span class="bar2"></span>
-                    <span class="bar3"></span>
-                </button>
-
-                <div class="k-toolbar__buttons">
+                <div class="koowa-toolbar">
+                    <!-- Sidebar toggle button -->
+                    <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </button>
                     <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
                 </div>
             </div>
