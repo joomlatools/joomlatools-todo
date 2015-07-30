@@ -8,7 +8,7 @@
  * @link        https://github.com/joomlatools/joomlatools-todo for the canonical source repository
  */
 
-class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
+class ComTodoDispatcher extends ComKoowaDispatcher
 {
     protected function _initialize(KObjectConfig $config)
     {

@@ -21,7 +21,7 @@ if (!class_exists('Koowa'))
 
 //Catch exceptions before Joomla does (JApplication::dispatch())
 try {
-    KObjectManager::getInstance()->getObject('com://admin/todo.dispatcher.http')->dispatch();
+    KObjectManager::getInstance()->getObject('com://admin/todo.dispatcher')->dispatch();
 } catch(Exception $exception) {
     KObjectManager::getInstance()->getObject('exception.handler')->handleException($exception);
 }

@@ -8,7 +8,7 @@
  * @link        https://github.com/joomlatools/joomlatools-todo for the canonical source repository
  */
 
-class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
+class ComTodoDispatcher extends ComKoowaDispatcher
 {
     protected function _initialize(KObjectConfig $config)
     {
@@ -19,11 +19,11 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
         parent::_initialize($config);
     }
 
-    public function getRequest()
+    protected function _resolveRequest(KDispatcherContextInterface $context)
     {
-        $request = parent::getRequest();
+        parent::_resolveRequest($context);
 
-        $query = $request->query;
+        $query = $context->getRequest()->query;
 
         // Can't use executable behavior here as it calls getController which in turn calls this method
         if ($this->getObject('user')->authorise('core.manage', 'com_todo') !== true)
@@ -40,8 +40,5 @@ class ComTodoDispatcherHttp extends ComKoowaDispatcherHttp
         if ($query->layout === 'form') {
             $query->tmpl = 'koowa';
         }
-
-        return $request;
-
     }
 }
