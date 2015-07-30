@@ -16,6 +16,8 @@ It's a code 'kata' component and is used to demonstrate the power and magic of  
 
 ## Installation
 
+### Composer
+
 Joomla Todo can and should be installed by using [Composer](https://getcomposer.org/). 
 
 Go to the root directory of your Joomla installation in command line and execute this command:
@@ -23,6 +25,19 @@ Go to the root directory of your Joomla installation in command line and execute
 ```
 composer require joomlatools/joomlatools-todo:1.*
 ```
+
+### Symlinker
+
+Assuming you have the [Joomlatools Vagrant box](http://developer.joomlatools.com/tools/vagrant.html) installed and have [joomlatools-framework](https://github.com/joomlatools/joomlatools-framework), 
+[nooku-framework](https://github.com/nooku/nooku-framework) and [nooku-activities](https://github.com/nooku/nooku-activities)
+available in the [`Projects`](http://developer.joomlatools.com/tools/vagrant/2-getting-started.html#symlink-your-code-into-a-joomla-site) folder of you Joomlatools Vagrant box.
+
+The following steps will create a new Joomla site called **todo**:
+
+1. SSH into the Joomlatools Vagrant box: `vagrant ssh`
+2. Symlink the code: `joomla site:create todo --symlink=joomlatools-todo,joomlatools-framework,nooku-activities`
+3. Register the Joomlatools Framework: `joomla extension:register todo koowa plugin`
+4. Install the Todo extension: `joomla extension:install todo com_todo`
 
 ## Contributing
 
