@@ -57,21 +57,16 @@ defined('KOOWA') or die; ?>
                             <div class="control-group col-xs-12">
                                 <div class="controls">
 
-                                    <div class="input-group input-group-lg">
-                                        <label for="todo_form_title" class="input-group-addon">
-                                            Title
-                                        </label>
-                                        <input
-                                            required
-                                            class="form-control"
-                                            id="todo_form_title"
-                                            type="email"
-                                            name="title"
-                                            maxlength="255"
-                                            value="<?= escape($task->title); ?>"
-                                            placeholder="Enter title here"
-                                        />
-                                    </div>
+                                    <input
+                                        required
+                                        class="form-control input-lg"
+                                        id="todo_form_title"
+                                        type="email"
+                                        name="title"
+                                        maxlength="255"
+                                        value="<?= escape($task->title); ?>"
+                                        placeholder="Enter title here"
+                                    />
 
                                 </div>
                             </div>
