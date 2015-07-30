@@ -68,15 +68,13 @@ defined('KOOWA') or die; ?>
 
             <!-- Toolbar -->
             <div class="k-toolbar">
-
-                <!-- Sidebar toggle button -->
-                <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
-                    <span class="bar1"></span>
-                    <span class="bar2"></span>
-                    <span class="bar3"></span>
-                </button>
-
-                <div class="k-toolbar__buttons">
+                <div class="koowa-toolbar">
+                    <!-- Sidebar toggle button -->
+                    <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </button>
                     <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
                 </div>
             </div>
@@ -93,7 +91,9 @@ defined('KOOWA') or die; ?>
                                 <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
                                 <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
                             </select>
+                            <button type="button" class="toggle-search">Search</button>
                         </div>
+
                     </div>
                     
                     <!-- Search filtered items -->
@@ -112,15 +112,6 @@ defined('KOOWA') or die; ?>
                                     </th>
                                     <th class="todo_table__title_field">
                                         <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
-                                    </th>
-                                    <th width="5%">
-                                        <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
-                                    </th>
-                                    <th width="5%">
-                                        <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
-                                    </th>
-                                    <th width="5%">
-                                        <?= helper('grid.sort', array('column' => 'last_modified_on', 'title' => 'Last modified')); ?>
                                     </th>
                                 </tr>
                             </thead>
