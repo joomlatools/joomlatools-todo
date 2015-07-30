@@ -95,7 +95,7 @@ defined('KOOWA') or die; ?>
                         </div>
 
                     </div>
-                    
+
                     <!-- Search filtered items -->
                     <div class="k-scopebar__item k-scopebar__search">
                         <?= helper('grid.search', array('submit_on_clear' => true)) ?>
@@ -112,6 +112,15 @@ defined('KOOWA') or die; ?>
                                     </th>
                                     <th class="todo_table__title_field">
                                         <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
+                                    </th>
+                                    <th width="5%">
+                                        <?= helper('grid.sort', array('column' => 'last_modified_on', 'title' => 'Last modified')); ?>
                                     </th>
                                 </tr>
                             </thead>
