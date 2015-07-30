@@ -37,7 +37,7 @@ defined('KOOWA') or die; ?>
 
             <!-- Toolbar -->
             <div class="k-toolbar">
-                <div class="k-toolbar__buttons">
+                <div class="koowa-toolbar">
                     <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
                 </div>
             </div>
