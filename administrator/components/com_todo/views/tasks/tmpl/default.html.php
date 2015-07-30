@@ -87,44 +87,15 @@ defined('KOOWA') or die; ?>
                 <div class="k-scopebar">
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
-                        <div class="dropdown-holder">
-                            <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--published" data-toggle="dropdown" aria-expanded="true">
-                                Published
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--published">
-                                <li role="presentation" class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled=&search=' ) ?>">
-                                        <?= translate('All') ?>
-                                    </a>
-                                </li>
-                                <li role="presentation" class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
-                                        <?= translate('Unpublished') ?>
-                                    </a>
-                                </li>
-                                <li role="presentation" class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>">
-                                    <a role="menuitem" href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
-                                        <?= translate('Published') ?>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
                         <div class="select2-wrapper select2--link-style select2--filter">
-                            <select id="select2-filter" data-placeholder="Status">
+                            <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
                                 <option></option>
-                                <optgroup label="Select status">
-                                    <option value="Option1">All</option>
-                                    <option value="Option2">Published</option>
-                                    <option value="Option3">Unpublished</option>
-                                </optgroup>
+                                <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
+                                <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
                             </select>
                         </div>
-
                     </div>
-
-
+                    
                     <!-- Search filtered items -->
                     <div class="k-scopebar__item k-scopebar__search">
                         <?= helper('grid.search', array('submit_on_clear' => true)) ?>

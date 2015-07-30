@@ -81,17 +81,14 @@ defined('KOOWA') or die; ?>
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
                         <div class="select2-wrapper select2--link-style select2--filter">
-                            <select id="select2-filter" data-placeholder="Action">
+                            <select name="action" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
                                 <option></option>
-                                <optgroup label="Select action">
-                                    <option value="Option1">Created</option>
-                                    <option value="Option2">Edited</option>
-                                    <option value="Option3">Deleted</option>
-                                </optgroup>
+                                <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>>Created</option>
+                                <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>>Edited</option>
+                                <option value="delete"<?= parameters()->action == 'delete' ? ' selected' : ''; ?>>Deleted</option>
                             </select>
                         </div>
                     </div>
-
 
                     <!-- Search filtered items -->
                     <div class="k-scopebar__item k-scopebar__search">
