@@ -16,9 +16,7 @@ It's a code 'kata' component and is used to demonstrate the power and magic of  
 
 ## Installation
 
-### Composer
-
-Joomla Todo can and should be installed by using [Composer](https://getcomposer.org/). 
+Joomla Todo can be installed directly into a working Joomla installation by using [Composer](https://getcomposer.org/).
 
 Go to the root directory of your Joomla installation in command line and execute this command:
 
@@ -26,18 +24,38 @@ Go to the root directory of your Joomla installation in command line and execute
 composer require joomlatools/joomlatools-todo:1.*
 ```
 
-### Symlinker
+## Making changes
 
-Assuming you have the [Joomlatools Vagrant box](http://developer.joomlatools.com/tools/vagrant.html) installed and have [joomlatools-framework](https://github.com/joomlatools/joomlatools-framework), 
-[nooku-framework](https://github.com/nooku/nooku-framework) and [nooku-activities](https://github.com/nooku/nooku-activities)
-available in the [`Projects`](http://developer.joomlatools.com/tools/vagrant/2-getting-started.html#symlink-your-code-into-a-joomla-site) folder of you Joomlatools Vagrant box.
+There's no better way to learn how something works than to fiddle around in it. The easiest way to do this is by symlinking the component into a Joomla installation. Using our [Joomlatools Vagrant box](http://developer.joomlatools.com/tools/vagrant.html) you can do this with a few simple commands:
 
-The following steps will create a new Joomla site called **todo**:
+1. Install [Joomlatools Vagrant box](http://developer.joomlatools.com/tools/vagrant.html) and start it with the `vagrant up` command.
+1. The box will automatically create a `Projects` folder for you. Clone this repository in there:
 
-1. SSH into the Joomlatools Vagrant box: `vagrant ssh`
-2. Symlink the code: `joomla site:create todo --symlink=joomlatools-todo,joomlatools-framework,nooku-activities`
-3. Register the Joomlatools Framework: `joomla extension:register todo koowa plugin`
-4. Install the Todo extension: `joomla extension:install todo com_todo`
+    ```
+cd Projects
+git clone https://github.com/joomlatools/joomlatools-todo.git
+    ```
+
+1. Open up the [web terminal](http://joomla.box:3000) or SSH into the Joomlatools Vagrant box with `vagrant ssh`
+1. Create a new Joomla site that symlinks the Todo component using the following command:
+
+    ```
+joomla site:create todo --symlink=joomlatools-todo
+    ```
+
+1. The Todo component is now installed but we still need to include its dependencies. If we install the component with Composer as explained above, this is taken care for us automatically. We need the [joomlatools-framework](https://github.com/joomlatools/joomlatools-framework) and [nooku-activities component](https://github.com/nooku/nooku-activities) packages too. We can install these using Composer:
+
+    ```
+composer require joomlatools/joomlatools-framework:~3.0 nooku/nooku-activities:~3.0 --working-dir=/var/www/todo
+    ```
+
+1. With everything in place, we can install the component into Joomla by running the installer:
+
+    ```
+joomla extension:install todo com_todo
+    ```
+
+1. Browse to [joomla.box/todo](http://joomla.box/todo), fire up the Todo codebase in your favorite code editor and have fun!
 
 ## Contributing
 
@@ -52,7 +70,7 @@ There are a few things you must know before submitting a pull request:
 - All changes need to be made against the `develop` branch. However, it is very well appreciated and highly suggested to start a new feature branch from `develop` and make your changes in this new branch. This way we can just checkout your feature branch for testing before merging it into `develop`.
 - We will not consider pull requests made directly to the `master` branch.
 
-## License 
+## License
 
 Joomlatools Todo is open-source software licensed under the [GPLv3 license](https://github.com/joomlatools/joomlatools-todo/blob/master/LICENSE.txt).
 
