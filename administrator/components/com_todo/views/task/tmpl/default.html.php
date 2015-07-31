@@ -93,7 +93,10 @@ defined('KOOWA') or die; ?>
                                                     placeholder="Will be created automatically"
                                                 />
                                                 <div class="input-group-btn">
-                                                    <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="assets://css/new-ui-file-popup-example.html">Modal-file</button>
+                                                    <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="/media/koowa/framework/new-ui/layouts/select-document.php">Select document</button>
+                                                </div>
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="/media/koowa/framework/new-ui/layouts/select-file.php">Select file</button>
                                                 </div>
                                             </div>
                                         </div>

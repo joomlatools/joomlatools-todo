@@ -82,6 +82,38 @@ defined('KOOWA') or die; ?>
             <!-- Component -->
             <div class="k-component">
 
+                <!-- Breadcrumbs -->
+                <div class="k-breadcrumb">
+                    <ul>
+                        <li class="home">
+                            <a class="k-breadcrumb__item k-icon-home" href="#">
+                                <span class="visually-hidden-icon-label">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Category number one
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                A sub-category of category number one
+                            </a>
+                        </li>
+                        <li>
+                            <a class="k-breadcrumb__item" href="#">
+                                Another level
+                            </a>
+                        </li>
+                        <li class="active">
+                            <span class="k-breadcrumb__item" data-title="Category 6">
+                                The final level
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Scopebar -->
                 <div class="k-scopebar">
                     <!-- Filter items by -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
@@ -135,6 +167,42 @@ defined('KOOWA') or die; ?>
                             <? endif; ?>
                             <tbody>
                             <? foreach ($tasks as $task): ?>
+                                <tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
+                                    </td>
+                                    <td class="todo_table__title_field">
+                                        <a href="<?= route('view=task&id='.$task->id); ?>">
+                                            <?= escape($task->title); ?></a>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= escape($task->getAuthor()->getName()); ?>
+                                    </td>
+                                    <td class="k-nowrap">
+                                        <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>
                                         <?= helper('grid.checkbox', array('entity' => $task)) ?>
