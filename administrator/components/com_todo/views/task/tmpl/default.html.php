@@ -67,7 +67,7 @@ defined('KOOWA') or die; ?>
                                                 required
                                                 class="form-control input-lg"
                                                 id="todo_form_title"
-                                                type="email"
+                                                type="text"
                                                 name="title"
                                                 maxlength="255"
                                                 value="<?= escape($task->title); ?>"
