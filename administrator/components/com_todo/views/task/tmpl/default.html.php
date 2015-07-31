@@ -92,6 +92,9 @@ defined('KOOWA') or die; ?>
                                                     value="<?= escape($task->slug) ?>"
                                                     placeholder="Will be created automatically"
                                                 />
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="assets://css/new-ui-file-popup-example.html">Modal-file</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
