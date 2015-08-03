@@ -28,7 +28,7 @@ defined('KOOWA') or die; ?>
 <?php // End test ?>
 
 
-<!-- Overview -->
+<!-- Overview layout -->
 <div class="k-overview">
 
     <!-- Form -->

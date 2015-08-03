@@ -10,26 +10,34 @@
 
 defined('KOOWA') or die; ?>
 
+
 <?= helper('behavior.validator'); ?>
 <?= helper('bootstrap.load', array('javascript' => true)); ?>
 <?= helper('behavior.koowa'); ?>
+
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">
 </ktml:module>
 
+
+<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
 <ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/modernizr.js" />
+<ktml:script src="assets://js/modernizr.js" /> <?php // @TODO: create modernizr file that only holds test we actually use ?>
 <ktml:script src="assets://js/scripts.js" />
-
-<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
-
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
+<?php // END ?>
 
-<!-- Begin Form layout -->
+
+<?php // For testing purposes only ?>
+<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
+<?php // End test ?>
+
+
+<!-- Form layout -->
 <div class="k-form">
 
-    <!-- The form -->
+    <!-- Form -->
     <form action="" method="post" class="k-content-wrapper -koowa-form">
 
         <!-- The content -->
@@ -45,10 +53,10 @@ defined('KOOWA') or die; ?>
             <!-- Component -->
             <div class="k-component">
 
-                <!-- Grid container -->
+                <!-- Container -->
                 <div class="container-fluid">
 
-                    <!-- Grid row -->
+                    <!-- Row -->
                     <div class="row">
 
                         <!-- Two thirds -->
@@ -121,6 +129,7 @@ defined('KOOWA') or die; ?>
                                 </div>
 
                             </fieldset>
+
                         </div><!-- Two thirds -->
 
                         <!-- One third -->
@@ -173,8 +182,11 @@ defined('KOOWA') or die; ?>
                                     </div>
                                 </div>
                             </fieldset>
+
                         </div><!-- One third -->
-                    </div><!-- Grid row -->
+
+                    </div><!--.row -->
+
                 </div><!-- .container-fluid -->
 
             </div><!-- .k-component -->
