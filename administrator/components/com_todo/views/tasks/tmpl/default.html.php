@@ -10,60 +10,67 @@
 
 defined('KOOWA') or die; ?>
 
+
 <?= helper('bootstrap.load', array('javascript' => true)); ?>
 <?= helper('behavior.koowa'); ?>
 
+
+<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
 <ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/modernizr.js" />
+<ktml:script src="assets://js/modernizr.js" /> <?php // @TODO: create modernizr file that only holds test we actually use ?>
 <ktml:script src="assets://js/scripts.js" />
-
-<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
-
 <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
+<?php // END ?>
 
-<!-- Begin List layout -->
+
+<?php // For testing purposes only ?>
+<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
+<?php // End test ?>
+
+
+<!-- Overview -->
 <div class="k-overview">
 
-    <!-- The form -->
+    <!-- Form -->
     <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
 
         <!-- Sidebar -->
         <div id="k-sidebar" class="k-sidebar">
 
-            <!-- Main component navigation -->
+            <!-- Navigation -->
             <div class="k-sidebar__navigation">
                 <ktml:toolbar type="menubar">
             </div>
 
-            <!-- Categories -->
+            <!-- Filters -->
             <div class="k-sidebar__item">
                 <div class="k-sidebar__content">
-
                     <ul class="k-list">
                         <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
                             <a href="<?= route('created_by=&sort=&direction=') ?>">
                                 <span class="k-icon-user"></span>
-                                <span class="k-title">All tasks</span>
+                                All tasks
                             </a>
                         </li>
                         <li class="<?= parameters()->created_by ? 'active' : ''; ?>">
                             <a href="<?= route('created_by='.object('user')->getId().'&sort=&direction=') ?>">
                                 <span class="k-icon-user"></span>
-                                <span class="k-title">My tasks</span>
+                                My tasks
                             </a>
                         </li>
                         <li class="<?= parameters()->sort == 'last_modified_on' && parameters()->direction == 'desc' ? 'active' : ''; ?>">
                             <a href="<?= route('sort=last_modified_on&direction=desc&created_by=') ?>">
                                 <span class="k-icon-clock"></span>
-                                <span class="k-title">Recently edited</span>
+                                Recently edited
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div> <!-- .k-sidebar -->
+            
+        </div><!-- .k-sidebar -->
 
-        <!-- The content -->
+        <!-- Content -->
         <div class="k-content">
 
             <!-- Toolbar -->
@@ -75,65 +82,42 @@ defined('KOOWA') or die; ?>
                         <span class="bar2"></span>
                         <span class="bar3"></span>
                     </button>
+                    <!-- Buttons -->
                     <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
                 </div>
-            </div>
+            </div><!-- .k-toolbar -->
 
             <!-- Component -->
             <div class="k-component">
 
-                <!-- Breadcrumbs -->
-                <div class="k-breadcrumb">
-                    <ul>
-                        <li class="home">
-                            <a class="k-breadcrumb__item k-icon-home" href="#">
-                                <span class="visually-hidden-icon-label">Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Category number one
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                A sub-category of category number one
-                            </a>
-                        </li>
-                        <li>
-                            <a class="k-breadcrumb__item" href="#">
-                                Another level
-                            </a>
-                        </li>
-                        <li class="active">
-                            <span class="k-breadcrumb__item" data-title="Category 6">
-                                The final level
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
                 <!-- Scopebar -->
                 <div class="k-scopebar">
-                    <!-- Filter items by -->
+                    
+                    <!-- Filters -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
+                        
+                        <!-- Filter -->
                         <div class="select2-wrapper select2--link-style select2--filter">
                             <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
                                 <option></option>
                                 <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
                                 <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
                             </select>
-                            <button type="button" class="toggle-search">Search</button>
                         </div>
+
+                        <!-- Search toggle button -->
+                        <button type="button" class="toggle-search">Search</button>
 
                     </div>
 
-                    <!-- Search filtered items -->
+                    <!-- Search -->
                     <div class="k-scopebar__item k-scopebar__search">
                         <?= helper('grid.search', array('submit_on_clear' => true)) ?>
                     </div>
-                </div>
+                    
+                </div><!-- .k-scopebar -->
 
+                <!-- Table -->
                 <div class="k-table-container">
                     <div class="k-table">
                         <table class="table--fixed">
@@ -142,7 +126,7 @@ defined('KOOWA') or die; ?>
                                     <th width="1">
                                         <?= helper('grid.checkall')?>
                                     </th>
-                                    <th class="todo_table__title_field">
+                                    <th>
                                         <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
                                     </th>
                                     <th width="5%">
@@ -156,58 +140,13 @@ defined('KOOWA') or die; ?>
                                     </th>
                                 </tr>
                             </thead>
-                            <? if (count($tasks)): ?>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="9">
-                                        <?= helper('paginator.pagination') ?>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                            <? endif; ?>
                             <tbody>
                             <? foreach ($tasks as $task): ?>
                                 <tr>
                                     <td>
                                         <?= helper('grid.checkbox', array('entity' => $task)) ?>
                                     </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
-                                        <a href="<?= route('view=task&id='.$task->id); ?>">
-                                            <?= escape($task->title); ?></a>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= escape($task->getAuthor()->getName()); ?>
-                                    </td>
-                                    <td class="k-nowrap">
-                                        <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                                    </td>
-                                    <td class="todo_table__title_field">
                                         <a href="<?= route('view=task&id='.$task->id); ?>">
                                             <?= escape($task->title); ?></a>
                                     </td>
@@ -222,19 +161,28 @@ defined('KOOWA') or die; ?>
                                     </td>
                                 </tr>
                             <? endforeach; ?>
-
-                                <? if (!count($tasks)) : ?>
+                            <? if (!count($tasks)) : ?>
                                 <tr>
-                                    <td colspan="9" align="center" style="text-align: center;">
+                                    <td colspan="9">
                                         <?= translate('No tasks found.') ?>
                                     </td>
                                 </tr>
-                                <? endif; ?>
+                            <? endif; ?>
                             </tbody>
                         </table>
-                    </div>
-                </div>
+
+                    </div><!-- .k-table -->
+
+                    <? if (count($tasks)): ?>
+                    <div class="k-table-pagination">
+                        <?= helper('paginator.pagination') ?>
+                    </div><!-- .k-table-pagination -->
+                    <? endif; ?>
+
+                </div><!-- .k-table-container -->
+
             </div><!-- .k-component -->
+
         </div><!-- k-content -->
 
     </form><!-- .k-content-wrapper -->
