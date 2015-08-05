@@ -120,22 +120,22 @@ defined('KOOWA') or die; ?>
                 <!-- Table -->
                 <div class="k-table-container">
                     <div class="k-table">
-                        <table class="table--fixed">
+                        <table class="table--fixed footable">
                             <thead>
                                 <tr>
                                     <th width="1">
                                         <?= helper('grid.checkall')?>
                                     </th>
-                                    <th>
+                                    <th data-toggle="true">
                                         <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
                                     </th>
-                                    <th width="5%">
+                                    <th width="5%" data-hide="phone,tablet">
                                         <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
                                     </th>
-                                    <th width="5%">
+                                    <th width="5%" data-hide="phone,tablet">
                                         <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
                                     </th>
-                                    <th width="5%">
+                                    <th width="5%" data-hide="phone,tablet">
                                         <?= helper('grid.sort', array('column' => 'last_modified_on', 'title' => 'Last modified')); ?>
                                     </th>
                                 </tr>
