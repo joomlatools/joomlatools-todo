@@ -96,12 +96,6 @@ defined('KOOWA') or die; ?>
                                             value="<?= escape($task->slug) ?>"
                                             placeholder="Will be created automatically"
                                         />
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="/media/koowa/framework/new-ui/layouts/select-document.php">Select document</button>
-                                        </div>
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-md btn-default mfp-iframe" data-mfp-src="/media/koowa/framework/new-ui/layouts/select-file.php">Select file</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
