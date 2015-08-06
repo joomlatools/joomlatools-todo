@@ -129,37 +129,14 @@ defined('KOOWA') or die; ?>
                                     <div class="control-content">
                                         <label class="control-label">Status</label>
                                         <div class="controls">
-                                            <div class="radio-toggle">
-                                                <div class="radio-toggle-item">
-                                                    <input type="radio" name="status" id="status1" value="1" checked="checked">
-                                                    <label for="status1">
-                                                        <span>
-                                                            Published
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="radio-toggle-item">
-                                                    <input type="radio" name="status" id="status0" value="0">
-                                                    <label for="status0">
-                                                        <span>
-                                                            Unpublished
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
+                                            <?= helper('select.booleanlist', array(
+                                                'name' => 'enabled',
+                                                'selected' => $task->enabled,
+                                                'true' => translate('Published'),
+                                                'false' => translate('Unpublished')
+                                            )); ?>
                                         </div>
                                     </div>
-
-                                    <?php // @TODO: Make sure code below generates code above
-                                    if ( 1 == 2 ) :?>
-                                        <?= helper('select.booleanlist', array(
-                                            'name' => 'enabled',
-                                            'selected' => $task->enabled,
-                                            'true' => translate('Published'),
-                                            'false' => translate('Unpublished')
-                                        )); ?>
-                                    <?php endif; ?>
-
                                 </div>
                             </div>
                         </fieldset>
