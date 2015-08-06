@@ -17,9 +17,7 @@ defined('KOOWA') or die; ?>
 
 <?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
 <ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/modernizr.js" /> <?php // @TODO: create modernizr file that only holds test we actually use ?>
-<ktml:script src="assets://js/scripts.js" />
-<script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
+<ktml:script src="assets://js/admin.js" />
 <?php // END ?>
 
 
