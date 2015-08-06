@@ -106,7 +106,7 @@ defined('KOOWA') or die; ?>
                         </div>
 
                         <!-- Search toggle button -->
-                        <button type="button" class="toggle-search">Search</button>
+                        <button type="button" class="toggle-search"><span class="k-icon-search"></span><span class="visually-hidden">Search</span></button>
 
                     </div>
 
