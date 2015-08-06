@@ -60,10 +60,6 @@ defined('KOOWA') or die; ?>
                     <div class="k-container__main">
 
                         <fieldset>
-
-                            <?php // @TODO: make sure we can just delete this <legend> without a new one being created ?>
-                            <legend style="height:0;overflow:hidden;padding:0;margin:0;border:none;"><?= translate('') ?></legend>
-
                             <div class="control-group">
                                 <div class="controls">
 
