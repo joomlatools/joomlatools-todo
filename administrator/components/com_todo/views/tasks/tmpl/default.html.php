@@ -46,13 +46,13 @@ defined('KOOWA') or die; ?>
                     <ul class="k-list">
                         <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
                             <a href="<?= route('created_by=&sort=&direction=') ?>">
-                                <span class="k-icon-user"></span>
+                                <span class="k-icon-list"></span>
                                 All tasks
                             </a>
                         </li>
                         <li class="<?= parameters()->created_by ? 'active' : ''; ?>">
                             <a href="<?= route('created_by='.object('user')->getId().'&sort=&direction=') ?>">
-                                <span class="k-icon-user"></span>
+                                <span class="k-icon-person"></span>
                                 My tasks
                             </a>
                         </li>

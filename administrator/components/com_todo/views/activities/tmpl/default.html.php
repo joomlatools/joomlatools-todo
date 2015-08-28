@@ -46,13 +46,13 @@ defined('KOOWA') or die; ?>
                     <ul class="k-list">
                         <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
                             <a href="<?= route('user=') ?>">
-                                <span class="k-icon-user"></span>
+                                <span class="k-icon-list"></span>
                                 All activities
                             </a>
                         </li>
                         <li class="<?= parameters()->user ? 'active' : ''; ?>">
                             <a href="<?= route('user='.object('user')->getId()) ?>">
-                                <span class="k-icon-user"></span>
+                                <span class="k-icon-person"></span>
                                 My activities
                             </a>
                         </li>
