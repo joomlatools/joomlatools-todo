@@ -97,7 +97,7 @@ defined('KOOWA') or die; ?>
                         <!-- Filter -->
                         <div class="select2-wrapper select2--link-style select2--filter">
                             <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
-                                <option></option>
+                                <option selected>--Status--</option>
                                 <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
                                 <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
                             </select>
