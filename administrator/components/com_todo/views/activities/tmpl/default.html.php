@@ -90,7 +90,7 @@ defined('KOOWA') or die; ?>
                         <!-- Filter -->
                         <div class="select2-wrapper select2--link-style select2--filter">
                             <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
-                                <option></option>
+                                <option selected>--Status--</option>
                                 <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>>Created</option>
                                 <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>>Edited</option>
                                 <option value="delete"<?= parameters()->action == 'delete' ? ' selected' : ''; ?>>Deleted</option>
