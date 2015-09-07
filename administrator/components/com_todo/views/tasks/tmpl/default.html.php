@@ -81,7 +81,7 @@ defined('KOOWA') or die; ?>
                         <span class="bar3"></span>
                     </button>
                     <!-- Buttons -->
-                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
+                    <ktml:toolbar type="actionbar" icon="task icon-stack">
                 </div>
             </div><!-- .k-toolbar -->
 
