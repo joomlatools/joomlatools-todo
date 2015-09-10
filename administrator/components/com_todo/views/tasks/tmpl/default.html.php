@@ -16,7 +16,6 @@ defined('KOOWA') or die; ?>
 
 
 <?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
-<ktml:style src="assets://css/admin-joomla.css" />
 <ktml:script src="assets://js/admin.js" />
 <?php // END ?>
 
@@ -104,7 +103,7 @@ defined('KOOWA') or die; ?>
                         </div>
 
                         <!-- Search toggle button -->
-                        <button type="button" class="toggle-search"><span class="k-icon-search"></span><span class="visually-hidden">Search</span></button>
+                        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden">Search</span></button>
 
                     </div>
 
