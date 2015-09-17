@@ -10,16 +10,7 @@
 
 defined('KOOWA') or die; ?>
 
-
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
-<?= helper('behavior.koowa'); ?>
-
-
-<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
-<ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/admin.js" />
-<?php // END ?>
-
+<?= helper('behavior.ui'); ?>
 
 <?php // For testing purposes only ?>
 <?php // JFactory::getApplication()->enqueueMessage('Message'); ?>

@@ -12,8 +12,7 @@ defined('KOOWA') or die; ?>
 
 <ktml:style src="assets://css/site.css" />
 
-<?= helper('bootstrap.load'); ?>
-<?= helper('behavior.koowa'); ?>
+<?= helper('behavior.ui'); ?>
 <?= helper('behavior.keepalive'); ?>
 <?= helper('behavior.validator'); ?>
 

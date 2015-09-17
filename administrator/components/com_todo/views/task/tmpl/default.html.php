@@ -12,8 +12,7 @@ defined('KOOWA') or die; ?>
 
 
 <?= helper('behavior.validator'); ?>
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
-<?= helper('behavior.koowa'); ?>
+<?= helper('behavior.ui'); ?>
 
 
 <ktml:module position="toolbar">
