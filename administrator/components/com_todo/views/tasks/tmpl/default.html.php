@@ -83,10 +83,13 @@ defined('KOOWA') or die; ?>
 
                 <!-- Scopebar -->
                 <div class="k-scopebar">
+
+                    <!-- Filter title -->
+                    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
                     
                     <!-- Filters -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
-                        
+
                         <!-- Filter -->
                         <div class="select2-wrapper select2--link-style select2--filter">
                             <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">

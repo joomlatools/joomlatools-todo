@@ -75,6 +75,9 @@ defined('KOOWA') or die; ?>
                 <!-- Scopebar -->
                 <div class="k-scopebar">
 
+                    <!-- Filter title -->
+                    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
+
                     <!-- Filters -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
 
