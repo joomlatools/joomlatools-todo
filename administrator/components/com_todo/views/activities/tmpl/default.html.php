@@ -37,7 +37,7 @@ defined('KOOWA') or die; ?>
                 <div class="k-sidebar__header">
                     Quick filters:
                 </div>
-                
+
                 <div class="k-sidebar__content">
                     <ul class="k-list">
                         <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
@@ -181,7 +181,10 @@ defined('KOOWA') or die; ?>
 </div><!-- .k-overview -->
 
 <script>
-    kQuery(document).ready(function($) {
+    jQuery(document).ready(function($) {
+
+        // @TODO: this temp script should be replaced by something in the core and something more robust
+
         // Temporary toggle
         $('.k-scopebar__item--filters button').on('click', function(){
             $(this).parent().toggleClass('js-is-active');

@@ -199,7 +199,10 @@ defined('KOOWA') or die; ?>
 </div><!-- .k-overview -->
 
 <script>
-    kQuery(document).ready(function($) {
+    jQuery(document).ready(function($) {
+
+        // @TODO: this temp script should be replaced by something in the core and something more robust
+
         // Temporary toggle
         $('.k-scopebar__item--filters button').on('click', function(){
             $(this).parent().toggleClass('js-is-active');
