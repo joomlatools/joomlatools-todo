@@ -35,6 +35,9 @@ defined('KOOWA') or die; ?>
 
             <!-- Filters -->
             <div class="k-sidebar__item">
+                <div class="k-sidebar__header">
+                    Quick filters:
+                </div>
                 <div class="k-sidebar__content">
                     <ul class="k-list">
                         <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
@@ -84,19 +87,17 @@ defined('KOOWA') or die; ?>
                 <!-- Scopebar -->
                 <div class="k-scopebar">
 
-                    <!-- Filter title -->
-                    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
-                    
                     <!-- Filters -->
                     <div class="k-scopebar__item k-scopebar__item--fluid">
 
-                        <!-- Filter -->
-                        <div class="select2-wrapper select2--link-style select2--filter">
-                            <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
-                                <option selected>--Status--</option>
-                                <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
-                                <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
-                            </select>
+                        <!-- Filter title -->
+                        <div class="k-scopebar__item--title">Filter:</div>
+
+                        <!-- Filters -->
+                        <div class="k-scopebar__item--filters">
+                            <ul>
+                                <li><button type="button">Status</button></li>
+                            </ul>
                         </div>
 
                         <!-- Search toggle button -->
@@ -110,6 +111,20 @@ defined('KOOWA') or die; ?>
                     </div>
                     
                 </div><!-- .k-scopebar -->
+
+                <!-- filter container -->
+                <div class="k-filter-container" id="logman-filters">
+                    <div class="k-filter-container__item">
+                        <div class="select2-wrapper select2--filter">
+                            <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
+                                <option selected>--Status--</option>
+                                <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>>Published</option>
+                                <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>>Unpublished</option>
+                            </select>
+                        </div>
+                        <button type="button" class="k-filter-container__close">×</button>
+                    </div>
+                </div><!-- .k-filter-container -->
 
                 <!-- Table -->
                 <div class="k-table-container">
@@ -182,3 +197,18 @@ defined('KOOWA') or die; ?>
     </form><!-- .k-content-wrapper -->
 
 </div><!-- .k-overview -->
+
+<script>
+    kQuery(document).ready(function($) {
+        // Temporary toggle
+        $('.k-scopebar__item--filters button').on('click', function(){
+            $(this).parent().toggleClass('js-is-active');
+            $('.k-filter-container__item').slideToggle();
+        });
+
+        $('.k-filter-container__close').on('click', function(){
+            $('.k-scopebar__item--filters li').toggleClass('js-is-active');
+            $('.k-filter-container__item').slideToggle();
+        });
+    });
+</script>
