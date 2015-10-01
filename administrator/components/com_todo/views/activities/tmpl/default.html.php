@@ -12,10 +12,6 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.ui'); ?>
 
-<?php // For testing purposes only ?>
-<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
-<?php // End test ?>
-
 
 <!-- Overview layout -->
 <div class="k-overview">
@@ -35,7 +31,7 @@ defined('KOOWA') or die; ?>
             <div class="k-sidebar__item">
 
                 <div class="k-sidebar__header">
-                    Quick filters:
+                    <?= translate('Quick filters:'); ?>
                 </div>
 
                 <div class="k-sidebar__content">
@@ -43,13 +39,13 @@ defined('KOOWA') or die; ?>
                         <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
                             <a href="<?= route('user=') ?>">
                                 <span class="k-icon-list"></span>
-                                All activities
+                                <?= translate('All activities'); ?>
                             </a>
                         </li>
                         <li class="<?= parameters()->user ? 'active' : ''; ?>">
                             <a href="<?= route('user='.object('user')->getId()) ?>">
                                 <span class="k-icon-person"></span>
-                                My activities
+                                <?= translate('My activities'); ?>
                             </a>
                         </li>
                     </ul>
@@ -77,17 +73,17 @@ defined('KOOWA') or die; ?>
                     <div class="k-scopebar__item k-scopebar__item--fluid">
 
                         <!-- Filter title -->
-                        <div class="k-scopebar__item--title">Filter:</div>
+                        <div class="k-scopebar__item--title"><?= translate('Filter:'); ?></div>
 
                         <!-- Filters -->
                         <div class="k-scopebar__item--filters">
                             <ul>
-                                <li><button type="button">Status</button></li>
+                                <li><button type="button"><?= translate('Status'); ?></button></li>
                             </ul>
                         </div>
 
                         <!-- Search toggle button -->
-                        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden">Search</span></button>
+                        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
 
                     </div>
 
@@ -103,13 +99,12 @@ defined('KOOWA') or die; ?>
                     <div class="k-filter-container__item">
                         <div class="select2-wrapper select2--filter">
                             <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
-                                <option selected>--Status--</option>
-                                <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>>Created</option>
-                                <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>>Edited</option>
-                                <option value="delete"<?= parameters()->action == 'delete' ? ' selected' : ''; ?>>Deleted</option>
+                                <option selected><?= translate('Status'); ?></option>
+                                <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>><?= translate('Created'); ?></option>
+                                <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>><?= translate('Edited'); ?></option>
+                                <option value="delete"<?= parameters()->action == 'delete' ? ' selected' : ''; ?>><?= translate('Deleted'); ?></option>
                             </select>
                         </div>
-                        <button type="button" class="k-filter-container__close">×</button>
                     </div>
                 </div><!-- .k-filter-container -->
 
@@ -172,21 +167,3 @@ defined('KOOWA') or die; ?>
     </form><!-- .k-content-wrapper -->
 
 </div><!-- .k-overview -->
-
-<script>
-    jQuery(document).ready(function($) {
-
-        // @TODO: this temp script should be replaced by something in the core and something more robust
-
-        // Temporary toggle
-        $('.k-scopebar__item--filters button').on('click', function(){
-            $(this).parent().toggleClass('js-is-active');
-            $('.k-filter-container__item').slideToggle();
-        });
-
-        $('.k-filter-container__close').on('click', function(){
-            $('.k-scopebar__item--filters li').toggleClass('js-is-active');
-            $('.k-filter-container__item').slideToggle();
-        });
-    });
-</script>
