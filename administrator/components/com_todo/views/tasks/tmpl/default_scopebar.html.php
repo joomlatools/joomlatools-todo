@@ -43,12 +43,9 @@ defined('KOOWA') or die; ?>
 <!-- filter container -->
 <div class="k-filter-container">
     <div class="k-filter-container__item" data-filter="status">
-        <div class="select2-wrapper select2--filter">
-            <select name="enabled" id="select2-filter" data-placeholder="Status" onchange="this.form.submit()">
-                <option selected><?= translate('Status'); ?></option>
-                <option value="1"<?= parameters()->enabled === 1 ? ' selected' : ''; ?>><?= translate('Published'); ?></option>
-                <option value="0"<?= parameters()->enabled === 0 ? ' selected' : ''; ?>><?= translate('Unpublished'); ?></option>
-            </select>
-        </div>
+        <?= helper('listbox.published', array(
+            'select2' => true,
+            'attribs' => array('onchange' => 'this.form.submit();')
+        )); ?>
     </div>
 </div><!-- .k-filter-container -->
