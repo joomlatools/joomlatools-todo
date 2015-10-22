@@ -14,55 +14,55 @@ defined('KOOWA') or die; ?>
 
 
 <!-- Overview layout -->
-<div class="k-overview">
+<div class="k-content-wrapper">
 
-    <!-- Form -->
-    <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
+    <!-- Sidebar -->
+    <div id="k-sidebar" class="k-sidebar">
 
-        <!-- Sidebar -->
-        <div id="k-sidebar" class="k-sidebar">
+        <!-- Navigation -->
+        <div class="k-sidebar__navigation">
+            <ktml:toolbar type="menubar">
+        </div>
 
-            <!-- Navigation -->
-            <div class="k-sidebar__navigation">
-                <ktml:toolbar type="menubar">
+        <!-- Filters -->
+        <div class="k-sidebar__item">
+
+            <div class="k-sidebar__header">
+                <?= translate('Quick filters:'); ?>
             </div>
 
-            <!-- Filters -->
-            <div class="k-sidebar__item">
+            <ul class="k-list">
+                <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
+                    <a href="<?= route('user=') ?>">
+                        <span class="k-icon-list"></span>
+                        <?= translate('All activities'); ?>
+                    </a>
+                </li>
+                <li class="<?= parameters()->user ? 'active' : ''; ?>">
+                    <a href="<?= route('user='.object('user')->getId()) ?>">
+                        <span class="k-icon-person"></span>
+                        <?= translate('My activities'); ?>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><!-- .k-sidebar -->
 
-                <div class="k-sidebar__header">
-                    <?= translate('Quick filters:'); ?>
-                </div>
+    <!-- Content -->
+    <div class="k-content">
 
-                <ul class="k-list">
-                    <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
-                        <a href="<?= route('user=') ?>">
-                            <span class="k-icon-list"></span>
-                            <?= translate('All activities'); ?>
-                        </a>
-                    </li>
-                    <li class="<?= parameters()->user ? 'active' : ''; ?>">
-                        <a href="<?= route('user='.object('user')->getId()) ?>">
-                            <span class="k-icon-person"></span>
-                            <?= translate('My activities'); ?>
-                        </a>
-                    </li>
-                </ul>
+        <!-- Toolbar -->
+        <div class="k-toolbar">
+            <div class="koowa-toolbar">
+                <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
             </div>
-        </div><!-- .k-sidebar -->
+        </div><!-- .k-toolbar -->
 
-        <!-- Content -->
-        <div class="k-content">
+        <!-- Component -->
+        <div class="k-component">
 
-            <!-- Toolbar -->
-            <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
-                </div>
-            </div><!-- .k-toolbar -->
-
-            <!-- Component -->
-            <div class="k-component">
+            <!-- Form -->
+            <form class="k-list-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
 
                 <!-- Scopebar -->
                 <div class="k-scopebar">
@@ -76,12 +76,16 @@ defined('KOOWA') or die; ?>
                         <!-- Filters -->
                         <div class="k-scopebar__item--filters">
                             <ul>
-                                <li><button type="button"><?= translate('Status'); ?></button></li>
+                                <li>
+                                    <button class="k-filter-button" type="button" data-filter-toggle="filter">
+                                        <?= translate('Status'); ?>
+                                    </button>
+                                </li>
                             </ul>
                         </div>
 
                         <!-- Search toggle button -->
-                        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
+                        <button type="button" class="k-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
 
                     </div>
 
@@ -94,7 +98,7 @@ defined('KOOWA') or die; ?>
 
                 <!-- filter container -->
                 <div class="k-filter-container" id="logman-filters">
-                    <div class="k-filter-container__item">
+                    <div class="k-filter-container__item" data-filter="filter">
                         <div class="select2-wrapper select2--filter">
                             <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
                                 <option selected><?= translate('Status'); ?></option>
@@ -158,10 +162,10 @@ defined('KOOWA') or die; ?>
 
                 </div><!-- .k-table-container -->
 
-            </div><!-- .k-component -->
+            </div><!-- .k-list-layout -->
 
-        </div><!-- k-content -->
+        </div><!-- .k-component -->
 
-    </form><!-- .k-content-wrapper -->
+    </div><!-- k-content -->
 
-</div><!-- .k-overview -->
+</div><!-- .k-content-wrapper -->

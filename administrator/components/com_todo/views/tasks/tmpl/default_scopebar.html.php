@@ -22,14 +22,15 @@ defined('KOOWA') or die; ?>
         <!-- Filters -->
         <div class="k-scopebar__item--filters">
             <ul>
-                <li><button type="button" data-filter-toggle="status"
-                            class="<?= is_numeric(parameters()->enabled) ? 'has-active-filter' : '' ?>"
-                        ><?= translate('Status'); ?></button></li>
+                <li><button type="button" data-filter-toggle="status" class="k-filter-button<?= is_numeric(parameters()->enabled) ? 'has-active-filter' : '' ?>">
+                        <?= translate('Status'); ?>
+                    </button>
+                </li>
             </ul>
         </div>
 
         <!-- Search toggle button -->
-        <button type="button" class="toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
+        <button type="button" class="k-toggle-search"><span class="k-icon-magnifying-glass"></span><span class="visually-hidden"><?= translate('Search'); ?></span></button>
 
     </div>
 

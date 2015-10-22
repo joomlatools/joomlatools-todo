@@ -15,60 +15,60 @@ defined('KOOWA') or die; ?>
 
 
 <!-- Overview -->
-<div class="k-overview">
+<div class="k-content-wrapper">
 
-    <!-- Form -->
-    <form id="k-offcanvas-container" action="" method="get" class="k-content-wrapper -koowa-grid">
+    <!-- Sidebar -->
+    <div id="k-sidebar" class="k-sidebar">
 
-        <!-- Sidebar -->
-        <div id="k-sidebar" class="k-sidebar">
+        <!-- Navigation -->
+        <div class="k-sidebar__navigation">
+            <ktml:toolbar type="menubar">
+        </div>
 
-            <!-- Navigation -->
-            <div class="k-sidebar__navigation">
-                <ktml:toolbar type="menubar">
+        <!-- Filters -->
+        <div class="k-sidebar__item">
+            <div class="k-sidebar__header">
+                <?= translate('Quick filters:'); ?>
             </div>
+            <ul class="k-list">
+                <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
+                    <a href="<?= route('created_by=&sort=&direction=') ?>">
+                        <span class="k-icon-list"></span>
+                        <?= translate('All tasks'); ?>
+                    </a>
+                </li>
+                <li class="<?= parameters()->created_by ? 'active' : ''; ?>">
+                    <a href="<?= route('created_by='.object('user')->getId().'&sort=&direction=') ?>">
+                        <span class="k-icon-person"></span>
+                        <?= translate('My tasks'); ?>
+                    </a>
+                </li>
+                <li class="<?= parameters()->sort == 'last_modified_on' && parameters()->direction == 'desc' ? 'active' : ''; ?>">
+                    <a href="<?= route('sort=last_modified_on&direction=desc&created_by=') ?>">
+                        <span class="k-icon-clock"></span>
+                        <?= translate('Recently edited'); ?>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-            <!-- Filters -->
-            <div class="k-sidebar__item">
-                <div class="k-sidebar__header">
-                    <?= translate('Quick filters:'); ?>
-                </div>
-                <ul class="k-list">
-                    <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
-                        <a href="<?= route('created_by=&sort=&direction=') ?>">
-                            <span class="k-icon-list"></span>
-                            <?= translate('All tasks'); ?>
-                        </a>
-                    </li>
-                    <li class="<?= parameters()->created_by ? 'active' : ''; ?>">
-                        <a href="<?= route('created_by='.object('user')->getId().'&sort=&direction=') ?>">
-                            <span class="k-icon-person"></span>
-                            <?= translate('My tasks'); ?>
-                        </a>
-                    </li>
-                    <li class="<?= parameters()->sort == 'last_modified_on' && parameters()->direction == 'desc' ? 'active' : ''; ?>">
-                        <a href="<?= route('sort=last_modified_on&direction=desc&created_by=') ?>">
-                            <span class="k-icon-clock"></span>
-                            <?= translate('Recently edited'); ?>
-                        </a>
-                    </li>
-                </ul>
+    </div><!-- .k-sidebar -->
+
+    <!-- Content -->
+    <div class="k-content">
+
+        <!-- Toolbar -->
+        <div class="k-toolbar">
+            <div class="koowa-toolbar">
+                <ktml:toolbar type="actionbar" icon="task icon-stack">
             </div>
-            
-        </div><!-- .k-sidebar -->
+        </div><!-- .k-toolbar -->
 
-        <!-- Content -->
-        <div class="k-content">
+        <!-- Component -->
+        <div class="k-component">
 
-            <!-- Toolbar -->
-            <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" icon="task icon-stack">
-                </div>
-            </div><!-- .k-toolbar -->
-
-            <!-- Component -->
-            <div class="k-component">
+            <!-- Form -->
+            <form class="k-list-layout -koowa-grid" id="k-offcanvas-container" action="" method="get">
 
                 <!-- Scopebar -->
                 <?= import('default_scopebar.html'); ?>
@@ -137,10 +137,10 @@ defined('KOOWA') or die; ?>
 
                 </div><!-- .k-table-container -->
 
-            </div><!-- .k-component -->
+            </div><!-- .k-list-layout -->
 
-        </div><!-- k-content -->
+        </div><!-- .k-component -->
 
-    </form><!-- .k-content-wrapper -->
+    </div><!-- k-content -->
 
-</div><!-- .k-overview -->
+</div><!-- .k-content-wrapper -->
