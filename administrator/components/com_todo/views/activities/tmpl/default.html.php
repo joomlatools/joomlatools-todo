@@ -34,22 +34,20 @@ defined('KOOWA') or die; ?>
                     <?= translate('Quick filters:'); ?>
                 </div>
 
-                <div class="k-sidebar__content">
-                    <ul class="k-list">
-                        <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
-                            <a href="<?= route('user=') ?>">
-                                <span class="k-icon-list"></span>
-                                <?= translate('All activities'); ?>
-                            </a>
-                        </li>
-                        <li class="<?= parameters()->user ? 'active' : ''; ?>">
-                            <a href="<?= route('user='.object('user')->getId()) ?>">
-                                <span class="k-icon-person"></span>
-                                <?= translate('My activities'); ?>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="k-list">
+                    <li class="<?= is_null(parameters()->user) ? 'active' : ''; ?>">
+                        <a href="<?= route('user=') ?>">
+                            <span class="k-icon-list"></span>
+                            <?= translate('All activities'); ?>
+                        </a>
+                    </li>
+                    <li class="<?= parameters()->user ? 'active' : ''; ?>">
+                        <a href="<?= route('user='.object('user')->getId()) ?>">
+                            <span class="k-icon-person"></span>
+                            <?= translate('My activities'); ?>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div><!-- .k-sidebar -->
 
