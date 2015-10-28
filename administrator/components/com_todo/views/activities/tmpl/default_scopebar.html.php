@@ -42,7 +42,7 @@ defined('KOOWA') or die; ?>
 </div><!-- .k-scopebar -->
 
 <!-- filter container -->
-<div class="k-filter-container" id="logman-filters">
+<div class="k-filter-container">
     <div class="k-filter-container__item" data-filter="filter">
         <div class="select2-wrapper select2--filter">
             <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
