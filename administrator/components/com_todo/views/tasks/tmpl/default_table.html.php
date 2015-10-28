@@ -40,7 +40,8 @@ defined('KOOWA') or die; ?>
                     </td>
                     <td>
                         <a href="<?= route('view=task&id='.$task->id); ?>">
-                            <?= escape($task->title); ?></a>
+                            <?= escape($task->title); ?>
+                        </a>
                     </td>
                     <td class="k-nowrap">
                         <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
