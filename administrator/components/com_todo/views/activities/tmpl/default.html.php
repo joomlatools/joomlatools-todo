@@ -40,7 +40,7 @@ defined('KOOWA') or die; ?>
                 <!-- Table -->
                 <?= import('default_table.html'); ?>
 
-            </div><!-- .k-list-layout -->
+            </form><!-- .k-list-layout -->
 
         </div><!-- .k-component -->
 
