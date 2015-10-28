@@ -10,26 +10,12 @@
 
 defined('KOOWA') or die; ?>
 
-
 <?= helper('behavior.validator'); ?>
 <?= helper('behavior.ui'); ?>
-
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">
 </ktml:module>
-
-
-<?php // START @TODO: These files / markup should be loaded at root component level so we don't have to add them on each view ?>
-<ktml:style src="assets://css/admin-joomla.css" />
-<ktml:script src="assets://js/admin.js" />
-<?php // END ?>
-
-
-<?php // For testing purposes only ?>
-<?php // JFactory::getApplication()->enqueueMessage('Message'); ?>
-<?php // End test ?>
-
 
 <!-- Overview -->
 <div class="k-content-wrapper">
