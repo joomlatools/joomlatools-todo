@@ -11,7 +11,8 @@
 /**
  * Task Controller
  *
- * @author  Mati Kochen <https://github.com/kochen>
+ * @author Mati Kochen <https://github.com/kochen>
+ * @author Rastin Mehr <https://github.com/rmdstudio>
  * @package Nooku\Component\Todo
  */
 class ComTodoControllerTask extends ComKoowaControllerModel
@@ -28,6 +29,9 @@ class ComTodoControllerTask extends ComKoowaControllerModel
     {
         $config->append(array(
             'formats'   => array('csv'),
+            'behaviors' => array(
+                'com:tags.controller.behavior.taggable'
+            )
         ));
 
         parent::_initialize($config);
