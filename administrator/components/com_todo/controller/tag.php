@@ -16,7 +16,7 @@
   * @author  Rastin Mehr <https://github.com/rmdstudio>
   * @package Nooku\Component\Todo
   */
-  class ComTodoControllerTag extends TagsControllerTag
+  class ComTodoControllerTag extends ComTagsControllerTag
   {
       protected function _initialize(KObjectConfig $config)
       {

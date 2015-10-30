@@ -44,6 +44,7 @@
         <submenu>
             <menu view="tasks" link="option=com_todo&amp;view=tasks">COM_TODO_SUBMENU_TASKS</menu>
             <menu view="activities" link="option=com_todo&amp;view=activities">COM_TODO_SUBMENU_ACTIVITIES</menu>
+            <menu view="tags" link="option=com_todo&amp;view=tags">COM_TODO_SUBMENU_TAGS</menu>
         </submenu>
 
         <files folder="../../../administrator/components/com_todo">

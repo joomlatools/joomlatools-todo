@@ -48,9 +48,6 @@ CREATE TABLE IF NOT EXISTS `#__activities` (
     KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `#__todo_tags`
 --
@@ -74,8 +71,6 @@ CREATE TABLE IF NOT EXISTS `#__todo_tags` (
   UNIQUE KEY `uuid` (`uuid`),
   KEY `table` (`table`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `#__todo_tags_relations`
