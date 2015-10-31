@@ -10,12 +10,15 @@
 
 class ComTodoControllerTask extends ComKoowaControllerModel
 {
-	protected function _initialize(KObjectConfig $config)
-	{
-		$config->append(array(
-			'formats'   => array('json')
-		));
+		protected function _initialize(KObjectConfig $config)
+		{
+				$config->append(array(
+						'formats' => array('json'),
+						'behaviors' => array(
+								'com:todo.controller.behavior.taggable'
+						)
+				));
 
-		parent::_initialize($config);
-	}
+				parent::_initialize($config);
+		}
 }

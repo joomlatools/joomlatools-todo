@@ -30,7 +30,7 @@ class ComTodoControllerTask extends ComKoowaControllerModel
         $config->append(array(
             'formats'   => array('csv'),
             'behaviors' => array(
-                'com:tags.controller.behavior.taggable'
+                'com:todo.controller.behavior.taggable'
             )
         ));
 

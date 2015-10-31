@@ -35,17 +35,16 @@ defined('KOOWA') or die; ?>
                         <? // Details fieldset ?>
                         <fieldset>
                             <legend><?= translate('Details') ?></legend>
-
                             <?= import('com://site/todo.task.form_details.html') ?>
-
                         </fieldset>
+
+                        <legend><?= translate('Tags') ?></legend>
+                        <?= helper('com:todo.listbox.tags', array('name' => 'tags[]', 'selected' => $task->getTags(), 'filter' => array('table' => 'tasks'), 'attribs' => array('class' => 'select-tags', 'multiple' => 'multiple', 'style' => 'width:220px'))) ?>
 
                         <? // Description fieldset ?>
                         <fieldset>
                             <legend><?= translate('Description') ?></legend>
-
                             <?= import('com://site/todo.task.form_description.html') ?>
-
                         </fieldset>
                     </div>
 
@@ -53,9 +52,7 @@ defined('KOOWA') or die; ?>
                         <? // Publishing fieldset ?>
                         <fieldset>
                             <legend><?= translate('Publishing') ?></legend>
-
                             <?= import('com://site/todo.task.form_publishing.html') ?>
-
                         </fieldset>
                     </div>
                 </div>

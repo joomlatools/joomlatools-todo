@@ -13,22 +13,20 @@
  * @author  Johan Janssens <http://github.com/johanjanssens>
  * @package Nooku\Component\Tags
  */
-class ComTagsDatabaseTableTags extends KDatabaseTableAbstract
-{
-    protected function _initialize(KObjectConfig $config)
-    {
-        $config->append(array(
-            'name' => 'todos_tags',
-            'relation_table' => 'todo_tags_relations',
-            'behaviors' => array(
-                'creatable',
-                'modifiable',
-                'lockable',
-                'sluggable',
-                'identifiable'
-            )
-        ));
+ class ComTodoDatabaseTableTags extends KDatabaseTableAbstract
+ {
+     protected function _initialize(KObjectConfig $config)
+     {
+         $config->append(array(
+             'behaviors' => array(
+                 'creatable',
+                 'modifiable',
+                 'lockable',
+                 'sluggable',
+                 'identifiable'
+             )
+         ));
 
-        parent::_initialize($config);
-    }
-}
+         parent::_initialize($config);
+     }
+ }

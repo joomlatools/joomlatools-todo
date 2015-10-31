@@ -8,7 +8,4 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
-class ComTodoModelEntityTask extends KModelEntityRow
-{
-
-}
+class ComTodoModelEntityTask extends KModelEntityRow{}

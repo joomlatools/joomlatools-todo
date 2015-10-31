@@ -15,13 +15,47 @@
  * @author Rastin Mehr <http://github.com/rmdstudio>
  * @package Component\Tags
  */
-class ComTagsControllerTag extends TagsControllerTag
+class ComTodoControllerTag extends ComTagsControllerTag
 {
+    protected function _initialize(KObjectConfig $config)
+    {
+        $config->append(array(
+            'model' => 'com:tags.model.tags'
+        ));
+
+        //Alias the permission
+        $permission = $this->getIdentifier()->toArray();
+        $permission['path'] = array('controller', 'permission');
+
+        $this->getObject('manager')->registerAlias('com:tags.controller.permission.tag', $permission);
+
+        parent::_initialize($config);
+    }
+
+    protected function _actionRender(KControllerContextInterface $context)
+    {
+        $view = $this->getView();
+
+        if($view instanceof KViewTemplate)
+        {
+            $layout = $view->getIdentifier()->toArray();
+            $layout['name'] = $view->getLayout();
+            unset($layout['path'][0]);
+
+            $alias = $layout;
+            $alias['package'] = 'tags';
+
+            $this->getObject('manager')->registerAlias($alias, $layout);
+        }
+
+        return parent::_actionRender($context);
+    }
+
     public function getRequest()
     {
         $request = parent::getRequest();
 
-        $request->query->access    = $this->getUser()->isAuthentic();
+        $request->query->access = $this->getUser()->isAuthentic();
         $request->query->published = 1;
 
         return $request;

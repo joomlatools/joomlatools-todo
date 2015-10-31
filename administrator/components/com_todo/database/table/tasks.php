@@ -21,11 +21,12 @@ class ComTodoDatabaseTableTasks extends KDatabaseTableAbstract
                 'sluggable',
                 'identifiable',
                 'parameterizable',
+                'com:todo.database.behavior.taggable',
             ),
             'filters' => array(
-                'title'        => array('trim'),
-                'slug'         => array('trim'),
-                'description'  => array('trim', 'html')
+                'title' => array('trim'),
+                'slug' => array('trim'),
+                'description' => array('trim', 'html')
             )
         ));
 

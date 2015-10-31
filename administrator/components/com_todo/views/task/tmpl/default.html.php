@@ -12,6 +12,8 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.validator'); ?>
 
+<ktml:script src="assets://js/koowa.js" />
+
 <ktml:style src="media://koowa/com_koowa/css/admin.css" />
 
 <ktml:module position="toolbar">
@@ -45,6 +47,9 @@ defined('KOOWA') or die; ?>
                                 </div>
                             </div>
                         </div>
+
+                        <legend><?= translate('Tags') ?></legend>
+                        <?= helper('com:todo.listbox.tags', array('name' => 'tags[]', 'selected' => $task->getTags(), 'filter' => array('table' => 'tasks'), 'attribs' => array('class' => 'select-tags', 'multiple' => 'multiple', 'style' => 'width:220px'))) ?>
 
                         <legend><?= translate('Description') ?></legend>
 
@@ -89,6 +94,7 @@ defined('KOOWA') or die; ?>
                 </div>
             </div>
         </div>
-
     </form>
 </div>
+
+<script data-inline> $jQuery(".select-tags").select2(); </script>
