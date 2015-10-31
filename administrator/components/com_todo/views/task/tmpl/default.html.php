@@ -49,7 +49,15 @@ defined('KOOWA') or die; ?>
                         </div>
 
                         <legend><?= translate('Tags') ?></legend>
-                        <?= helper('com:todo.listbox.tags', array('name' => 'tags[]', 'selected' => $task->getTags(), 'filter' => array('table' => 'tasks'), 'attribs' => array('class' => 'select-tags', 'multiple' => 'multiple', 'style' => 'width:220px'))) ?>
+                        <?= helper('com:todo.listbox.tags', array(
+                            'name' => 'tags[]',
+                            'selected' => $task->getTags(),
+                      //      'filter' => array('table' => 'tasks'),
+                            'attribs' => array(
+                                'class' => 'select-tags',
+                                'multiple' => 'multiple',
+                                'style' => 'width:100%')
+                                )); ?>
 
                         <legend><?= translate('Description') ?></legend>
 

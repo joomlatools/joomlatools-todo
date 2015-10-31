@@ -23,6 +23,7 @@ class ComTodoTemplateHelperListbox extends KTemplateHelperListbox
             'value'	 => 'id',
             'label'	 => 'title',
             'prompt' => false,
+            'select2' => true,
             'identifier' => 'com:todo.model.tags'
         ));
 

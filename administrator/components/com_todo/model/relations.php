@@ -25,7 +25,7 @@ class ComTodoModelRelations extends KModelDatabase
 				 	   ->insert('table', 'string', $this->getIdentifier()->package);
 		}
 
-	  protected function _buildQueryColumns(KDatabaseQuerySelect $query)
+	  protected function _buildQueryColumns(KDatabaseQueryInterface $query)
 	  {
 	      parent::_buildQueryColumns($query);
 
@@ -35,14 +35,14 @@ class ComTodoModelRelations extends KModelDatabase
 	      ));
 		}
 
-		protected function _buildQueryJoins(KDatabaseQuerySelect $query)
+		protected function _buildQueryJoins(KDatabaseQueryInterface $query)
 		{
 		    parent::_buildQueryJoins($query);
 
 		    $query->join(array('tags' => 'tags'), 'tags.tags_tag_id = tbl.tags_tag_id');
 		}
 
-		protected function _buildQueryWhere(KDatabaseQuerySelect $query)
+		protected function _buildQueryWhere(KDatabaseQueryInterface $query)
 		{
 			  $state = $this->getState();
 

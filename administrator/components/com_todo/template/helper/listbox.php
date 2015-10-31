@@ -20,9 +20,11 @@ class ComTodoTemplateHelperListbox extends KTemplateHelperListbox
         $config = new KObjectConfig($config);
 
         $config->append(array(
+            'model' => 'tags',
             'value'	 => 'id',
             'label'	 => 'title',
             'prompt' => false,
+            'select2' => true,
             'identifier' => 'com:todo.model.tags'
         ));
 

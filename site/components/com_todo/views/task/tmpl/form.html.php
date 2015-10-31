@@ -24,37 +24,38 @@ defined('KOOWA') or die; ?>
 
 <? // Form ?>
 <div class="koowa_form">
-
     <div class="todo_form_layout">
         <form action="<?= route('id='. $task->id) ?>" method="post" class="-koowa-form">
-
             <div class="todo_container">
                 <div class="todo_grid">
-                    <div class="todo_grid__task two-thirds">
+                    <fieldset>
+                        <legend><?= translate('Details') ?></legend>
+                        <?= import('com://site/todo.task.form_details.html') ?>
+                    </fieldset>
 
-                        <? // Details fieldset ?>
-                        <fieldset>
-                            <legend><?= translate('Details') ?></legend>
-                            <?= import('com://site/todo.task.form_details.html') ?>
-                        </fieldset>
-
+                    <fieldset>
                         <legend><?= translate('Tags') ?></legend>
-                        <?= helper('com:todo.listbox.tags', array('name' => 'tags[]', 'selected' => $task->getTags(), 'filter' => array('table' => 'tasks'), 'attribs' => array('class' => 'select-tags', 'multiple' => 'multiple', 'style' => 'width:220px'))) ?>
+                        <?= helper('com:todo.listbox.tags', array(
+                            'name' => 'tags[]',
+                            'selected' => $task->getTags(),
+                            'filter' => array('table' => 'tasks'),
+                            'attribs' => array(
+                                'class' => 'select-tags',
+                                'multiple' => 'multiple',
+                                'style' => 'width:100%'
+                            )
+                        )) ?>
+                    </fieldset>
 
-                        <? // Description fieldset ?>
-                        <fieldset>
-                            <legend><?= translate('Description') ?></legend>
-                            <?= import('com://site/todo.task.form_description.html') ?>
-                        </fieldset>
-                    </div>
+                    <fieldset>
+                        <legend><?= translate('Description') ?></legend>
+                        <?= import('com://site/todo.task.form_description.html') ?>
+                    </fieldset>
 
-                    <div class="todo_grid__task one-third">
-                        <? // Publishing fieldset ?>
-                        <fieldset>
-                            <legend><?= translate('Publishing') ?></legend>
-                            <?= import('com://site/todo.task.form_publishing.html') ?>
-                        </fieldset>
-                    </div>
+                    <fieldset>
+                        <legend><?= translate('Publishing') ?></legend>
+                        <?= import('com://site/todo.task.form_publishing.html') ?>
+                    </fieldset>
                 </div>
             </div>
         </form>
