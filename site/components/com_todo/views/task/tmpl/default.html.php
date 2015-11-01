@@ -42,7 +42,7 @@ defined('KOOWA') or die; ?>
     <ul class="nav nav-pills">
         <? foreach($tags as $tag) : ?>
         <li>
-            <a href="<?= route('view=tasks&tag[]='.$tag->id) ?>">
+            <a href="<?= route('view=tasks&tagid='.$tag->id) ?>">
             <?= escape($tag->title) ?>
             </a>
         </li>
