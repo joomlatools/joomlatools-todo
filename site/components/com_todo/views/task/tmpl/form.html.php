@@ -34,17 +34,15 @@ defined('KOOWA') or die; ?>
                     </fieldset>
 
                     <fieldset>
-                        <legend><?= translate('Tags') ?></legend>
-                        <?= helper('com:todo.listbox.tags', array(
-                            'name' => 'tags[]',
-                            'selected' => $task->getTags(),
-                            'filter' => array('table' => 'tasks'),
-                            'attribs' => array(
-                                'class' => 'select-tags',
-                                'multiple' => 'multiple',
-                                'style' => 'width:100%'
-                            )
-                        )) ?>
+                      <legend><?= translate('Tags') ?></legend>
+                      <?= helper('com:todo.listbox.tags', array(
+                          'name' => 'tags[]',
+                          'selected' => $task->getTags(),
+                          'attribs' => array(
+                              'class' => 'select-tags',
+                              'multiple' => 'multiple',
+                              'style' => 'width:100%')
+                            )); ?>
                     </fieldset>
 
                     <fieldset>

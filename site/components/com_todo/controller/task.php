@@ -15,7 +15,7 @@ class ComTodoControllerTask extends ComKoowaControllerModel
 				$config->append(array(
 						'formats' => array('json'),
 						'behaviors' => array(
-								'com:todo.controller.behavior.taggable'
+								'com://admin/todo.controller.behavior.taggable'
 						)
 				));
 

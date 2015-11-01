@@ -50,14 +50,4 @@ class ComTodoControllerTag extends ComTagsControllerTag
 
         return parent::_actionRender($context);
     }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        $request->query->access = $this->getUser()->isAuthentic();
-        $request->query->published = 1;
-
-        return $request;
-    }
 }

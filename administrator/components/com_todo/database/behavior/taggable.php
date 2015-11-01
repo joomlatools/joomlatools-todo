@@ -39,20 +39,17 @@ class ComTodoDatabaseBehaviorTaggable extends KDatabaseBehaviorAbstract
      */
     public function getTags()
     {
-          $model = $this->getObject('com:todo.model.tags');
+        $tags = null;
 
-          if(!$this->isNew())
-          {
-              $tags = $model->row($this->id)
-                            ->table($this->getTable()->getName())
-                            ->fetch();
-          }
-          else
-          {
-              $tags = $model->fetch();
-          }
+        if(!$this->isNew())
+        {
+            $tags = $this->getObject('com://admin/todo.model.tags')
+                         ->row($this->id)
+                         ->table($this->getTable()->getName())
+                         ->fetch();
+        }
 
-          return $tags;
+        return $tags;
     }
 
     /**

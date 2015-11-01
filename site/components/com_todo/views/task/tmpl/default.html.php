@@ -32,9 +32,22 @@ defined('KOOWA') or die; ?>
             <span class="label label-<?= $task->enabled ? $task->status : 'draft' ?>"><?= ucfirst($status); ?></span>
         <? endif; ?>
     </h4>
+
     <div class="task_description">
         <?= JHtml::_('content.prepare', $task->description); ?>
     </div>
+
+    <? // task tags ?>
+    <? $tags = $task->getTags() ?>
+    <ul class="nav nav-pills">
+        <? foreach($tags as $tag) : ?>
+        <li>
+            <a href="<?= route('view=tasks&tag[]='.$tag->id) ?>">
+            <?= escape($tag->title) ?>
+            </a>
+        </li>
+        <? endforeach; ?>
+    </ul>
 
     <? // Edit area | Import partial template from task view ?>
     <?= import('com://site/todo.task.manage.html', array('task' => $task)) ?>
