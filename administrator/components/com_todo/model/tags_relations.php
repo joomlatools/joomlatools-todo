@@ -13,7 +13,7 @@
  * @author  Johan Janssens <http://github.com/johanjanssens>
  * @package Nooku\Component\Tags
  */
-class ComTodoModelRelations extends KModelDatabase
+class ComTodoModelTags_relations extends KModelDatabase
 {
 		public function __construct(KObjectConfig $config)
 		{
@@ -39,7 +39,7 @@ class ComTodoModelRelations extends KModelDatabase
 		{
 		    parent::_buildQueryJoins($query);
 
-		    $query->join(array('tags' => 'tags'), 'tags.tags_tag_id = tbl.tags_tag_id');
+		    $query->join(array('tags' => 'todo_tags'), 'tags.tags_tag_id = tbl.tags_tag_id');
 		}
 
 		protected function _buildQueryWhere(KDatabaseQueryInterface $query)

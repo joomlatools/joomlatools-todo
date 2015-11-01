@@ -48,15 +48,4 @@ class ComTodoControllerTag extends ComKoowaControllerModel
 
         return parent::_actionRender($context);
     }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        //Force set the 'table' in the request
-        $request->query->table  = $this->getIdentifier()->package;
-        $request->data->table   = $this->getIdentifier()->package;
-
-        return $request;
-    }
 }

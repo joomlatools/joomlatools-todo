@@ -22,7 +22,7 @@
 				// Set the state
 				$this->getState()
 		         ->insert('row', 'int')
-		         ->insert('table', 'string', $this->getIdentifier()->package);
+		         ->insert('table', 'string');
 		}
 
 		protected function _initialize(KObjectConfig $config)
@@ -64,7 +64,7 @@
 		      }
 
 		      if($this->getState()->table) {
-		          $query->where('tbl.table = :table')->bind(array('table' => $this->getState()->table));
+		          $query->where('relations.table = :table')->bind(array('table' => $this->getState()->table));
 		      }
 
 		      parent::_buildQueryWhere($query);

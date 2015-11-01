@@ -36,7 +36,7 @@ class ComTodoControllerBehaviorTaggable extends KControllerBehaviorAbstract
             // Remove all existing relations
             if($entity->id && $entity->getTable()->getBase())
             {
-                $relations = $this->getObject('com:todo.model.relations')
+                $relations = $this->getObject('com:todo.model.tags_relations')
                     ->row($entity->id)
                     ->table($table)
                     ->fetch();
@@ -55,13 +55,13 @@ class ComTodoControllerBehaviorTaggable extends KControllerBehaviorAbstract
                         'table'       => $table
                     );
 
-                    $relation = $this->getObject('com:todo.model.relations')
+                    $relation = $this->getObject('com:todo.model.tags_relations')
                         ->setState($properties)
                         ->fetch();
 
                     if($relation->isNew())
                     {
-                        $relation = $this->getObject('com:todo.model.relations')->create();
+                        $relation = $this->getObject('com:todo.model.tags_relations')->create();
 
                         $relation->setProperties($properties);
                         $relation->save();
@@ -86,7 +86,7 @@ class ComTodoControllerBehaviorTaggable extends KControllerBehaviorAbstract
 
           if(!empty($id) && $id != 0)
           {
-              $rows = $this->getObject('com:todo.model.relations')
+              $rows = $this->getObject('com:todo.model.tags_relations')
                   ->row($id)
                   ->table($table)
                   ->fetch();
