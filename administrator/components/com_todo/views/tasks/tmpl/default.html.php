@@ -12,38 +12,44 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.ui'); ?>
 
-<!-- Overview -->
-<div class="k-content-wrapper">
 
-    <!-- Sidebar -->
-    <?= import('default_sidebar.html'); ?>
+<!-- Wrapper -->
+<div class="k-wrapper">
 
-    <!-- Content -->
-    <div class="k-content">
+    <!-- Overview -->
+    <div class="k-content-wrapper">
 
-        <!-- Toolbar -->
-        <div class="k-toolbar">
-            <div class="koowa-toolbar">
-                <ktml:toolbar type="actionbar" icon="task icon-stack">
-            </div>
-        </div><!-- .k-toolbar -->
+        <!-- Sidebar -->
+        <?= import('default_sidebar.html'); ?>
 
-        <!-- Component -->
-        <div class="k-component">
+        <!-- Content -->
+        <div class="k-content">
 
-            <!-- Form -->
-            <form class="k-list-layout -koowa-grid" action="" method="get">
+            <!-- Toolbar -->
+            <div class="k-toolbar">
+                <div class="koowa-toolbar">
+                    <ktml:toolbar type="actionbar" icon="task icon-stack">
+                </div>
+            </div><!-- .k-toolbar -->
 
-                <!-- Scopebar -->
-                <?= import('default_scopebar.html'); ?>
+            <!-- Component -->
+            <div class="k-component">
 
-                <!-- Table -->
-                <?= import('default_table.html'); ?>
+                <!-- Form -->
+                <form class="k-list-layout -koowa-grid" action="" method="get">
 
-            </form><!-- .k-list-layout -->
+                    <!-- Scopebar -->
+                    <?= import('default_scopebar.html'); ?>
 
-        </div><!-- .k-component -->
+                    <!-- Table -->
+                    <?= import('default_table.html'); ?>
 
-    </div><!-- k-content -->
+                </form><!-- .k-list-layout -->
 
-</div><!-- .k-content-wrapper -->
+            </div><!-- .k-component -->
+
+        </div><!-- k-content -->
+
+    </div><!-- .k-content-wrapper -->
+
+</div><!-- .k-wrapper -->
