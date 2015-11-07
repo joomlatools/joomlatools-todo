@@ -35,7 +35,7 @@ defined('KOOWA') or die; ?>
 
                     <fieldset>
                       <legend><?= translate('Tags') ?></legend>
-                      <?= helper('com:todo.listbox.tags', array(
+                      <?= helper('com:tags.listbox.tags', array(
                           'name' => 'tags[]',
                           'selected' => $task->getTags(),
                           'attribs' => array(
