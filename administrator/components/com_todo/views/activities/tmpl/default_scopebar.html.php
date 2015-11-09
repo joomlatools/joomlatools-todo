@@ -18,15 +18,11 @@ defined('KOOWA') or die; ?>
         <!-- Filter title -->
         <div class="k-scopebar__item--title"><?= translate('Filter:'); ?></div>
 
-        <!-- Filters -->
-        <div class="k-scopebar__item--filters">
-            <ul>
-                <li>
-                    <button class="k-filter-button" type="button" data-filter-toggle="filter">
-                        <?= translate('Status'); ?>
-                    </button>
-                </li>
-            </ul>
+        <div class="k-scopebar__item--filter">
+            <button type="button" class="k-scopebar__filter-button">
+                <span class="add-filter"><?= translate('Add filter'); ?></span>
+                <span class="clear-filter" style="display: none;"><?= translate('Clear filter'); ?></span>
+            </button>
         </div>
 
         <!-- Search toggle button -->
@@ -42,10 +38,12 @@ defined('KOOWA') or die; ?>
 </div><!-- .k-scopebar -->
 
 <!-- filter container -->
-<div class="k-filter-container">
-    <div class="k-filter-container__item" data-filter="filter">
-        <div class="select2-wrapper select2--filter">
-            <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()">
+<div class="k-filter-container" data-filter="all">
+
+    <!-- First group -->
+    <div class="k-filter-group">
+        <div class="k-filter">
+            <select name="action" id="select2-filter" data-placeholder="Action" onchange="this.form.submit()" class="select2-filter--no-search">
                 <option selected><?= translate('Status'); ?></option>
                 <option value="add"<?= parameters()->action == 'add' ? ' selected' : ''; ?>><?= translate('Created'); ?></option>
                 <option value="edit"<?= parameters()->action == 'edit' ? ' selected' : ''; ?>><?= translate('Edited'); ?></option>
@@ -53,4 +51,6 @@ defined('KOOWA') or die; ?>
             </select>
         </div>
     </div>
+    <!-- End first group -->
+
 </div><!-- .k-filter-container -->

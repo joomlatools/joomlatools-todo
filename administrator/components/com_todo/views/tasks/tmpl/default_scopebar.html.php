@@ -19,14 +19,11 @@ defined('KOOWA') or die; ?>
         <!-- Filter title -->
         <div class="k-scopebar__item--title"><?= translate('Filter:'); ?></div>
 
-        <!-- Filters -->
-        <div class="k-scopebar__item--filters">
-            <ul>
-                <li><button type="button" data-filter-toggle="status" class="k-filter-button<?= is_numeric(parameters()->enabled) ? 'has-active-filter' : '' ?>">
-                        <?= translate('Status'); ?>
-                    </button>
-                </li>
-            </ul>
+        <div class="k-scopebar__item--filter">
+            <button type="button" class="k-scopebar__filter-button">
+                <span class="add-filter"><?= translate('Add filter'); ?></span>
+                <span class="clear-filter" style="display: none;"><?= translate('Clear filter'); ?></span>
+            </button>
         </div>
 
         <!-- Search toggle button -->
@@ -42,11 +39,20 @@ defined('KOOWA') or die; ?>
 </div><!-- .k-scopebar -->
 
 <!-- filter container -->
-<div class="k-filter-container">
-    <div class="k-filter-container__item" data-filter="status">
-        <?= helper('listbox.published', array(
-            'select2' => true,
-            'attribs' => array('onchange' => 'this.form.submit();')
-        )); ?>
+<div class="k-filter-container" data-filter="all">
+
+    <!-- First group -->
+    <div class="k-filter-group">
+        <div class="k-filter">
+            <?= helper('listbox.published', array(
+                'select2' => true,
+                'attribs' => array(
+                    'onchange' => 'this.form.submit();',
+                    'class' => 'select2-filter--no-search'
+                )
+            )); ?>
+        </div>
     </div>
+    <!-- End first group -->
+
 </div><!-- .k-filter-container -->
