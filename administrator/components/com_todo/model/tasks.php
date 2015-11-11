@@ -22,7 +22,7 @@ class ComTodoModelTasks extends KModelDatabase
         $config->append(array(
             'behaviors' => array(
                 'searchable' => array('columns' => array('title', 'description')),
-                'com:todo.model.behavior.taggable'
+                'com:tags.model.behavior.taggable'
             )
         ));
 

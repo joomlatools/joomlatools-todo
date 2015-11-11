@@ -8,19 +8,18 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
- return array(
-     'identifiers' => array(
-         'com://site/todo.controller.task' => array(
-           'behaviors' => array(
-               'com:activities.controller.behavior.loggable',
-               'com://site/todo.controller.behavior.taggable'
+return array(
+   'aliases' => array(
+       'com://site/todo.model.behavior.taggable' => 'com:tags.model.behavior.taggable',
+       'com://site/todo.database.behavior.taggable' => 'com:tags.database.behavior.taggable',
+       'com://site/todo.database.table.tags' => 'com:tags.database.table.tags'
+    ),
+
+    'identifiers' => array(
+        'com://site/todo.database.table.tasks' => array(
+            'behaviors' => array(
+                'com://site/tags.database.behavior.taggable'
             )
-         )
-     ),
-     'aliases' => array(
-         'com://site/todo.controller.behavior.taggable' => 'com://admin/todo.controller.behavior.taggable',
-         'com://site/todo.model.behavior.taggable' => 'com://admin/todo.model.behavior.taggable',
-         'com://site/todo.database.behavior.taggable' => 'com://admin/todo.database.behavior.taggable',
-         'com://site/todo.database.table.tags' => 'com://admin/todo.database.table.tags'
-      )
- );
+        )
+    )
+);

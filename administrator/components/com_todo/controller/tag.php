@@ -13,4 +13,22 @@
  * @author  Johan Janssens <http://github.com/johanjanssens>
  * @package ComTagsControllerTag
  */
-class ComTodoControllerTag extends ComTagsControllerTag{}
+class ComTodoControllerTag extends ComTagsControllerTag
+{
+    /**
+     * Initializes the default configuration for the object
+     *
+     * Called from {@link __construct()} as a first step of object instantiation.
+     *
+     * @param   KObjectConfig $config Configuration options
+     * @return void
+     */
+    protected function _initialize(KObjectConfig $config)
+    {
+        $config->append(array(
+            'toolbars'   => array('menubar', 'tags'),
+        ));
+
+        parent::_initialize($config);
+    }
+}
