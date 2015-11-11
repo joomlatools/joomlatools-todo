@@ -10,11 +10,8 @@
 
 return array(
    'aliases' => array(
-       'com://site/todo.model.behavior.taggable' => 'com:tags.model.behavior.taggable',
-       'com://site/todo.database.behavior.taggable' => 'com:tags.database.behavior.taggable',
-       'com://site/todo.database.table.tags' => 'com:tags.database.table.tags'
+       'com://site/todo.database.table.tasks' => 'com://admin/todo.database.table.tasks'
     ),
-
     'identifiers' => array(
         'com://site/todo.database.table.tasks' => array(
             'behaviors' => array(
