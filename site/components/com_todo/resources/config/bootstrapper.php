@@ -15,7 +15,7 @@ return array(
     'identifiers' => array(
         'com://site/todo.database.table.tasks' => array(
             'behaviors' => array(
-                'com://site/tags.database.behavior.taggable'
+                'com:tags.database.behavior.taggable'
             )
         )
     )
