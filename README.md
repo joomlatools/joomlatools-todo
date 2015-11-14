@@ -39,8 +39,26 @@ There are a few things you must know before submitting a pull request:
 - All changes need to be made against the `develop` branch. However, it is very well appreciated and highly suggested to start a new feature branch from `develop` and make your changes in this new branch. This way we can just checkout your feature branch for testing before merging it into `develop`.
 - We will not consider pull requests made directly to the `master` branch.
 
+## Contributing
+
+Joomlatools Todo is an open source, community-driven project. Contributions are welcome from everyone. 
+We have [contributing guidelines](CONTRIBUTING.md) to help you get started.
+
+## Contributors
+
+See the list of [contributors](https://github.com/joomlatools/joomla-console/contributors).
+
 ## License 
 
-Joomla Todo is open-source software licensed under the [GPLv3 license](https://github.com/nooku/nooku-framework/blob/master/LICENSE.txt).
+Joomlatools Todo is free and open-source software licensed under the [GPLv3 license](LICENSE.txt).
+
+## Community
+
+Keep track of development and community news.
+
+* Follow [@joomlatoolsdev on Twitter](https://twitter.com/joomlatoolsdev)
+* Join [joomlatools/dev on Gitter](http://gitter.im/joomlatools/dev)
+* Read and subscribe to the [Joomlatools Developer Blog](https://develeoper.joomlatools.com/blog/)
+* Subscribe to the [Joomlatools Newsletter](http://www.joomlatools.com/newsletter)
 
 [gitflow-model]: http://nvie.com/posts/a-successful-git-branching-model/
