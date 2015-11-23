@@ -31,7 +31,7 @@ composer require nooku/joomla-todo:1.*
 We appreciate any contribution to Nooku Activities, whether it is related to bugs, grammar, or simply a suggestion or
 improvement. We ask that any contribution follows a few simple guidelines in order to be properly received.
 
-We follow the [GitFlow][gitflow-model] branching model, from development to release. If you are not familiar with it,
+We follow the [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) branching model, from development to release. If you are not familiar with it,
 there are several guides and tutorials online to learn about it.
 
 There are a few things you must know before submitting a pull request:
@@ -58,7 +58,5 @@ Keep track of development and community news.
 
 * Follow [@joomlatoolsdev on Twitter](https://twitter.com/joomlatoolsdev)
 * Join [joomlatools/dev on Gitter](http://gitter.im/joomlatools/dev)
-* Read and subscribe to the [Joomlatools Developer Blog](https://develeoper.joomlatools.com/blog/)
-* Subscribe to the [Joomlatools Newsletter](http://www.joomlatools.com/newsletter)
-
-[gitflow-model]: http://nvie.com/posts/a-successful-git-branching-model/
+* Read the [Joomlatools Developer Blog](http://developer.joomlatools.com/blog/)
+* Subscribe to the [Joomlatools Developer Newsletter](http://developer.joomlatools.com/newsletter)
