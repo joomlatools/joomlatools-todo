@@ -12,7 +12,7 @@ defined('KOOWA') or die; ?>
 
 <?= helper('behavior.validator'); ?>
 
-<ktml:style src="media://css/admin.css" />
+<ktml:style src="media://koowa/com_koowa/css/admin.css" />
 
 <ktml:module position="toolbar">
     <ktml:toolbar type="actionbar" icon="task-add icon-pencil-2">
@@ -48,27 +48,8 @@ defined('KOOWA') or die; ?>
                             <div class="control-group todo_grid__task one-third input-group-form-control-field input-file">
                                 <label class="control-label" for="todo_form_alias"><?= translate('Attachment') ?></label>
                                 <div class="input-group">
-                                    <?
-                                    ?>
-                                    <?= helper('com:files.modal.select', array(
-                                        'name'  => 'attachment',
-                                        'value' => $task->attachment,
-                                        'link'  => route('option=com_todo&view=files&layout=select&tmpl=koowa'),
-                                        'callback' => 'attachmentSelectCallback',
-                                        'button_attribs' => array(
-                                            'data-koowa-modal' => htmlentities(json_encode(array('mainClass' => 'koowa_dialog_modal'))),
-                                        )
-                                    ))?>
+                                    <?= import('com:files.files.attachments.html', array('select' => true, 'attachments' => $task->getAttachments())) ?>
                                 </div>
-                                <script>
-                                    var attachmentSelectCallback = function(selected) {
-                                        kQuery('#attachment').val(selected).trigger('change');
-
-                                        if (typeof kQuery.magnificPopup !== 'undefined' && kQuery.magnificPopup.instance) {
-                                            kQuery.magnificPopup.close();
-                                        }
-                                    };
-                                </script>
                             </div>
                         </div>
 
