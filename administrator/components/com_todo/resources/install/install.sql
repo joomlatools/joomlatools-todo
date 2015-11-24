@@ -59,3 +59,40 @@ INSERT INTO `#__activities` (`activities_activity_id`, `uuid`, `application`, `t
   (3, 'b0baa5d8f5ff4efeb063ba76717104a6', 'admin', 'com', 'todo', 'item', 'add', '3', 'Vis natum eleifend eu', 'created', '2014-11-17 13:08:19', 951, '33.33.33.1', '[]'),
   (4, '7334ae6d4eaa4517a0cb60fb3ee904a9', 'admin', 'com', 'todo', 'item', 'add', '4', 'Mea probo labitur in', 'created', '2014-11-17 13:08:47', 951, '33.33.33.1', '[]'),
   (5, 'd938dd4b63454783a5d8bd14fa45e127', 'admin', 'com', 'todo', 'item', 'add', '5', 'Pro eu bonorum adversarium', 'created', '2014-11-17 13:09:03', 951, '33.33.33.1', '[]');
+
+-- Files tables.
+
+CREATE TABLE IF NOT EXISTS `#__files_containers` (
+  `files_container_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `parameters` text NOT NULL,
+  PRIMARY KEY (`files_container_id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `#__files_thumbnails` (
+  `files_thumbnail_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `files_container_id` varchar(255) NOT NULL,
+  `folder` varchar(255) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `thumbnail` mediumtext NOT NULL,
+  PRIMARY KEY (`files_thumbnail_id`)
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `#__files_attachments` (
+  `files_attachment_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `files_container_id` bigint(20) NOT NULL,
+  `uuid` char(36) NOT NULL DEFAULT '',
+  `table` varchar(255) NOT NULL DEFAULT '',
+  `row` bigint(20) unsigned NOT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`files_attachment_id`),
+  UNIQUE KEY `uuid` (`uuid`),
+  UNIQUE KEY `table` (`table`,`row`,`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `#__files_containers` (`files_container_id`, `slug`, `title`, `path`, `parameters`)
+VALUES
+	(NULL, 'todo-attachments', 'TODO Attachments', 'todo-attachments', '{\"thumbnails\":true}');
