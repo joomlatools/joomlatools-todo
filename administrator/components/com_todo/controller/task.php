@@ -28,6 +28,7 @@ class ComTodoControllerTask extends ComKoowaControllerModel
     {
         $config->append(array(
             'formats'   => array('csv'),
+            'behaviors' => array('com:files.controller.behavior.attachable')
         ));
 
         parent::_initialize($config);
