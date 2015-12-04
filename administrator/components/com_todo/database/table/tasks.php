@@ -14,6 +14,7 @@ class ComTodoDatabaseTableTasks extends KDatabaseTableAbstract
     {
         $config->append(array(
             'behaviors' => array(
+                'com:files.database.behavior.attachable',
                 'permissible',
                 'lockable',
                 'creatable',
