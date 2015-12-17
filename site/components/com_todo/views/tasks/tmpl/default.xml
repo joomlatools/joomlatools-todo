@@ -5,4 +5,10 @@
 			<![CDATA[COM_TODO_VIEW_DEFAULT_DESCRIPTION]]>
 		</message>
 	</layout>
+	<fields name="params" addfieldpath="/components/com_todo/forms/fields">
+			<fieldset name="basic" label="COM_TODO_FILTERS">
+					<field name="tag" type="todotags" label="COM_TODO_TAGS"
+					key_field="id" multiple="true" size="10" default="0" description="COM_TODO_TAGS_DESCRIPTION" />
+			</fieldset>
+	</fields>
 </metadata>

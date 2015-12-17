@@ -27,6 +27,7 @@
     <files folder="../../../site/components/com_todo">
         <folder>controller</folder>
         <folder>dispatcher</folder>
+        <folder>language</folder>
         <folder>resources</folder>
         <folder>template</folder>
         <folder>views</folder>
