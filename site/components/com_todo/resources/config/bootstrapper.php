@@ -17,6 +17,11 @@ return array(
             'behaviors' => array(
                 'com:tags.database.behavior.taggable'
             )
+        ),
+        'com://site/todo.model.tasks' => array(
+            'behaviors' => array(
+                'com:tags.model.behavior.taggable'
+            )
         )
     )
 );

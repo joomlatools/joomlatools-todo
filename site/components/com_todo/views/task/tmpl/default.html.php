@@ -37,18 +37,6 @@ defined('KOOWA') or die; ?>
         <?= JHtml::_('content.prepare', $task->description); ?>
     </div>
 
-    <? // task tags ?>
-    <? $tags = $task->getTags() ?>
-    <ul class="nav nav-pills">
-        <? foreach($tags as $tag) : ?>
-        <li>
-            <a href="<?= route('view=tasks&tagid='.$tag->id) ?>">
-            <?= escape($tag->title) ?>
-            </a>
-        </li>
-        <? endforeach; ?>
-    </ul>
-
     <? // Edit area | Import partial template from task view ?>
     <?= import('com://site/todo.task.manage.html', array('task' => $task)) ?>
 

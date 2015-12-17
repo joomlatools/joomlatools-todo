@@ -10,6 +10,8 @@
 
 class ComTodoControllerTask extends ComKoowaControllerModel
 {
+		protected $_params;
+
 		protected function _initialize(KObjectConfig $config)
 		{
 				$config->append(array(
@@ -20,6 +22,16 @@ class ComTodoControllerTask extends ComKoowaControllerModel
 						)
 				));
 
+				$this->_params = JFactory::getApplication()->getMenu()->getActive()->params;
+
 				parent::_initialize($config);
 		}
+
+		protected function _beforeRender(KControllerContextInterface $context)
+    {
+        $controller = $context->getSubject();
+        $request = $controller->getRequest();
+
+        $request->query->set('tag', $this->_params->get('tag'));
+    }
 }
