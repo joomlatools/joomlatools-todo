@@ -24,8 +24,12 @@ defined('KOOWA') or die; ?>
 </ktml:module>
 
 <div class="todo-container">
+
+    <?php // Including the sidebar ?>
+    <?= import('default_sidebar.html')?>
+
     <div class="todo_admin_list_grid">
-        <form action="" method="get" class="-koowa-grid">
+        <form action="" method="get" class="-koowa-grid" id="tasks-form">
             <div class="scopebar">
                 <div class="scopebar-group hidden-tablet hidden-phone">
                     <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"

@@ -28,10 +28,11 @@ class JFormFieldTodotags extends JFormField
 
         $view = KObjectManager::getInstance()->getObject('com://admin/todo.view.default.html');
 
-        $template = $view->getTemplate()->addFilter('style')->addFilter('script');
+        $template = $view->getTemplate()
+                         ->addFilter('style')
+                         ->addFilter('script');
 
         $attribs = array();
-
         if ($multiple)
         {
             $attribs['multiple'] = true;
@@ -39,7 +40,6 @@ class JFormFieldTodotags extends JFormField
         }
 
         $value_field = $key_field ? $key_field : 'slug';
-
         $string = "
         <?= helper('bootstrap.load'); ?>
         <?= helper('com:tags.listbox.tags', array(
@@ -47,12 +47,10 @@ class JFormFieldTodotags extends JFormField
             'value' => \$value_field,
             'deselect' => \$deselect,
             'selected' => \$value,
-            'attribs' => array_merge(\$attribs, array(
-                'class' => 'select-tags',
+            'attribs'  => array_merge(\$attribs, array(
                 'id' => \$id,
-                'multiple' => 'multiple',
                 'data-placeholder' => translate('Select Tags')))
-                )); ?>";
+        )); ?>";
 
         return $template->loadString($string, 'php')
             ->render(array(
