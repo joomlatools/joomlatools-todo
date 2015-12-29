@@ -7,16 +7,15 @@
  */
 defined('KOOWA') or die; ?>
 
-<div id="tasks-sidebar" class="fltlft">
+<div id="tasks-sidebar">
   <div class="sidebar-inner">
     <h3><?= translate('Filter'); ?></h3>
     <div id="tag-list">
         <div class="control-group">
           <div class="controls">
             <?= helper('com:tags.listbox.tags', array(
-                'name' => 'tag[]',
+                'name' => 'tag',
                 'attribs' => array(
-                    'class' => 'select-tags',
                     'multiple' => 'multiple',
                     'style' => 'width:100%',
                     'form' => 'tasks-form'

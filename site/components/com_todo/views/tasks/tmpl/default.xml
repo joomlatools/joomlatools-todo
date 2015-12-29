@@ -11,7 +11,7 @@
 					name="tag"
 					type="todotags"
 					label="COM_TODO_TAGS"
-					key_field="id"
+					key_field="slug"
 					multiple="true"
 					size="10"
 					default="0"

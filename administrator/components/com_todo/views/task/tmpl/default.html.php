@@ -53,7 +53,6 @@ defined('KOOWA') or die; ?>
                             'name' => 'tags[]',
                             'selected' => $task->getTags(),
                             'attribs' => array(
-                                'class' => 'select-tags',
                                 'multiple' => 'multiple',
                                 'style' => 'width:100%')
                                 )); ?>
