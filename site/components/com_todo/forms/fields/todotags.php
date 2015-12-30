@@ -52,6 +52,18 @@ class JFormFieldTodotags extends JFormField
                 'data-placeholder' => translate('Select Tags')))
         )); ?>";
 
+        $string .= "
+        <script>\n\n
+          kQuery(function($){
+            $('#item-form').on('submit', function( event ) {
+                if (!$('select[name=\"jform[request][tag][]\"]').select2(\"val\").length) {
+                    $(this).append('<input type=\"hidden\" name=\"jform[request][tag]\" value=\"\" />');
+                }
+            });
+          });\n\n
+        </script>
+        ";
+
         return $template->loadString($string, 'php')
             ->render(array(
                 'el_name'     => $el_name,

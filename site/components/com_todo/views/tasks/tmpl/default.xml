@@ -5,7 +5,7 @@
 			<![CDATA[COM_TODO_VIEW_DEFAULT_DESCRIPTION]]>
 		</message>
 	</layout>
-	<fields name="params" addfieldpath="/components/com_todo/forms/fields">
+	<fields name="request" addfieldpath="/components/com_todo/forms/fields">
 		<fieldset name="basic" label="COM_TODO_FILTERS">
 				<field
 					name="tag"
