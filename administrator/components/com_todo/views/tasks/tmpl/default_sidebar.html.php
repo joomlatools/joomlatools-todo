@@ -7,6 +7,8 @@
  */
 defined('KOOWA') or die; ?>
 
+<ktml:script src="media://com_todo/js/admin/tagfilter.js" />
+
 <div id="tasks-sidebar">
   <div class="sidebar-inner">
     <h3><?= translate('Filter'); ?></h3>
