@@ -20,7 +20,8 @@ defined('KOOWA') or die; ?>
                 'attribs' => array(
                     'multiple' => 'multiple',
                     'style' => 'width:100%',
-                    'form' => 'tasks-form'
+                    'form' => 'tasks-form',
+                    'data-placeholder' => translate('Filter by tags')
                   )
                 )
             ); ?>
