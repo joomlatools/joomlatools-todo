@@ -51,6 +51,7 @@ defined('KOOWA') or die; ?>
                         <legend><?= translate('Tags') ?></legend>
                         <?= helper('com:tags.listbox.tags', array(
                             'name' => 'tags[]',
+                            'value' => 'id',
                             'selected' => $task->getTags(),
                             'attribs' => array(
                                 'multiple' => 'multiple',
