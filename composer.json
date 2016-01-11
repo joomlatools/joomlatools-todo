@@ -20,6 +20,7 @@
     "require": {
         "nooku/nooku-framework-joomla": "~3.0",
         "nooku/nooku-activities": "~3.0",
-        "nooku/joomla-basicauth": "~1.0"
+        "nooku/joomla-basicauth": "~1.0",
+        "nooku/nooku-files": "dev-feature/83-attachments"
     }
 }
