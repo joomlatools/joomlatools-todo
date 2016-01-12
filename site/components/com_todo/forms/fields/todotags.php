@@ -47,6 +47,7 @@ class JFormFieldTodotags extends JFormField
             'value' => \$value_field,
             'deselect' => \$deselect,
             'selected' => \$value,
+            'identifier' => 'com://admin/todo.model.tags',
             'attribs'  => array_merge(\$attribs, array(
                 'id' => \$id,
                 'data-placeholder' => translate('Select Tags')))

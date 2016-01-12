@@ -38,6 +38,7 @@ defined('KOOWA') or die; ?>
                       <?= helper('com:tags.listbox.tags', array(
                           'name' => 'tags[]',
                           'selected' => $task->getTags(),
+                          'identifier' => 'com://admin/todo.model.tags',
                           'attribs' => array(
                               'class' => 'select-tags',
                               'multiple' => 'multiple',

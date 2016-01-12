@@ -17,6 +17,7 @@ defined('KOOWA') or die; ?>
           <div class="controls">
             <?= helper('com:tags.listbox.tags', array(
                 'name' => 'tag',
+                'identifier' => 'com://admin/todo.model.tags',
                 'attribs' => array(
                     'multiple' => 'multiple',
                     'style' => 'width:100%',

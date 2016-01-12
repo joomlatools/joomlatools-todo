@@ -53,6 +53,7 @@ defined('KOOWA') or die; ?>
                             'name' => 'tags[]',
                             'value' => 'id',
                             'selected' => $task->getTags(),
+                            'identifier' => 'com://admin/todo.model.tags',
                             'attribs' => array(
                                 'multiple' => 'multiple',
                                 'style' => 'width:100%')

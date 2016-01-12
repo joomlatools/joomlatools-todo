@@ -76,11 +76,10 @@ INSERT INTO `#__activities` VALUES
 -- Creating table `#__tags_tags`
 --
 
-CREATE TABLE `#__tags_tags` (
+CREATE TABLE `#__todo_tags` (
     `tags_tag_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
     `title` varchar(255) NOT NULL,
     `slug` varchar(255) NOT NULL,
-    `table` varchar(50) NOT NULL,
     `created_by` int(10) unsigned DEFAULT NULL,
     `created_on` datetime DEFAULT NULL,
     `modified_by` int(10) unsigned DEFAULT NULL,
@@ -92,59 +91,57 @@ CREATE TABLE `#__tags_tags` (
     PRIMARY KEY (`tags_tag_id`),
     UNIQUE KEY `slug` (`slug`),
     UNIQUE KEY `title` (`title`),
-    UNIQUE KEY `uuid` (`uuid`),
-    KEY `table` (`table`)
+    UNIQUE KEY `uuid` (`uuid`)
   ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
   --
-  -- Dumping data for table `#__tags_tags`
+  -- Dumping data for table `#__todo_tags`
   --
 
-INSERT INTO `#__tags_tags` VALUES
-  (5,'Monkeys','monkeys','todo',951,'2015-10-31 01:00:08',NULL,NULL,NULL,NULL,'','f5d2aaa9-472a-47d1-adb4-81796cbf4d90'),
-  (6,'Apes','apes','todo',951,'2015-10-31 01:00:24',NULL,NULL,NULL,NULL,'','aa34f65e-e091-4d9b-a963-14d4595cf164'),
-  (7,'Gorillas','gorillas','todo',951,'2015-10-31 01:00:36',NULL,NULL,NULL,NULL,'','6025817a-3e5d-452a-ab9c-28c00d5981b5'),
-  (8,'Orangutans','orangutans','todo',951,'2015-10-31 01:00:44',NULL,NULL,NULL,NULL,'','1181d691-5f02-4f54-a430-3564e2d03aea'),
-  (9,'Chimpanzees','chimpanzees','todo',951,'2015-10-31 01:01:10',NULL,NULL,NULL,NULL,'','ba51741b-6f98-4e15-ba7c-061b63f672ff'),
-  (10,'Humans','humans','todo',951,'2015-11-01 01:28:33',NULL,NULL,NULL,NULL,'','87443e26-75d1-41a3-bfb8-5a3521c1182f'),
-  (11,'Chicken','chicken','',951,'2015-11-02 02:24:28',NULL,NULL,NULL,NULL,'','c34ddedb-5506-42bc-8c46-9e55aa7023d7'),
-  (12,'Mice','mice','',951,'2015-11-02 02:25:06',NULL,NULL,NULL,NULL,'','289065a5-58ff-43c1-b8c2-4b533564c648'),
-  (13,'Ducks','ducks','',951,'2015-11-02 02:27:40',NULL,NULL,NULL,NULL,'','04e0a572-3db7-452e-ba5f-de1fb72377d4'),
-  (14,'Pigs','pigs','',951,'2015-11-02 02:37:30',NULL,NULL,NULL,NULL,'','e8ead618-c3a8-4f45-b7bf-673f99644473');
+INSERT INTO `#__todo_tags` VALUES
+  (5,'Monkeys','monkeys',951,'2015-10-31 01:00:08',NULL,NULL,NULL,NULL,'','f5d2aaa9-472a-47d1-adb4-81796cbf4d90'),
+  (6,'Apes','apes',951,'2015-10-31 01:00:24',NULL,NULL,NULL,NULL,'','aa34f65e-e091-4d9b-a963-14d4595cf164'),
+  (7,'Gorillas','gorillas',951,'2015-10-31 01:00:36',NULL,NULL,NULL,NULL,'','6025817a-3e5d-452a-ab9c-28c00d5981b5'),
+  (8,'Orangutans','orangutans',951,'2015-10-31 01:00:44',NULL,NULL,NULL,NULL,'','1181d691-5f02-4f54-a430-3564e2d03aea'),
+  (9,'Chimpanzees','chimpanzees',951,'2015-10-31 01:01:10',NULL,NULL,NULL,NULL,'','ba51741b-6f98-4e15-ba7c-061b63f672ff'),
+  (10,'Humans','humans',951,'2015-11-01 01:28:33',NULL,NULL,NULL,NULL,'','87443e26-75d1-41a3-bfb8-5a3521c1182f'),
+  (11,'Chicken','chicken',951,'2015-11-02 02:24:28',NULL,NULL,NULL,NULL,'','c34ddedb-5506-42bc-8c46-9e55aa7023d7'),
+  (12,'Mice','mice',951,'2015-11-02 02:25:06',NULL,NULL,NULL,NULL,'','289065a5-58ff-43c1-b8c2-4b533564c648'),
+  (13,'Ducks','ducks',951,'2015-11-02 02:27:40',NULL,NULL,NULL,NULL,'','04e0a572-3db7-452e-ba5f-de1fb72377d4'),
+  (14,'Pigs','pigs',951,'2015-11-02 02:37:30',NULL,NULL,NULL,NULL,'','e8ead618-c3a8-4f45-b7bf-673f99644473');
 
 --
--- Creating table `#__tags_relations`
+-- Creating table `#__todo_tags_relations`
 --
 
-CREATE TABLE `#__tags_relations` (
+CREATE TABLE `#__todo_tags_relations` (
     `tags_tag_id` bigint(20) unsigned NOT NULL,
     `row` bigint(20) unsigned NOT NULL,
-    `table` varchar(255) NOT NULL,
-    PRIMARY KEY (`tags_tag_id`,`row`,`table`)
+    PRIMARY KEY (`tags_tag_id`,`row`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `#__tags_relations` VALUES
-(5,1,'todo_tasks'),
-(5,5,'todo_tasks'),
-(6,1,'todo_tasks'),
-(7,1,'todo_tasks'),
-(7,2,'todo_tasks'),
-(7,3,'todo_tasks'),
-(7,5,'todo_tasks'),
-(7,8,'todo_tasks'),
-(9,1,'todo_tasks'),
-(9,2,'todo_tasks'),
-(9,3,'todo_tasks'),
-(9,4,'todo_tasks'),
-(9,5,'todo_tasks'),
-(10,1,'todo_tasks'),
-(10,2,'todo_tasks'),
-(10,5,'todo_tasks'),
-(11,3,'todo_tasks'),
-(11,8,'todo_tasks'),
-(12,1,'todo_tasks'),
-(12,5,'todo_tasks'),
-(12,8,'todo_tasks'),
-(13,3,'todo_tasks'),
-(13,5,'todo_tasks'),
-(13,8,'todo_tasks');
+(5,1),
+(5,5),
+(6,1),
+(7,1),
+(7,2),
+(7,3),
+(7,5),
+(7,8),
+(9,1),
+(9,2),
+(9,3),
+(9,4),
+(9,5),
+(10,1),
+(10,2),
+(10,5),
+(11,3),
+(11,8),
+(12,1),
+(12,5),
+(12,8),
+(13,3),
+(13,5),
+(13,8);
