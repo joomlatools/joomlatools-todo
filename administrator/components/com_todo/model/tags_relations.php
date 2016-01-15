@@ -8,4 +8,4 @@
  * @link        https://github.com/nooku/joomla-todo for the canonical source repository
  */
 
-class ComTodoModelTags extends ComTagsModelTags{}
+class ComTodoModelTags_Relations extends ComTagsModelRelations{}

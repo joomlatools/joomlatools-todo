@@ -57,6 +57,7 @@ class JFormFieldTodotags extends JFormField
         <script>\n\n
           kQuery(function($){
             $('#item-form').on('submit', function( event ) {
+                $(this).find('input[name=\"tag[]\"]').remove();
                 if (!$('select[name=\"jform[request][tag][]\"]').select2(\"val\").length) {
                     $(this).append('<input type=\"hidden\" name=\"jform[request][tag]\" value=\"\" />');
                 }

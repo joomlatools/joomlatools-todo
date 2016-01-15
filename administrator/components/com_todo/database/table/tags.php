@@ -13,7 +13,4 @@
  * @author  Johan Janssens <http://github.com/johanjanssens>
  * @package Nooku\Component\Tags
  */
-class ComTodoDatabaseTableTags extends ComTagsDatabaseTableTags
-{
-    
-}
+class ComTodoDatabaseTableTags extends ComTagsDatabaseTableTags{}
