@@ -28,10 +28,7 @@ class ComTodoControllerTask extends ComKoowaControllerModel
     protected function _initialize(KObjectConfig $config)
     {
         $config->append(array(
-            'formats'   => array('csv'),
-            'behaviors' => array(
-                'com:tags.controller.behavior.taggable'
-            )
+            'formats'   => array('csv')
         ));
 
         parent::_initialize($config);

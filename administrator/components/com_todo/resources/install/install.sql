@@ -120,7 +120,7 @@ CREATE TABLE `#__todo_tags_relations` (
     PRIMARY KEY (`tags_tag_id`,`row`)
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `#__tags_relations` VALUES
+INSERT INTO `#__todo_tags_relations` VALUES
 (5,'6da0ac15-5a4e-4a34-9e81-8da190d56b84'),
 (5,'ca7b0608-8e5f-40e0-9369-291f212cb9a5'),
 (6,'6da0ac15-5a4e-4a34-9e81-8da190d56b84'),
@@ -140,4 +140,4 @@ INSERT INTO `#__tags_relations` VALUES
 (12,'6da0ac15-5a4e-4a34-9e81-8da190d56b84'),
 (12,'ca7b0608-8e5f-40e0-9369-291f212cb9a5'),
 (13,'d923e4a3-4d51-4698-a3b6-6d1c3d3aa3da'),
-(13,'ca7b0608-8e5f-40e0-9369-291f212cb9a5'),
+(13,'ca7b0608-8e5f-40e0-9369-291f212cb9a5');
