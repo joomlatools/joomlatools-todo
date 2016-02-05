@@ -103,6 +103,8 @@ CREATE TABLE `#__files_attachments_relations` (
   `files_attachment_id` bigint(20) unsigned NOT NULL,
   `table` varchar(255) NOT NULL DEFAULT '',
   `row` bigint(20) unsigned NOT NULL,
+  `created_by` bigint(20) NOT NULL,
+  `created_on` datetime NOT NULL,
   PRIMARY KEY (`files_attachment_id`,`table`,`row`),
   CONSTRAINT `#__files_attachments_relations_ibfk_1` FOREIGN KEY (`files_attachment_id`) REFERENCES `#__files_attachments` (`files_attachment_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
