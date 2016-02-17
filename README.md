@@ -4,15 +4,15 @@
 
 ## What is Joomla Todo?
 
-Joomla Todo is an example component for the [Nooku Framework](https://github.com/nooku/nooku-framework). It's a simple todo list solution with logging support.
+Joomla Todo is an example component for the [Joomlatools Framework]. It's a simple todo list solution with logging support.
 
-It's a code 'kata' component and is used to demonstrate the power and magic of  [Nooku Framework](https://github.com/nooku/nooku-framework) by trying to do as much as possible with as few lines of code as possible as fast as possible.
+It's a code 'kata' component and is used to demonstrate the power and magic of [Joomlatools Framework] by trying to do as much as possible with as few lines of code as possible as fast as possible.
 
 > *A code kata is a simple exercise used to sharpen programming skills. You only actually practice problem solving the very first time you perform the kata. Then you repeat, and repeat again. And again. The objective of the exercise is to practice speed, technique and tools.*
 
 ## Requirements
 
-- Nooku Framework 2 or newer.
+- Joomlatools Framework 2 or newer.
 - PHP 5.2 or newer.
 - MySQL 5.
 
@@ -28,7 +28,7 @@ composer require nooku/joomla-todo:1.*
 
 ## Contributing
 
-We appreciate any contribution to Nooku Activities, whether it is related to bugs, grammar, or simply a suggestion or
+We appreciate any contribution, whether it is related to bugs, grammar, or simply a suggestion or
 improvement. We ask that any contribution follows a few simple guidelines in order to be properly received.
 
 We follow the [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) branching model, from development to release. If you are not familiar with it,
@@ -58,5 +58,7 @@ Keep track of development and community news.
 
 * Follow [@joomlatoolsdev on Twitter](https://twitter.com/joomlatoolsdev)
 * Join [joomlatools/dev on Gitter](http://gitter.im/joomlatools/dev)
-* Read the [Joomlatools Developer Blog](http://www.joomlatools.com/developer/blog/)
-* Subscribe to the [Joomlatools Developer Newsletter](http://www.joomlatools.com/developer/newsletter/)
+* Read the [Joomlatools Developer Blog](https://www.joomlatools.com/developer/blog/)
+* Subscribe to the [Joomlatools Developer Newsletter](https://www.joomlatools.com/developer/newsletter/)
+
+[Joomlatools Framework]: http://www.joomlatools.com/developer/framework/
