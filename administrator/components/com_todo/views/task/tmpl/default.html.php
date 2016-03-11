@@ -48,7 +48,7 @@ defined('KOOWA') or die; ?>
                             <div class="control-group todo_grid__task one-third input-group-form-control-field input-file">
                                 <label class="control-label" for="todo_form_alias"><?= translate('Attachments') ?></label>
                                 <div class="input-group">
-                                    <?= import('com:files.attachments.list.html', array('select' => true, 'entity' => $task)) ?>
+                                    <?= import('com:files.attachments.list.html', array('manage' => true, 'entity' => $task)) ?>
                                 </div>
                             </div>
                         </div>
