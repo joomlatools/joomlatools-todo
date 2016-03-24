@@ -25,18 +25,21 @@ defined('KOOWA') or die; ?>
         <!-- Content -->
         <div class="k-content">
 
+            <!-- Title when sidebar is inivisible -->
+            <div class="k-mobile-title">
+                <ktml:toolbar type="actionbar" render_buttons="false">
+            </div>
+
             <!-- Toolbar -->
             <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" icon="task icon-stack">
-                </div>
+                <ktml:toolbar type="actionbar" render_title="false"<?= $category_count ? '' : ' render_buttons="false"' ?>>
             </div><!-- .k-toolbar -->
 
             <!-- Component -->
             <div class="k-component">
 
                 <!-- Form -->
-                <form class="k-list-layout -koowa-grid" action="" method="get">
+                <form class="k-list-layout -koowa-grid" action="" id="k-offcanvas-container" method="get">
 
                     <!-- Scopebar -->
                     <?= import('default_scopebar.html'); ?>

@@ -43,13 +43,13 @@ defined('KOOWA') or die; ?>
                             <?= escape($task->title); ?>
                         </a>
                     </td>
-                    <td class="k-nowrap">
+                    <td class="k-table-data--nowrap">
                         <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
                     </td>
-                    <td class="k-nowrap">
+                    <td class="k-table-data--nowrap">
                         <?= escape($task->getAuthor()->getName()); ?>
                     </td>
-                    <td class="k-nowrap">
+                    <td class="k-table-data--nowrap">
                         <?= helper('date.format', array('date' => $task->last_modified_on)); ?>
                     </td>
                 </tr>

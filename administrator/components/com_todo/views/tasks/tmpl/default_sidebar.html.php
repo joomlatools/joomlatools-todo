@@ -17,9 +17,10 @@ defined('KOOWA') or die; ?>
     </div>
 
     <!-- Filters -->
-    <div class="k-sidebar__item">
+    <div class="k-sidebar__item k-quick-filters">
         <div class="k-sidebar__header">
-            <?= translate('Quick filters:'); ?>
+            <?= translate('Quick filters') ?>
+            <div class="k-sidebar__toggle"><span class="visually-hidden">Toggle</span></div>
         </div>
         <ul class="k-list">
             <li class="<?= is_null(parameters()->created_by) && parameters()->sort != 'sort' && parameters()->direction != 'desc' ? 'active' : ''; ?>">
@@ -43,3 +44,11 @@ defined('KOOWA') or die; ?>
         </ul>
     </div>
 </div><!-- .k-sidebar -->
+
+<script type="text/javascript">
+    kQuery(function ($) {
+        $('.k-sidebar__toggle').on('click', function() {
+            $(this).toggleClass('is-active').parent().next().slideToggle(180);
+        });
+    });
+</script>
