@@ -25,11 +25,14 @@ defined('KOOWA') or die; ?>
         <!-- Content -->
         <div class="k-content">
 
+            <!-- Title when sidebar is inivisible -->
+            <div class="k-mobile-title">
+                <ktml:toolbar type="actionbar" render_buttons="false">
+            </div>
+
             <!-- Toolbar -->
             <div class="k-toolbar">
-                <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
-                </div>
+                <ktml:toolbar type="actionbar" render_title="false">
             </div><!-- .k-toolbar -->
 
             <!-- Component -->

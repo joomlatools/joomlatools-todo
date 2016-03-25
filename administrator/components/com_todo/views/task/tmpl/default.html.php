@@ -30,7 +30,7 @@ defined('KOOWA') or die; ?>
             <!-- Toolbar -->
             <div class="k-toolbar">
                 <div class="koowa-toolbar">
-                    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
+                    <ktml:toolbar type="actionbar" render_title="false">
                 </div>
             </div>
 
@@ -43,59 +43,52 @@ defined('KOOWA') or die; ?>
                     <!-- Container -->
                     <div class="k-container">
 
+                        <ktml:toolbar type="actionbar" render_buttons="false">
+
                         <!-- Main information -->
                         <div class="k-container__main">
 
                             <fieldset>
                                 <div class="control-group">
-                                    <div class="controls">
-
+                                    <input
+                                        required
+                                        class="form-control input-lg"
+                                        id="todo_form_title"
+                                        type="text"
+                                        name="title"
+                                        maxlength="255"
+                                        value="<?= escape($task->title); ?>"
+                                        placeholder="Enter title here"
+                                    />
+                                </div>
+                                <div class="control-group">
+                                    <div class="input-group input-group-sm">
+                                        <label for="todo_form_alias" class="input-group-addon">
+                                            Alias
+                                        </label>
                                         <input
-                                            required
-                                            class="form-control input-lg"
-                                            id="todo_form_title"
+                                            id="todo_form_alias"
                                             type="text"
-                                            name="title"
+                                            class="form-control"
+                                            name="slug"
                                             maxlength="255"
-                                            value="<?= escape($task->title); ?>"
-                                            placeholder="Enter title here"
+                                            value="<?= escape($task->slug) ?>"
+                                            placeholder="Will be created automatically"
                                         />
-
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="controls">
-
-                                        <div class="input-group input-group-sm">
-                                            <label for="todo_form_alias" class="input-group-addon">
-                                                Alias
-                                            </label>
-                                            <input
-                                                id="todo_form_alias"
-                                                type="text"
-                                                class="form-control"
-                                                name="slug"
-                                                maxlength="255"
-                                                value="<?= escape($task->slug) ?>"
-                                                placeholder="Will be created automatically"
-                                            />
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <div class="controls">
-                                        <?= helper('editor.display', array(
-                                            'name' => 'description',
-                                            'value' => $task->description,
-                                            'id'   => 'description',
-                                            'width' => '100%',
-                                            'height' => '341',
-                                            'cols' => '100',
-                                            'rows' => '20',
-                                            'buttons' => array('pagebreak')
-                                        )); ?>
-                                    </div>
+                                    <?= helper('editor.display', array(
+                                        'name' => 'description',
+                                        'value' => $task->description,
+                                        'id'   => 'description',
+                                        'width' => '100%',
+                                        'height' => '341',
+                                        'cols' => '100',
+                                        'rows' => '20',
+                                        'buttons' => array('pagebreak')
+                                    )); ?>
                                 </div>
 
                             </fieldset>
@@ -113,17 +106,13 @@ defined('KOOWA') or die; ?>
 
                                 <div class="k-form-block__content">
                                     <div class="control-group">
-                                        <div class="control-content">
-                                            <label class="control-label">Status</label>
-                                            <div class="controls">
-                                                <?= helper('select.booleanlist', array(
-                                                    'name' => 'enabled',
-                                                    'selected' => $task->enabled,
-                                                    'true' => translate('Published'),
-                                                    'false' => translate('Unpublished')
-                                                )); ?>
-                                            </div>
-                                        </div>
+                                        <label class="control-label">Status</label>
+                                        <?= helper('select.booleanlist', array(
+                                            'name' => 'enabled',
+                                            'selected' => $task->enabled,
+                                            'true' => translate('Published'),
+                                            'false' => translate('Unpublished')
+                                        )); ?>
                                     </div>
                                 </div>
                             </fieldset>

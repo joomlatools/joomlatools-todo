@@ -35,7 +35,7 @@ defined('KOOWA') or die; ?>
                     <td>
                         <?= helper('com:activities.activity.activity', array('entity' => $activity)) ?>
                     </td>
-                    <td>
+                    <td class="k-table-data--nowrap">
                         <?= helper('date.humanize', array('date' => $activity->created_on)); ?>
                     </td>
                 </tr>

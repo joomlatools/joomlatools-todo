@@ -32,7 +32,7 @@ defined('KOOWA') or die; ?>
 
             <!-- Toolbar -->
             <div class="k-toolbar">
-                <ktml:toolbar type="actionbar" render_title="false"<?= $category_count ? '' : ' render_buttons="false"' ?>>
+                <ktml:toolbar type="actionbar" render_title="false">
             </div><!-- .k-toolbar -->
 
             <!-- Component -->
