@@ -10,105 +10,57 @@
 
 defined('KOOWA') or die; ?>
 
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
-<?= helper('behavior.koowa'); ?>
+<? // Loading necessary Markup, CSS and JS ?>
+<?= helper('ui.load') ?>
+<?= helper('behavior.modal') ?>
+<?= helper('behavior.tooltip') ?>
 
-<ktml:style src="media://koowa/com_koowa/css/admin.css" />
 
-<ktml:module position="submenu">
-    <ktml:toolbar type="menubar">
-</ktml:module>
+<!-- Wrapper -->
+<div class="k-wrapper k-js-wrapper">
 
-<ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_TASKS" icon="task icon-stack">
-</ktml:module>
+    <!-- Overview -->
+    <div class="k-content-wrapper">
 
-<div class="todo-container">
-    <div class="todo_admin_list_grid">
-        <form action="" method="get" class="-koowa-grid">
-            <div class="scopebar">
-                <div class="scopebar-group hidden-tablet hidden-phone">
-                    <a class="<?= is_null(parameters()->enabled) ? 'active' : ''; ?>"
-                       href="<?= route('enabled=&search=' ) ?>">
-                        <?= translate('All') ?>
-                    </a>
-                </div>
-                <div class="scopebar-group last hidden-tablet hidden-phone">
-                    <a class="<?= parameters()->enabled === 0 ? 'active' : ''; ?>"
-                       href="<?= route('enabled='.(parameters()->enabled === 0 ? '' : '0')) ?>">
-                        <?= translate('Unpublished') ?>
-                    </a>
-                    <a class="<?= parameters()->enabled === 1 ? 'active' : ''; ?>"
-                       href="<?= route('enabled='.(parameters()->enabled === 1 ? '' : '1')) ?>">
-                        <?= translate('Published') ?>
-                    </a>
-                </div>
-                <div class="scopebar-search">
-                    <?= helper('grid.search', array('submit_on_clear' => true)) ?>
-                </div>
-            </div>
-            <div class="todo_table_container">
-                <table class="table table-striped footable">
-                <thead>
-                    <tr>
-                        <th style="text-align: center;" width="1">
-                            <?= helper('grid.checkall')?>
-                        </th>
-                        <th class="todo_table__title_field">
-                            <?= helper('grid.sort', array('column' => 'title', 'title' => 'Title')); ?>
-                        </th>
-                        <th width="5%" data-hide="phone,phablet">
-                            <?= helper('grid.sort', array('column' => 'enabled', 'title' => 'Status')); ?>
-                        </th>
-                        <th width="5%" data-hide="phone,phablet,tablet">
-                            <?= helper('grid.sort', array('column' => 'created_by', 'title' => 'Owner')); ?>
-                        </th>
-                        <th width="5%" data-hide="phone,phablet">
-                            <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Date')); ?>
-                        </th>
-                    </tr>
-                </thead>
-                <? if (count($tasks)): ?>
-                <tfoot>
-                    <tr>
-                        <td colspan="9">
-                            <?= helper('paginator.pagination') ?>
-                        </td>
-                    </tr>
-                </tfoot>
-                <? endif; ?>
-                <tbody>
-                    <? foreach ($tasks as $task): ?>
-                    <tr>
-                        <td style="text-align: center;">
-                            <?= helper('grid.checkbox', array('entity' => $task)) ?>
-                        </td>
-                        <td class="todo_table__title_field">
-                            <a href="<?= route('view=task&id='.$task->id); ?>">
-                                <?= escape($task->title); ?></a>
-                        </td>
-                        <td style="text-align: center">
-                            <?= helper('grid.publish', array('entity' => $task, 'clickable' => true)) ?>
-                        </td>
-                        <td>
-                            <?= escape($task->getAuthor()->getName()); ?>
-                        </td>
-                        <td>
-                            <?= helper('date.format', array('date' => $task->created_on)); ?>
-                        </td>
-                    </tr>
-                    <? endforeach; ?>
+        <!-- Sidebar -->
+        <?= import('default_sidebar.html'); ?>
 
-                    <? if (!count($tasks)) : ?>
-                    <tr>
-                        <td colspan="9" align="center" style="text-align: center;">
-                            <?= translate('No tasks found.') ?>
-                        </td>
-                    </tr>
+        <!-- Content -->
+        <div class="k-content k-js-content">
+
+            <!-- Title when sidebar is invisible -->
+            <ktml:toolbar type="titlebar" mobile>
+
+            <!-- Toolbar -->
+            <ktml:toolbar type="actionbar">
+
+            <!-- Component -->
+            <div class="k-component">
+
+                <!-- Form -->
+                <form class="k-flex-wrapper k-js-grid-controller " action="" method="get">
+
+                    <!-- Scopebar -->
+                    <?= import('default_scopebar.html'); ?>
+
+                    <?if (!count($tasks)) : ?>
+
+                        <!-- No documents -->
+                        <?= import('no_tasks.html'); ?>
+
+                    <? else : ?>
+
+                        <!-- Table -->
+                        <?= import('default_table.html'); ?>
+
                     <? endif; ?>
-                </tbody>
-            </table>
-            </div>
-        </form>
-    </div>
-</div>
+
+                </form><!-- .k-flex-wrapper -->
+
+            </div><!-- .k-component -->
+
+        </div><!-- k-content -->
+
+    </div><!-- .k-content-wrapper -->
+
+</div><!-- .k-wrapper -->

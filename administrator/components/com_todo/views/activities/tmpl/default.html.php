@@ -10,71 +10,57 @@
 
 defined('KOOWA') or die; ?>
 
-<?= helper('bootstrap.load', array('javascript' => true)); ?>
-<?= helper('behavior.koowa'); ?>
+<? // Loading necessary Markup, CSS and JS ?>
+<?= helper('ui.load') ?>
+<?= helper('behavior.modal') ?>
+<?= helper('behavior.tooltip') ?>
 
-<ktml:style src="media://koowa/com_koowa/css/admin.css" />
 
-<ktml:module position="submenu">
-    <ktml:toolbar type="menubar">
-</ktml:module>
+<!-- Wrapper -->
+<div class="k-wrapper k-js-wrapper">
 
-<ktml:module position="toolbar">
-    <ktml:toolbar type="actionbar" title="COM_TODO_SUBMENU_ACTIVITIES" icon="task icon-stack">
-</ktml:module>
+    <!-- Overview -->
+    <div class="k-content-wrapper">
 
-<div class="todo-container">
-    <div class="todo_admin_list_grid">
-        <form action="" method="get" class="-koowa-grid">
-            <div class="todo_table_container">
-                <table class="table table-striped footable">
-                    <thead>
-                    <tr>
-                        <th style="text-align: center;" width="1">
-                            <?= helper('grid.checkall')?>
-                        </th>
-                        <th class="todo_table__message_field">
-                            <?= translate('Message'); ?>
-                        </th>
-                        <th width="30%" data-hide="phone,phablet">
-                            <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Time')); ?>
-                        </th>
-                    </tr>
-                    </thead>
-                    <? if (count($activities)): ?>
-                        <tfoot>
-                        <tr>
-                            <td colspan="9">
-                                <?= helper('paginator.pagination') ?>
-                            </td>
-                        </tr>
-                        </tfoot>
-                    <? endif; ?>
-                    <tbody>
-                    <? foreach ($activities as $activity): ?>
-                        <tr>
-                            <td style="text-align: center;">
-                                <?= helper('grid.checkbox', array('entity' => $activity)) ?>
-                            </td>
-                            <td class="todo_table__message_field">
-                                <?= helper('com:activities.activity.activity', array('entity' => $activity)) ?>
-                            </td>
-                            <td>
-                                <?= helper('date.humanize', array('date' => $activity->created_on)); ?>
-                            </td>
-                        </tr>
-                    <? endforeach; ?>
+        <!-- Sidebar -->
+        <?= import('default_sidebar.html'); ?>
 
-                    <? if (!count($activities)) : ?>
-                        <tr>
-                            <td colspan="9" align="center" style="text-align: center;">
-                                <?= translate('No activities found.') ?>
-                            </td>
-                        </tr>
-                    <? endif; ?>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-    </div>
-</div>
+        <!-- Content -->
+        <div class="k-content k-js-content">
+
+            <!-- Title when sidebar is invisible -->
+            <ktml:toolbar type="titlebar" mobile>
+
+            <!-- Toolbar -->
+            <ktml:toolbar type="actionbar">
+
+                <!-- Component -->
+                <div class="k-component">
+
+                    <!-- Form -->
+                    <form class="k-flex-wrapper k-js-grid-controller " action="" method="get">
+
+                        <!-- Scopebar -->
+                        <?= import('default_scopebar.html'); ?>
+
+                        <?if (!count($activities)) : ?>
+
+                            <!-- No documents -->
+                            <?= import('no_activities.html'); ?>
+
+                        <? else : ?>
+
+                            <!-- Table -->
+                            <?= import('default_table.html'); ?>
+
+                        <? endif; ?>
+
+                    </form><!-- .k-flex-wrapper -->
+
+                </div><!-- .k-component -->
+
+        </div><!-- k-content -->
+
+    </div><!-- .k-content-wrapper -->
+
+</div><!-- .k-wrapper -->
